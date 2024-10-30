@@ -45,5 +45,9 @@
 		"postcss-jit-props": "^1.0.14",
 		"postcss-scss": "^4.0.9",
 		"prettier-plugin-astro": "^0.13.0"
-	}
-}
+	},
+  "engines": {
+    "node": ">=20.14.0",
+    "pnpm": "^9.10.0"
+  },
+  "packageManager": "pnpm@9.10.0"}
