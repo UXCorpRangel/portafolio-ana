@@ -1,6 +1,5 @@
 {
 	"name": "ana-rangel-portafolio",
-	"type": "module",
 	"version": "0.0.1",
 	"scripts": {
 		"dev": "astro dev",
@@ -45,9 +44,5 @@
 		"postcss-jit-props": "^1.0.14",
 		"postcss-scss": "^4.0.9",
 		"prettier-plugin-astro": "^0.13.0"
-	},
-	"engines": {
-		"pnpm": "^9.10.0"
-	},
-	"packageManager": "pnpm@9.10.0"
+	}
 }
