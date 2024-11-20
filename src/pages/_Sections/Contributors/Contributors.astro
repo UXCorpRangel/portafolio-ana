@@ -22,7 +22,7 @@ const respDevs = await fetch(
 );
 const dataDevs: Contributor[] = await respDevs.json();
 const dataDesigners: Designer[] = designersData;
-const images = import.meta.glob<{ default: ImageMetadata }>('/src/img/avatars/*.jpg');
+const images = import.meta.glob<{ default: ImageMetadata }>('/src/img/avatars/*.{jpg,jpeg}');
 ---
 
 <div class="container-contributions">
