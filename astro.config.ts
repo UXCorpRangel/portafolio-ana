@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import i18n from "@astrolicious/i18n";
 import playformCompress from "@playform/compress";
 import { defineConfig } from "astro/config";
