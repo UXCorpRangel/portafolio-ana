@@ -1,22 +1,2 @@
-# Initially ignore everything in the project
-/*
-
-# Source code and content directories
-!/.github
-!/public
-!/src
-
-# Configuration files
-!.eslintrc.cjs
-!astro.config.ts
-!commitlint.config.mjs
-!lint-staged.config.mjs
-!postcss.config.mjs
-!prettier.config.mjs
-!stylelint.config.mjs
-!tsconfig.json
-!validate-branch-name.config.cjs
-
-
-# Documentation
-!README.md
+dist
+pnpm-lock.yaml
