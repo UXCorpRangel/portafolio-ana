@@ -1,6 +1,10 @@
 <div class="container-scroll-back">
   <button id="btn-scroll-back" data-active="false">
-    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke-width="1.8">
+    <svg
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+      stroke-width="1.8"
+    >
       <path
         fill-rule="evenodd"
         clip-rule="evenodd"
@@ -78,24 +82,26 @@
 
 <script is:inline>
   document.addEventListener('DOMContentLoaded', () => {
-    const btnScrollBack = document.getElementById('btn-scroll-back');
+    const btnScrollBack = document.getElementById('btn-scroll-back')
 
     const getPositonScroll = () => {
-      return document.body.scrollTop || document.documentElement.scrollTop;
-    };
+      return document.body.scrollTop || document.documentElement.scrollTop
+    }
 
     const handleScroll = (e) => {
-      const scroll = e ? e.target.scrollingElement.scrollTop : getPositonScroll();
-      btnScrollBack.setAttribute('data-hidden', `${scroll < 100}`);
-    };
+      const scroll = e
+        ? e.target.scrollingElement.scrollTop
+        : getPositonScroll()
+      btnScrollBack.setAttribute('data-hidden', `${scroll < 100}`)
+    }
 
     const handlerClick = () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    };
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    }
 
-    btnScrollBack.addEventListener('click', handlerClick);
+    btnScrollBack.addEventListener('click', handlerClick)
 
-    window.addEventListener('scroll', handleScroll);
-    handleScroll();
-  });
+    window.addEventListener('scroll', handleScroll)
+    handleScroll()
+  })
 </script>

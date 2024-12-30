@@ -1,13 +1,20 @@
 ---
-import { Button } from '@components';
-import BaseLayout from '@layouts/Base.astro';
+import { Button } from '@components'
+import BaseLayout from '@layouts/Base.astro'
 ---
 
 <BaseLayout title="Upps! • Ana Rangel">
   <div class="blobs-bg">
-    <svg viewBox="0 0 100vw 100vw" xmlns="http://www.w3.org/2000/svg" class="noise-bg">
+    <svg
+      viewBox="0 0 100vw 100vw"
+      xmlns="http://www.w3.org/2000/svg"
+      class="noise-bg"
+    >
       <filter id="noise-filter-bg">
-        <feTurbulence type="fractalNoise" baseFrequency="0.6" stitchTiles="stitch"></feTurbulence>
+        <feTurbulence
+          type="fractalNoise"
+          baseFrequency="0.6"
+          stitchTiles="stitch"></feTurbulence>
       </filter>
 
       <rect
@@ -20,7 +27,8 @@ import BaseLayout from '@layouts/Base.astro';
     <svg xmlns="http://www.w3.org/2000/svg" class="svg-blur">
       <defs>
         <filter id="goo">
-          <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur"></feGaussianBlur>
+          <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur"
+          ></feGaussianBlur>
           <feColorMatrix
             in="blur"
             mode="matrix"
@@ -313,26 +321,27 @@ import BaseLayout from '@layouts/Base.astro';
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    const followerBlob = document.querySelector<HTMLDivElement>('.blob.follower');
-    let cursorX = 0;
-    let cursorY = 0;
-    let targetX = 0;
-    let targetY = 0;
+    const followerBlob =
+      document.querySelector<HTMLDivElement>('.blob.follower')
+    let cursorX = 0
+    let cursorY = 0
+    let targetX = 0
+    let targetY = 0
 
     window.addEventListener('mousemove', (event) => {
-      targetX = event.clientX;
-      targetY = event.clientY;
-    });
+      targetX = event.clientX
+      targetY = event.clientY
+    })
 
     function moveBlob() {
-      cursorX += (targetX - cursorX) / 20;
-      cursorY += (targetY - cursorY) / 20;
+      cursorX += (targetX - cursorX) / 20
+      cursorY += (targetY - cursorY) / 20
 
-      followerBlob?.style?.setProperty('--cursor-x', `${Math.round(cursorX)}px`);
-      followerBlob?.style?.setProperty('--cursor-y', `${Math.round(cursorY)}px`);
-      requestAnimationFrame(moveBlob);
+      followerBlob?.style?.setProperty('--cursor-x', `${Math.round(cursorX)}px`)
+      followerBlob?.style?.setProperty('--cursor-y', `${Math.round(cursorY)}px`)
+      requestAnimationFrame(moveBlob)
     }
 
-    moveBlob();
-  });
+    moveBlob()
+  })
 </script>

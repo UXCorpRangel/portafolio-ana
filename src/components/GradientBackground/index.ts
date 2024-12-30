@@ -1,1 +1,1 @@
-export { default as GradientBackground } from './GradientBackground.astro';
+export { default as GradientBackground } from './GradientBackground.astro'

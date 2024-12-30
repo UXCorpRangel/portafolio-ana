@@ -1,18 +1,29 @@
 ---
-import { CardVariant, GradientBackground, ScrollBack, SimpleCard } from '@components';
-import { t } from 'i18n:astro';
-import Layout from '@layouts/Layout.astro';
-import Contact from '@pages/_Sections/Contact/Contact.astro';
-import Contributors from '@pages/_Sections/Contributors/Contributors.astro';
-import Hero from '@pages/_Sections/Hero/Hero.astro';
-import Profession from '@pages/_Sections/Profession/Profession.astro';
-import StudyCases from '@pages/_Sections/StudyCases/StudyCases.astro';
-import Thunder from '@pages/_Sections/Thunder/Thunder.astro';
-import { GradientColor } from '../components/GradientBackground/GradientBackground.astro';
+import {
+  CardVariant,
+  GradientBackground,
+  ScrollBack,
+  SimpleCard
+} from '@components'
+import { t } from 'i18n:astro'
+import Layout from '@layouts/Layout.astro'
+import Contact from '@pages/_Sections/Contact/Contact.astro'
+import Contributors from '@pages/_Sections/Contributors/Contributors.astro'
+import Hero from '@pages/_Sections/Hero/Hero.astro'
+import Profession from '@pages/_Sections/Profession/Profession.astro'
+import StudyCases from '@pages/_Sections/StudyCases/StudyCases.astro'
+import Thunder from '@pages/_Sections/Thunder/Thunder.astro'
+import { GradientColor } from '../components/GradientBackground/GradientBackground.astro'
 ---
 
 <Layout title="UX Ana Rangel">
-  <link rel="preload" href="/svg/notion-maze.svg" as="image" type="image/svg+xml" slot="preload" />
+  <link
+    rel="preload"
+    href="/svg/notion-maze.svg"
+    as="image"
+    type="image/svg+xml"
+    slot="preload"
+  />
   <link
     rel="preload"
     href="/svg/figma-useberry.svg"
@@ -41,8 +52,14 @@ import { GradientColor } from '../components/GradientBackground/GradientBackgrou
     <div class="container">
       <Profession />
 
-      <div id={Astro.url.pathname.includes('/en') ? 'projects' : 'proyectos'} class="grid-auto-fit">
-        <SimpleCard cardText={t('project_ripley_title')} cardImage="/svg/logo-ripley.svg" />
+      <div
+        id={Astro.url.pathname.includes('/en') ? 'projects' : 'proyectos'}
+        class="grid-auto-fit"
+      >
+        <SimpleCard
+          cardText={t('project_ripley_title')}
+          cardImage="/svg/logo-ripley.svg"
+        />
 
         <SimpleCard
           cardText={t('project_cta')}
@@ -66,7 +83,10 @@ import { GradientColor } from '../components/GradientBackground/GradientBackgrou
           hasHover
         />
 
-        <SimpleCard cardText={t('project_cencosud_title')} cardImage="/svg/cencosud_logo.svg" />
+        <SimpleCard
+          cardText={t('project_cencosud_title')}
+          cardImage="/svg/cencosud_logo.svg"
+        />
       </div>
 
       <Thunder />

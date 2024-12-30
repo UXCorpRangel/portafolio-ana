@@ -1,41 +1,41 @@
 ---
-import { CardVariant } from '@components';
+import { CardVariant } from '@components'
 
 interface Props {
   /**
    * The class name for the card wrapper.
    */
-  class?: string;
+  class?: string
 
   /**
    * The variant of the card.
    */
-  variant?: CardVariant;
+  variant?: CardVariant
 
   /**
    * Determines whether the card has a border or not.
    */
-  hasBorder?: boolean;
+  hasBorder?: boolean
 
   /**
    * Determines whether the card should take up the full width or not.
    */
-  isFullWidth?: boolean;
+  isFullWidth?: boolean
 
   /**
    * Determines whether the card should has hover effect or not.
    */
-  hasHover?: boolean;
+  hasHover?: boolean
 }
 
-const { class: className, variant, hasBorder, hasHover, ...rest } = Astro.props;
+const { class: className, variant, hasBorder, hasHover, ...rest } = Astro.props
 
 function getBorderAttributes() {
-  return hasBorder ? { 'data-has-border': true } : {};
+  return hasBorder ? { 'data-has-border': true } : {}
 }
 
 function getHoverAttributes() {
-  return hasHover ? { 'data-has-hover': true } : {};
+  return hasHover ? { 'data-has-hover': true } : {}
 }
 ---
 
@@ -84,6 +84,10 @@ function getHoverAttributes() {
   }
 
   article[data-variant='tertiary'] {
-    background: linear-gradient(90deg, rgb(48 183 202 / 30%) 0%, rgb(33 212 155 / 30%) 100.01%);
+    background: linear-gradient(
+      90deg,
+      rgb(48 183 202 / 30%) 0%,
+      rgb(33 212 155 / 30%) 100.01%
+    );
   }
 </style>

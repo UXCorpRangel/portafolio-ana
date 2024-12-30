@@ -20,6 +20,7 @@
       "@pages/*": ["pages/*"],
       "@styles/*": ["styles/*"]
     },
+    "jsx": "react-jsx",
     "plugins": [
       {
         "name": "@astrojs/ts-plugin"

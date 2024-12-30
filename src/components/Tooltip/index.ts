@@ -1,1 +1,1 @@
-export { default as Tooltip } from './Tooltip.astro';
+export { default as Tooltip } from './Tooltip.astro'

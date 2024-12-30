@@ -2,8 +2,8 @@
  * @type {import('@commitlint/types').UserConfig}
  */
 export default {
-  extends: ['@commitlint/config-conventional'],
-};
+  extends: ['@commitlint/config-conventional']
+}
 
 /**
  * @reference

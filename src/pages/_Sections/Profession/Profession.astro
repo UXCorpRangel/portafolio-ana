@@ -1,6 +1,6 @@
 ---
-import { Button } from '@components';
-import { getLocalePath, t } from 'i18n:astro';
+import { Button } from '@components'
+import { getLocalePath, t } from 'i18n:astro'
 ---
 
 <article>
@@ -12,7 +12,12 @@ import { getLocalePath, t } from 'i18n:astro';
         <div class="dots bottom"></div>
       </div>
       <p class="text-content">{t('profession_desc')}</p>
-      <Button invert tag="anchor" href={getLocalePath('/sobre-mi')} target="_self">
+      <Button
+        invert
+        tag="anchor"
+        href={getLocalePath('/sobre-mi')}
+        target="_self"
+      >
         {t('profession_button')}
         <!-- Se agrega el SVG de manera provisoria ya que el componente button da problemas para implementar el icono mediante props -->
         <svg width="12" height="13" viewBox="0 0 12 13" fill="white">
@@ -45,13 +50,10 @@ import { getLocalePath, t } from 'i18n:astro';
 
   .container {
     justify-content: space-between;
-
     border: 1px solid hsl(0deg 0% 16%);
     border-radius: 1.5rem;
-
     background: hsl(240deg 4% 5%);
     padding: 1.5rem;
-
     inline-size: 90%;
     max-inline-size: 81rem;
     margin-inline: auto;
@@ -106,6 +108,7 @@ import { getLocalePath, t } from 'i18n:astro';
       &::before {
         left: var(--pos-dots);
       }
+
       &::after {
         right: var(--pos-dots);
       }
@@ -164,27 +167,19 @@ import { getLocalePath, t } from 'i18n:astro';
 
   span::before {
     position: absolute;
-
     z-index: 1;
-
     display: flex;
     align-items: center;
     justify-content: center;
     margin: auto;
-
     border-radius: 2rem;
-
     color: hsl(0deg 0% 100%);
     font-size: 0.7rem;
     text-wrap: nowrap;
-
     background-color: hsl(248deg 98% 66%);
     transform: rotate(-15deg);
-
     content: 'En progreso';
-
     inset: 0;
-
     max-inline-size: 5.5rem;
     max-block-size: 1.5rem;
   }
@@ -197,7 +192,6 @@ import { getLocalePath, t } from 'i18n:astro';
     .container {
       padding-block-start: 3rem;
       padding-inline-start: 3.5rem;
-
       inline-size: 100%;
     }
 

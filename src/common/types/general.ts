@@ -23,4 +23,4 @@ export type ColorVariants =
   | 'brown'
   | 'sand'
   | 'camo'
-  | 'jungle';
+  | 'jungle'

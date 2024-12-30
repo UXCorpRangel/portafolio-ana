@@ -1,14 +1,13 @@
 ---
-import '@styles/main.scss';
-
-import { Footer, Navbar } from '@components';
-import BaseLayout from './Base.astro';
+import '@styles/main.scss'
+import { Footer, Navbar } from '@components'
+import BaseLayout from './Base.astro'
 
 interface Props {
-  title: string;
+  title: string
 }
 
-const { title } = Astro.props;
+const { title } = Astro.props
 ---
 
 <BaseLayout title={title}>

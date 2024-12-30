@@ -1,18 +1,18 @@
 export enum HtmlType {
   button = 'button',
   reset = 'reset',
-  submit = 'submit',
+  submit = 'submit'
 }
 
 export enum ButtonSize {
   xs = 'xs',
   sm = 'sm',
   base = 'base',
-  lg = 'lg',
+  lg = 'lg'
 }
 
 export enum ButtonVariant {
   primary = 'primary',
   secondary = 'secondary',
-  ghost = 'ghost',
+  ghost = 'ghost'
 }

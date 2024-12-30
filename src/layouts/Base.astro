@@ -1,17 +1,19 @@
 ---
-import '@styles/main.scss';
-
-import { Avatar, PostHog } from '@components';
+import '@styles/main.scss'
+import { Avatar, PostHog } from '@components'
 
 interface Props {
-  title: string;
-  description?: string;
+  title: string
+  description?: string
 }
 
-const { title, description = '¡Hola! Soy Ana, una UX Senior con alma de Junior.' } = Astro.props;
+const {
+  title,
+  description = '¡Hola! Soy Ana, una UX Senior con alma de Junior.'
+} = Astro.props
 
-const baseUrl = `https://${Astro.site?.host || 'anarangel.github.io'}`;
-const ogImage = new URL('/img/og.jpg', baseUrl);
+const baseUrl = `https://${Astro.site?.host || 'anarangel.github.io'}`
+const ogImage = new URL('/img/og.jpg', baseUrl)
 ---
 
 <!doctype html>

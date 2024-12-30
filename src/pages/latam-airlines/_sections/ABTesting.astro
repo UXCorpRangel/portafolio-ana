@@ -1,6 +1,6 @@
 ---
-import { CardWrapper } from '@components';
-import { t } from 'i18n:astro';
+import { CardWrapper } from '@components'
+import { t } from 'i18n:astro'
 ---
 
 <section>
@@ -8,7 +8,10 @@ import { t } from 'i18n:astro';
     <!-- Card: A/B Testing description -->
     <CardWrapper class="card | flow">
       <div class="card__title-container | flow">
-        <img src="/assets/images/latam-airways-abtesting-1.png" alt="AB Testing Logo" />
+        <img
+          src="/assets/images/latam-airways-abtesting-1.png"
+          alt="AB Testing Logo"
+        />
         <h3>Test A/B</h3>
       </div>
       <p>{t('latam_abtesting_desc')}</p>
@@ -31,6 +34,7 @@ import { t } from 'i18n:astro';
 <style>
   section .container {
     --flow-spacer: 3rem;
+
     padding-block-start: 4rem;
     padding-inline: 2rem;
   }
@@ -41,6 +45,7 @@ import { t } from 'i18n:astro';
 
   .card__title-container {
     --flow-spacer: 1rem;
+
     img {
       margin-inline: auto;
     }
@@ -52,6 +57,7 @@ import { t } from 'i18n:astro';
       text-align: center;
     }
   }
+
   .text-container {
     display: grid;
     gap: 1.5rem;
@@ -61,7 +67,6 @@ import { t } from 'i18n:astro';
     text-align: center;
     line-height: 1.5;
     color: hsla(236, 25%, 75%, 1);
-
     margin-inline: auto;
   }
 
@@ -77,6 +82,7 @@ import { t } from 'i18n:astro';
       align-items: center;
       justify-content: center;
       gap: 0.625rem;
+
       img {
         margin-inline: unset;
       }

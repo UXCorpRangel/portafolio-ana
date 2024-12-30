@@ -4,15 +4,15 @@ export enum GradientColor {
   purple = 'purple',
   darkPurple = 'darkPurple',
   darkBlue = 'darkBlue',
-  cyan = 'cyan',
+  cyan = 'cyan'
 }
 
 interface GradientBackgroundProps {
-  color: GradientColor;
-  class?: string;
+  color: GradientColor
+  class?: string
 }
 
-const { color, class: className } = Astro.props as GradientBackgroundProps;
+const { color, class: className } = Astro.props as GradientBackgroundProps
 
 const gradients: Record<GradientColor, string> = {
   [GradientColor.blue]:
@@ -24,14 +24,17 @@ const gradients: Record<GradientColor, string> = {
   [GradientColor.darkBlue]:
     'radial-gradient(48.42% 48.42% at 49.41% 51.58%, #061962 0%, rgba(0, 0, 0, 0.00) 100%)',
   [GradientColor.cyan]:
-    'radial-gradient(35.82% 35.18% at 50.01% 50%, rgba(48, 183, 202, 0.30) 0%, rgba(33, 212, 155, 0.00) 100%)',
-};
+    'radial-gradient(35.82% 35.18% at 50.01% 50%, rgba(48, 183, 202, 0.30) 0%, rgba(33, 212, 155, 0.00) 100%)'
+}
 
-const gradientStyle = gradients[color];
-const Class = className ? ` ${className}` : '';
+const gradientStyle = gradients[color]
+const Class = className ? ` ${className}` : ''
 ---
 
-<div class={`gradient-background${Class}`} style={`--gradient: ${gradientStyle}`}>
+<div
+  class={`gradient-background${Class}`}
+  style={`--gradient: ${gradientStyle}`}
+>
   <slot />
 </div>
 

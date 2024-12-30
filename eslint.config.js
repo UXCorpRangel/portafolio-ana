@@ -54,8 +54,8 @@ export default [
       globals: eslintPluginAstro.environments.astro.globals,
       parser: parserAstro,
       parserOptions: {
-        extraFileExtensions: ['.astro'],
-        parser: parserTs
+        parser: parserTs,
+        extraFileExtensions: ['.astro']
       }
     },
     rules: {

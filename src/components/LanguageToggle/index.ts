@@ -1,1 +1,1 @@
-export { default as LanguageToggle } from './LanguageToggle.astro';
+export { default as LanguageToggle } from './LanguageToggle.astro'

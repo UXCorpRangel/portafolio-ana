@@ -1,38 +1,41 @@
 ---
-import { Button, IconCatalog } from '@components';
-import { t } from 'i18n:astro';
+import { Button, IconCatalog } from '@components'
+import { t } from 'i18n:astro'
 
 interface Props {
   /*
    * Id button element, not repeat reference
    */
-  id: string;
+  id: string
 }
 
-const { id } = Astro.props;
+const { id } = Astro.props
 ---
 
-<Button invert id={id} afterIcon={IconCatalog.arrowDownTray}>{t('hero_download_cv')}</Button>
+<Button invert id={id} afterIcon={IconCatalog.arrowDownTray}>
+  {t('hero_download_cv')}
+</Button>
 
 <script is:inline define:vars={{ btnId: id }}>
-  const button = document.getElementById(btnId);
+  const button = document.getElementById(btnId)
 
   function downloadCV() {
-    button.disabled = true;
-    const url = 'https://drive.google.com/file/d/1ZZjdVRQMhsjmHY6AFifQ0cee4JRFo-ic/view';
-    const anchorElement = document.createElement('a');
-    anchorElement.download = 'cv ana rangel eng.pdf';
-    anchorElement.href = url;
+    button.disabled = true
+    const url =
+      'https://drive.google.com/file/d/1ZZjdVRQMhsjmHY6AFifQ0cee4JRFo-ic/view'
+    const anchorElement = document.createElement('a')
+    anchorElement.download = 'cv ana rangel eng.pdf'
+    anchorElement.href = url
     anchorElement.dispatchEvent(
       new MouseEvent('click', { bubbles: true, cancelable: true, view: window })
-    );
+    )
     // TODO: Averiguar si hay alguna forma menos trucha de capturar el evento de descarga
     setTimeout(() => {
-      button.disabled = false;
-    }, 1000);
+      button.disabled = false
+    }, 1000)
   }
 
   if (button) {
-    button.addEventListener('click', () => downloadCV());
+    button.addEventListener('click', () => downloadCV())
   }
 </script>

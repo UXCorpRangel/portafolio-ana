@@ -1,5 +1,5 @@
 ---
-import { switchLocalePath } from 'i18n:astro';
+import { switchLocalePath } from 'i18n:astro'
 ---
 
 <div class="slider-container">
@@ -7,14 +7,14 @@ import { switchLocalePath } from 'i18n:astro';
     href={switchLocalePath('es')}
     class:list={[
       'action-language action-left',
-      { 'action-selected': !Astro.url.pathname.includes('/en') },
+      { 'action-selected': !Astro.url.pathname.includes('/en') }
     ]}>Esp</a
   >
   <a
     href={switchLocalePath('en')}
     class:list={[
       'action-language action-right',
-      { 'action-selected': Astro.url.pathname.includes('/en') },
+      { 'action-selected': Astro.url.pathname.includes('/en') }
     ]}>Eng</a
   >
 </div>
@@ -30,6 +30,7 @@ import { switchLocalePath } from 'i18n:astro';
     justify-content: center;
     width: 100%;
   }
+
   .action-language {
     color: hsla(0, 0%, 100%, 0.6);
     align-items: center;
@@ -59,10 +60,12 @@ import { switchLocalePath } from 'i18n:astro';
     background: linear-gradient(#2e58ff, #9452ff);
     color: hsl(0deg 0% 100%);
   }
+
   .action-left {
     border-top-left-radius: 50px;
     border-bottom-left-radius: 50px;
   }
+
   .action-right {
     border-top-right-radius: 50px;
     border-bottom-right-radius: 50px;
