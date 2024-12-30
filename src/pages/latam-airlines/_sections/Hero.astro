@@ -1,12 +1,16 @@
 ---
-import { CardWrapper } from '@components';
-import { t } from 'i18n:astro';
+import { CardWrapper } from '@components'
+import { t } from 'i18n:astro'
 ---
 
 <section class="hero">
   <div class="container">
     <!-- Main logo of the case study -->
-    <img src="/svg/latam-airlines-logo.svg" alt="Cencosud logo" class="main-logo" />
+    <img
+      src="/svg/latam-airlines-logo.svg"
+      alt="Cencosud logo"
+      class="main-logo"
+    />
     <h1 class="title">{t('latam_hero_case_study_title')}</h1>
     <p class="description" set:html={t('latam_hero_case_study_desc')} />
 

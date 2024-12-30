@@ -1,6 +1,6 @@
 ---
-import { CardWrapper } from '@components';
-import { t } from 'i18n:astro';
+import { CardWrapper } from '@components'
+import { t } from 'i18n:astro'
 ---
 
 <section>
@@ -57,13 +57,18 @@ import { t } from 'i18n:astro';
         <!-- Card: Testing Description -->
         <CardWrapper class="card | flow">
           <div class="card-text-container">
-            <h2 class="card-title">{t('latam_process_user_interview_title')}</h2>
+            <h2 class="card-title">
+              {t('latam_process_user_interview_title')}
+            </h2>
             <img
               src="/assets/images/latam-airways-process-4.png"
               alt="Logotipo de Synthetic Users"
             />
           </div>
-          <p class="card-description" set:html={t('latam_process_user_interview_desc_1')} />
+          <p
+            class="card-description"
+            set:html={t('latam_process_user_interview_desc_1')}
+          />
           <p>{t('latam_process_user_interview_desc_2')}</p>
         </CardWrapper>
 
@@ -78,7 +83,9 @@ import { t } from 'i18n:astro';
     <!-- Definition Section -->
     <div class="process-text-container | flow">
       <div class="flow">
-        <h3 class="process-text-container__title">{t('latam_process_definition_title')}</h3>
+        <h3 class="process-text-container__title">
+          {t('latam_process_definition_title')}
+        </h3>
       </div>
       <p>{t('latam_process_definition_desc')}</p>
       <!-- Image: Simulation of prioritization -->
@@ -159,6 +166,7 @@ import { t } from 'i18n:astro';
     display: grid;
     gap: 3rem;
   }
+
   .process-text-container {
     .flow {
       --flow-spacer: 1.5rem;
@@ -201,6 +209,7 @@ import { t } from 'i18n:astro';
 
     .cards-container .grid-auto-fit {
       --min-item-with: 400px;
+
       gap: 4.4375rem;
       align-items: center;
     }

@@ -1,74 +1,79 @@
 ---
-import { ButtonSize, ButtonVariant, HtmlType, type ColorVariants } from '@common';
-import { Icon, IconCatalog, IconSize, IconStyle } from '@components';
+import {
+  ButtonSize,
+  ButtonVariant,
+  HtmlType,
+  type ColorVariants
+} from '@common'
+import { Icon, IconCatalog, IconSize, IconStyle } from '@components'
 
 interface Props {
   /**
    * The tag to use for the button. It can be either a button or an anchor tag
    */
-  tag?: 'button' | 'anchor';
+  tag?: 'button' | 'anchor'
   /**
    * The URL to navigate to when the anchor is clicked
    */
-  href?: string;
+  href?: string
   /**
    * The target attribute specifies where to open the linked document
    */
-  target?: HTMLAnchorElement['target'];
+  target?: HTMLAnchorElement['target']
   /**
    * The unique identifier of the component
    */
-  id?: string;
+  id?: string
   /**
    * Changes the size of the button, giving it more or less padding
    */
-  size?: ButtonSize;
+  size?: ButtonSize
 
   /**
    * Adds additional class to the button
    */
-  className?: string;
+  className?: string
 
   /**
    * The shape of the component. It determines the importance in the hierarchy, for example, the contained button commands the most attention
    */
-  variant?: ButtonVariant;
+  variant?: ButtonVariant
 
   /**
    * If set to true, the button's color will be inverted.
    */
-  invert?: boolean;
+  invert?: boolean
 
   /**
    * Disables the button, disallowing user interaction.
    */
-  isDisabled?: boolean;
+  isDisabled?: boolean
 
   /**
    * Extends the button to 100% width.
    */
-  isFullWidth?: boolean;
+  isFullWidth?: boolean
 
   /**
    * HTML type attribute of the button.
    */
-  htmlType?: HtmlType;
+  htmlType?: HtmlType
 
   /**
    * Icon before the button content
    */
-  beforeIcon?: IconCatalog;
+  beforeIcon?: IconCatalog
 
   /**
    * Icon after the button content
    */
-  afterIcon?: IconCatalog;
+  afterIcon?: IconCatalog
 
   // TODO: Look for a better way to pass the color
   /**
    * Color of the icon
    */
-  iconColor?: `var(--${ColorVariants}-${string})`;
+  iconColor?: `var(--${ColorVariants}-${string})`
 }
 
 const {
@@ -85,17 +90,17 @@ const {
   beforeIcon,
   afterIcon,
   iconColor = '',
-  id,
-} = Astro.props;
+  id
+} = Astro.props
 
 const iconSizeMap = {
   [ButtonSize.xs]: IconSize.lg,
   [ButtonSize.sm]: IconSize.xl,
   [ButtonSize.base]: IconSize['2xl'],
-  [ButtonSize.lg]: IconSize['3xl'],
-};
+  [ButtonSize.lg]: IconSize['3xl']
+}
 
-const computedIconSize = iconSizeMap[size];
+const computedIconSize = iconSizeMap[size]
 ---
 
 {
@@ -106,7 +111,12 @@ const computedIconSize = iconSizeMap[size];
       disabled={isDisabled}
       data-size={size}
       data-variant={variant}
-      class:list={['button', { inverted: invert }, { fullWidth: isFullWidth }, className]}
+      class:list={[
+        'button',
+        { inverted: invert },
+        { fullWidth: isFullWidth },
+        className
+      ]}
     >
       {beforeIcon && (
         <Icon
@@ -133,7 +143,12 @@ const computedIconSize = iconSizeMap[size];
       id={id}
       data-size={size}
       data-variant={variant}
-      class:list={['button', { inverted: invert }, { fullWidth: isFullWidth }, className]}
+      class:list={[
+        'button',
+        { inverted: invert },
+        { fullWidth: isFullWidth },
+        className
+      ]}
       href={href}
       target={target}
     >
@@ -160,7 +175,7 @@ const computedIconSize = iconSizeMap[size];
   )
 }
 
-<style lang="scss">
+<style>
   :root {
     --color-ghost: transparent;
     --text-color: hsl(0deg 0% 100%);
@@ -169,7 +184,7 @@ const computedIconSize = iconSizeMap[size];
     --font-weight: 500;
   }
 
-  // TODO: Make this a utility Class
+  /* TODO: Make this a utility Class */
   .fullWidth {
     inline-size: 100%;
   }
@@ -276,7 +291,8 @@ const computedIconSize = iconSizeMap[size];
   }
 
   .button[data-variant='ghost'] {
-    --gradient-primary: hsl(0deg 0% 14%), hsl(0deg 0% 12%), hsl(0deg 0% 12%), hsl(0deg 0% 14%);
+    --gradient-primary: hsl(0deg 0% 14%), hsl(0deg 0% 12%), hsl(0deg 0% 12%),
+      hsl(0deg 0% 14%);
   }
 
   .button:disabled {

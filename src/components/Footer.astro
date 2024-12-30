@@ -1,11 +1,11 @@
 ---
-import { t } from 'i18n:astro';
-import IconAna from '../../public/svg/ana-logo.svg';
-import Behance from '../../public/svg/behance.svg';
-import Github from '../../public/svg/github.svg';
-import Instagram from '../../public/svg/ig.svg';
-import Linkedin from '../../public/svg/linkedIn.svg';
-import Twitch from '../../public/svg/twitch.svg';
+import { t } from 'i18n:astro'
+import IconAna from '../../public/svg/ana-logo.svg'
+import Behance from '../../public/svg/behance.svg'
+import Github from '../../public/svg/github.svg'
+import Instagram from '../../public/svg/ig.svg'
+import Linkedin from '../../public/svg/linkedIn.svg'
+import Twitch from '../../public/svg/twitch.svg'
 ---
 
 <!-- TODO: Crear componente svg para iconos -->
@@ -24,7 +24,10 @@ import Twitch from '../../public/svg/twitch.svg';
         <p>{t('social_net')}</p>
         <ul class="social-icons">
           <li>
-            <a href="https://www.behance.net/rangelana1a2a6" target="_blank" rel="noopener norefer"
+            <a
+              href="https://www.behance.net/rangelana1a2a6"
+              target="_blank"
+              rel="noopener norefer"
               ><img
                 class="icon"
                 src={Behance.src}
@@ -36,7 +39,10 @@ import Twitch from '../../public/svg/twitch.svg';
             >
           </li>
           <li>
-            <a href="https://github.com/AnaRangel" target="_blank" rel="noopener norefer"
+            <a
+              href="https://github.com/AnaRangel"
+              target="_blank"
+              rel="noopener norefer"
               ><img
                 class="icon"
                 src={Github.src}
@@ -48,7 +54,10 @@ import Twitch from '../../public/svg/twitch.svg';
             >
           </li>
           <li>
-            <a href="https://www.twitch.tv/uxanarangel" target="_blank" rel="noopener norefer"
+            <a
+              href="https://www.twitch.tv/uxanarangel"
+              target="_blank"
+              rel="noopener norefer"
               ><img
                 class="icon"
                 src={Twitch.src}
@@ -103,7 +112,11 @@ import Twitch from '../../public/svg/twitch.svg';
 <style>
   .footer {
     border-top: 1px solid #2f303f;
-    background: radial-gradient(334.99% 90.54% at 0.35% 53.17%, #010119 0%, #0d0d0e 100%);
+    background: radial-gradient(
+      334.99% 90.54% at 0.35% 53.17%,
+      #010119 0%,
+      #0d0d0e 100%
+    );
     width: 100%;
     padding: 2rem 1rem;
     text-align: center;

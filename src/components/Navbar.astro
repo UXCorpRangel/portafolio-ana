@@ -1,25 +1,25 @@
 ---
-import { LanguageToggle } from '@components';
-import { getLocalePath, t } from 'i18n:astro';
-import Logo from './Logo.astro';
+import { LanguageToggle } from '@components'
+import { getLocalePath, t } from 'i18n:astro'
+import Logo from './Logo.astro'
 
 const SLUGS = [
   {
-    slug: getLocalePath('/'),
+    slug: getLocalePath('/')
   },
   {
     slug: Astro.url.pathname.includes('/en')
       ? getLocalePath('/#projects')
-      : getLocalePath('/#proyectos'),
+      : getLocalePath('/#proyectos')
   },
   {
-    slug: getLocalePath('/sobre-mi'),
-  },
-];
+    slug: getLocalePath('/sobre-mi')
+  }
+]
 
 const LINKS = t('navbar', {
-  returnObjects: true,
-});
+  returnObjects: true
+})
 ---
 
 <header class="nav-container">
@@ -33,7 +33,12 @@ const LINKS = t('navbar', {
       {
         SLUGS.map(({ slug }, index) => (
           <>
-            <li class:list={['list-item', { active: Astro.url.pathname === slug }]}>
+            <li
+              class:list={[
+                'list-item',
+                { active: Astro.url.pathname === slug }
+              ]}
+            >
               <a href={slug}>{LINKS[index]}</a>
             </li>
             <li class="dots">&#183;</li>
@@ -63,8 +68,7 @@ const LINKS = t('navbar', {
   </div>
 </header>
 
-<!----------- Style to the navbar comp ----------->
-<style lang="scss">
+<style>
   :root {
     --color-bg: hsla(0deg 0% 0% 0.5);
     --color-menu: hsla(0deg 0 100%);
@@ -304,32 +308,31 @@ const LINKS = t('navbar', {
   }
 </style>
 
-{/*----------- function to the navbar comp -----------*/}
 <script is:inline>
-  const items = document.querySelectorAll('.list-item  a');
-  const navBar = document.querySelector('.navbar');
-  const burgerMenu = document.querySelector('.burger');
-  const dataStatus = 'data-status';
+  const items = document.querySelectorAll('.list-item  a')
+  const navBar = document.querySelector('.navbar')
+  const burgerMenu = document.querySelector('.burger')
+  const dataStatus = 'data-status'
 
   items.forEach((anchor) => {
     anchor.addEventListener('click', () => {
-      navBar.setAttribute(dataStatus, 'open');
-      burgerMenu.click();
-    });
-  });
+      navBar.setAttribute(dataStatus, 'open')
+      burgerMenu.click()
+    })
+  })
 
   // Animation to the three spans, if get touch, will be a X
   burgerMenu.addEventListener('click', () => {
-    const isOpen = navBar.getAttribute(dataStatus) === 'open';
+    const isOpen = navBar.getAttribute(dataStatus) === 'open'
 
     if (isOpen) {
-      document.querySelector('body').style.removeProperty('overflow-y');
-      navBar.setAttribute(dataStatus, 'close');
-      burgerMenu.setAttribute(dataStatus, 'close');
+      document.querySelector('body').style.removeProperty('overflow-y')
+      navBar.setAttribute(dataStatus, 'close')
+      burgerMenu.setAttribute(dataStatus, 'close')
     } else {
-      document.querySelector('body').style.overflowY = 'hidden';
-      navBar.setAttribute(dataStatus, 'open');
-      burgerMenu.setAttribute(dataStatus, 'open');
+      document.querySelector('body').style.overflowY = 'hidden'
+      navBar.setAttribute(dataStatus, 'open')
+      burgerMenu.setAttribute(dataStatus, 'open')
     }
-  });
+  })
 </script>

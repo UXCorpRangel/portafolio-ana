@@ -1,48 +1,55 @@
 ---
-import { CardVariant, CardWrapper, Icon, IconCatalog, IconSize, IconStyle } from '@components';
+import {
+  CardVariant,
+  CardWrapper,
+  Icon,
+  IconCatalog,
+  IconSize,
+  IconStyle
+} from '@components'
 
 interface Props {
   /**
    * The variant of the card.
    */
-  variant?: CardVariant;
+  variant?: CardVariant
 
   /**
    * Determines whether the card has a border or not.
    */
-  hasBorder?: boolean;
+  hasBorder?: boolean
 
   /**
    * Determines whether the card is inverted or not.
    */
-  isInverted?: boolean;
+  isInverted?: boolean
 
   /**
    * The text content of the card.
    */
-  cardText?: string;
+  cardText?: string
 
   /**
    * The text of the alt image.
    */
-  altText?: string;
+  altText?: string
 
   /**
    * The image URL for the card.
    */
-  cardImage?: string;
+  cardImage?: string
 
   /**
    * The aspect ratio of the image.
    */
-  aspectRatio?: string;
+  aspectRatio?: string
 
   /**
    * The URL to navigate to when the card is clicked.
    */
-  url?: string;
+  url?: string
 
-  hasHover?: boolean;
+  hasHover?: boolean
 }
 const {
   variant = CardVariant.primary,
@@ -53,8 +60,8 @@ const {
   cardImage,
   aspectRatio,
   url,
-  hasHover = false,
-} = Astro.props;
+  hasHover = false
+} = Astro.props
 ---
 
 <CardWrapper hasBorder={hasBorder} variant={variant} hasHover={hasHover}>
@@ -101,12 +108,10 @@ const {
 <style>
   .card-container {
     block-size: 20.25rem;
-
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-
     color: white;
     padding: 3rem 2rem 0 2rem;
 

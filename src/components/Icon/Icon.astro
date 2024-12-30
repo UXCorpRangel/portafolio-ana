@@ -1,14 +1,14 @@
 ---
-import type { HTMLAttributes } from 'astro/types';
-import { IconCatalog, Icons, IconSize, IconStyle } from './Icons';
+import type { HTMLAttributes } from 'astro/types'
+import { IconCatalog, Icons, IconSize, IconStyle } from './Icons'
 
 const IconStyles: Record<IconStyle, number> = {
   [IconStyle.thin]: 1,
   [IconStyle.light]: 1.2,
   [IconStyle.regular]: 1.5,
   [IconStyle.bold]: 1.8,
-  [IconStyle.solid]: 0,
-};
+  [IconStyle.solid]: 0
+}
 
 const IconSizes: Record<IconSize, string> = {
   [IconSize.xs]: '0.4rem',
@@ -23,34 +23,34 @@ const IconSizes: Record<IconSize, string> = {
   [IconSize['6xl']]: '2.2rem',
   [IconSize['7xl']]: '2.4rem',
   [IconSize['8xl']]: '2.6rem',
-  [IconSize['9xl']]: '2.8rem',
-};
+  [IconSize['9xl']]: '2.8rem'
+}
 
 interface Props extends HTMLAttributes<'svg'> {
   /**
    * The color variant of the icon.
    */
-  color?: string;
+  color?: string
 
   /**
    * Additional CSS classes to be applied to the SVG element.
    */
-  classes?: string;
+  classes?: string
 
   /**
    * The icon to display.
    */
-  icon?: IconCatalog;
+  icon?: IconCatalog
 
   /**
    * The style of the icon.
    */
-  iconStyle?: IconStyle;
+  iconStyle?: IconStyle
 
   /**
    * The size of the icon. Required.
    */
-  size: IconSize;
+  size: IconSize
 }
 
 const {
@@ -59,15 +59,16 @@ const {
   icon = IconCatalog.arrowDownTray,
   iconStyle = IconStyle.thin,
   size = IconSize.sm,
-  style,
-} = Astro.props;
+  style
+} = Astro.props
 
-const strokeWidth = IconStyles[iconStyle];
-const iconPaths = Icons[icon];
-const iconPath = iconStyle === IconStyle.solid ? iconPaths.solid : iconPaths.outline;
-const sizes = IconSizes[size];
-const fill = iconStyle === IconStyle.solid ? `currentColor` : 'none';
-const stroke = iconStyle === IconStyle.solid ? 'none' : `currentColor`;
+const strokeWidth = IconStyles[iconStyle]
+const iconPaths = Icons[icon]
+const iconPath =
+  iconStyle === IconStyle.solid ? iconPaths.solid : iconPaths.outline
+const sizes = IconSizes[size]
+const fill = iconStyle === IconStyle.solid ? `currentColor` : 'none'
+const stroke = iconStyle === IconStyle.solid ? 'none' : `currentColor`
 ---
 
 <svg
@@ -92,14 +93,12 @@ const stroke = iconStyle === IconStyle.solid ? 'none' : `currentColor`;
   define:vars={{
     fill,
     stroke,
-    sizes,
+    sizes
   }}
 >
   svg {
     color: var(--icon-color, currentColor);
-
     transform: translateX(var(--icon-transform, 0));
-
     transition-timing-function: var(--ease-elastic-in-out-3);
     transition-duration: 300ms;
     transition-property: fill stroke transform;

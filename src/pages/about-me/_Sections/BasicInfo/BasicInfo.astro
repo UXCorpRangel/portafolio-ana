@@ -1,6 +1,6 @@
 ---
-import { CardWrapper, Tooltip } from '@components';
-import { t } from 'i18n:astro';
+import { CardWrapper, Tooltip } from '@components'
+import { t } from 'i18n:astro'
 ---
 
 <section>
@@ -47,7 +47,9 @@ import { t } from 'i18n:astro';
             <Tooltip message="4 Geeks academy"
               ><img src="/img/4geeks.png" alt="4 Geeks academy" /></Tooltip
             >
-            <Tooltip message="UX Show"><img src="/img/uxshow.png" alt="UX Show" /></Tooltip>
+            <Tooltip message="UX Show"
+              ><img src="/img/uxshow.png" alt="UX Show" /></Tooltip
+            >
           </div>
         </CardWrapper>
       </div>
@@ -62,7 +64,12 @@ import { t } from 'i18n:astro';
         <picture class="portrait-img">
           <source srcset="/img/ana-1.avif" type="image/avif" />
           <source srcset="/img/ana-1.webp" type="image/webp" />
-          <img src="/img/ana-1.webp" alt="Ana" decoding="async" fetchpriority="high" />
+          <img
+            src="/img/ana-1.webp"
+            alt="Ana"
+            decoding="async"
+            fetchpriority="high"
+          />
         </picture>
       </CardWrapper>
 

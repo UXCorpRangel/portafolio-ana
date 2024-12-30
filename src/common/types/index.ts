@@ -1,2 +1,2 @@
-export * from './button';
-export * from './general';
+export * from './button'
+export * from './general'

@@ -1,36 +1,36 @@
 ---
-import { t } from 'i18n:astro';
+import { t } from 'i18n:astro'
 
 interface Props {
   /**
    * URL of the company's logo image
    */
-  companyLogoUrl: string;
+  companyLogoUrl: string
 
   /**
    * Name of the company providing the testimony
    */
-  companyName: string;
+  companyName: string
 
   /**
    * Full name of the person providing the testimony
    */
-  personFullName: string;
+  personFullName: string
 
   /**
    * Job title or profession of the person providing the testimony
    */
-  personJobTitle: string;
+  personJobTitle: string
 
   /**
    * Testimonial text provided by the person
    */
-  testimonyText: string;
+  testimonyText: string
 
   /**
    * URL to the full testimonial
    */
-  fullTestimonyUrl: string;
+  fullTestimonyUrl: string
 }
 
 const {
@@ -39,8 +39,8 @@ const {
   personFullName,
   personJobTitle,
   testimonyText,
-  fullTestimonyUrl,
-} = Astro.props;
+  fullTestimonyUrl
+} = Astro.props
 ---
 
 <article class="card-testimony">
@@ -62,8 +62,15 @@ const {
   <div class="card-testimony__bio">
     <p class="card-testimony__text">{testimonyText}</p>
   </div>
-  <a class="card-testimony__Link" href={fullTestimonyUrl} target="_blank" rel="noopener noreferrer">
-    <span class="card-testimony__Link-text"> {t('about_testimonials_read_more')} </span>
+  <a
+    class="card-testimony__Link"
+    href={fullTestimonyUrl}
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <span class="card-testimony__Link-text">
+      {t('about_testimonials_read_more')}
+    </span>
     <span class="card-testimony__Link-icon">
       <svg
         width="24"

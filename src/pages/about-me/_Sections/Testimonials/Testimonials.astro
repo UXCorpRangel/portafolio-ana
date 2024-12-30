@@ -1,12 +1,10 @@
 ---
-import { TestimonyCard } from '@components';
-import { t } from 'i18n:astro';
-
-// import { dataTestimonies } from '@data/testimonies';
+import { TestimonyCard } from '@components'
+import { t } from 'i18n:astro'
 
 const dataTestimonies = t('about_testimonials_text', {
-  returnObjects: true,
-});
+  returnObjects: true
+})
 ---
 
 <section>
@@ -49,6 +47,7 @@ const dataTestimonies = t('about_testimonials_text', {
     max-width: 1280px;
     margin: 0 auto;
   }
+
   .testimonials__item {
     display: flex;
     flex-direction: column;
@@ -56,6 +55,7 @@ const dataTestimonies = t('about_testimonials_text', {
     gap: 24px;
     max-width: 444px;
   }
+
   .testimonials__item__title {
     font-family: Inter;
     font-size: 40px;
@@ -63,6 +63,7 @@ const dataTestimonies = t('about_testimonials_text', {
     line-height: 48.41px;
     text-align: left;
   }
+
   .testimonials__item__content {
     font-family: Inter;
     font-size: 16px;
@@ -75,7 +76,13 @@ const dataTestimonies = t('about_testimonials_text', {
     flex: 1;
     overflow: hidden;
     width: 100%;
-    mask: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+    mask: linear-gradient(
+      to right,
+      transparent 0%,
+      black 10%,
+      black 90%,
+      transparent 100%
+    );
     padding: 1rem;
   }
 
@@ -108,11 +115,11 @@ const dataTestimonies = t('about_testimonials_text', {
 </style>
 
 <script>
-  const scroller = document.querySelector('#scroller');
-  const cardTestimony = document.querySelectorAll('.card-testimony');
+  const scroller = document.querySelector('#scroller')
+  const cardTestimony = document.querySelectorAll('.card-testimony')
 
   cardTestimony.forEach((testimony) => {
-    const duplicateContent = testimony.cloneNode(true);
-    scroller?.appendChild(duplicateContent);
-  });
+    const duplicateContent = testimony.cloneNode(true)
+    scroller?.appendChild(duplicateContent)
+  })
 </script>

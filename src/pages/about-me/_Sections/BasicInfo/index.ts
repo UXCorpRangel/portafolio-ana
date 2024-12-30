@@ -1,1 +1,1 @@
-export { default as BasicInfo } from './BasicInfo.astro';
+export { default as BasicInfo } from './BasicInfo.astro'

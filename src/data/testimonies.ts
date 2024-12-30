@@ -2,32 +2,32 @@ interface DataTestimonies {
   /**
    * URL of the company's logo image
    */
-  companyLogoUrl: string;
+  companyLogoUrl: string
 
   /**
    * Name of the company providing the testimony
    */
-  companyName: string;
+  companyName: string
 
   /**
    * Full name of the person providing the testimony
    */
-  personFullName: string;
+  personFullName: string
 
   /**
    * Job title or profession of the person providing the testimony
    */
-  personJobTitle: string;
+  personJobTitle: string
 
   /**
    * Testimonial text provided by the person
    */
-  testimonyText: string;
+  testimonyText: string
 
   /**
    * URL to the full testimonial
    */
-  fullTestimonyUrl: string;
+  fullTestimonyUrl: string
 }
 export const dataTestimonies: DataTestimonies[] = [
   {
@@ -37,7 +37,7 @@ export const dataTestimonies: DataTestimonies[] = [
     personJobTitle: 'UX Researcher',
     testimonyText:
       'Ana es una Product Designer dedicada y creativa, capaz de resolver problemas complejos de manera inspiradora. Su pasión y habilidad para fomentar la colaboración impactan positivamente en cualquier equipo. Recomiendo su talento a cualquier organización.',
-    fullTestimonyUrl: '',
+    fullTestimonyUrl: ''
   },
   {
     companyLogoUrl: '/assets/images/bancoRipley_logo.webp',
@@ -46,7 +46,7 @@ export const dataTestimonies: DataTestimonies[] = [
     personJobTitle: 'Lead UX I Researcher',
     testimonyText:
       'Trabajar con Ana fue un placer debido a su enfoque en los objetivos del negocio y su exhaustiva investigación previa al diseño. Destaca en presentaciones técnicas y es flexible para aceptar recomendaciones. Es una profesional excelente con habilidades en gestión de proyectos y trabajo en equipos multidisciplinarios.',
-    fullTestimonyUrl: '',
+    fullTestimonyUrl: ''
   },
   {
     companyLogoUrl: '/assets/images/neoris_logo.jpg',
@@ -55,7 +55,7 @@ export const dataTestimonies: DataTestimonies[] = [
     personJobTitle: 'UX Researcher',
     testimonyText:
       'Ana Rangel is an extremely talented individual with unparalleled operational and leadership skills. When it comes to operational work, she translates data collected in surveys and creates designs with absolute care both technically and emotionally. Her leadership skills include her charisma, her communicative and mediation skills that make her stand out.',
-    fullTestimonyUrl: '',
+    fullTestimonyUrl: ''
   },
   {
     companyLogoUrl: '/assets/images/timining.webp',
@@ -64,6 +64,6 @@ export const dataTestimonies: DataTestimonies[] = [
     personJobTitle: 'Sr. Product Manager',
     testimonyText:
       'Ana es proactiva, autodidacta y resolutiva. Fundamenta sus propuestas con investigación y no asume comportamientos de usuarios sin datos. Es colaborativa y tiene buenas aptitudes para el trabajo en equipo.',
-    fullTestimonyUrl: '',
-  },
-];
+    fullTestimonyUrl: ''
+  }
+]
