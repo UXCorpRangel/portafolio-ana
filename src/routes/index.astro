@@ -5,6 +5,8 @@ import {
   ScrollBack,
   SimpleCard
 } from '@components'
+import AnaCards from '@sections/home/AnaCards.astro'
+import UXCorp from '@sections/home/UXCorp.astro'
 import { t } from 'i18n:astro'
 import Layout from '@layouts/Layout.astro'
 import Contact from '@pages/_Sections/Contact/Contact.astro'
@@ -51,6 +53,11 @@ import { GradientColor } from '../components/GradientBackground/GradientBackgrou
     <Hero />
     <div class="container">
       <Profession />
+
+      <article class="uxcorp-projects">
+        <AnaCards />
+        <UXCorp />
+      </article>
 
       <div
         id={Astro.url.pathname.includes('/en') ? 'projects' : 'proyectos'}
@@ -104,6 +111,18 @@ import { GradientColor } from '../components/GradientBackground/GradientBackgrou
   .grid-auto-fit {
     max-width: 90%;
     margin: 0 auto;
+  }
+
+  .uxcorp-projects {
+    display: grid;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    padding-inline: 1rem;
+
+    @media (width >= 992px) {
+      grid-template-columns: 1fr 0.5fr;
+      padding-inline: 0rem;
+    }
   }
 
   @media (width >= 992px) {
