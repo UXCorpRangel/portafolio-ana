@@ -1,0 +1,58 @@
+---
+import { Button } from '@components'
+---
+
+<section class="uxcorp-container">
+  <h2 aria-label="UXCorpRangel Logo">
+    <img
+      src="/img/uxcorprangel-logo.png"
+      alt="UXCorpRangel Logo"
+      width="175"
+      height="175"
+      loading="lazy"
+      decoding="async"
+      fetchpriority="low"
+    />
+  </h2>
+  <p>
+    En cada proyecto, mi objetivo es armonizar la estética, la funcionalidad y
+    la eficiencia para entregar soluciones que.
+  </p>
+  <Button
+    invert
+    tag="anchor"
+    href="https://uxcorprangel.github.io/"
+    target="_blank"
+  >
+    <span>Ver más</span>
+    <svg width="12" height="13" viewBox="0 0 12 13" fill="white">
+      <path
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M0.329505 12.4312C-0.109835 11.9919 -0.109835 11.2796 0.329505 10.8402L8.15901 3.01074H2.625C2.00368 3.01074 1.5 2.50706 1.5 1.88574C1.5 1.26442 2.00368 0.760742 2.625 0.760742H10.875C11.4963 0.760742 24 1.26442 12 1.88574V10.1357C12 10.7571 11.4963 11.2607 10.875 11.2607C10.2537 11.2607 9.75 10.7571 9.75 10.1357V4.60173L1.9205 12.4312C1.48116 12.8706 0.768844 12.8706 0.329505 12.4312Z"
+        fill="white"></path>
+    </svg>
+  </Button>
+</section>
+
+<style>
+  .uxcorp-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    text-align: center;
+    padding: 31px 32px;
+    background: linear-gradient(230deg, #460b0b 0%, #140303 100%);
+    border: 1px solid #8b1818;
+    border-radius: 1.5rem;
+
+    @media (width >= 992px) {
+      padding: 31px 56px;
+    }
+
+    a.button[data-variant="primary"] {
+      --gradient-primary: #fff, #fff;
+    }
+  }
+</style>
