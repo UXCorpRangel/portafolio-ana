@@ -18,6 +18,7 @@
       "@data/*": ["data/*"],
       "@layouts/*": ["layouts/*"],
       "@pages/*": ["pages/*"],
+      "@sections/*": ["pages/_*"],
       "@styles/*": ["styles/*"]
     },
     "jsx": "react-jsx",
