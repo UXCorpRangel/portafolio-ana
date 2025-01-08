@@ -1,0 +1,84 @@
+---
+import { Button } from '@components'
+---
+
+<section class="ana-cards-container">
+  <div class="ana-cards">
+    <h2 aria-label="Ana Cards">
+      <img
+        src="/img/ana-cards-logo.png"
+        alt="Ana Cards"
+        decoding="async"
+        fetchpriority="low"
+        loading="lazy"
+        style="aspect-ratio: 359/99"
+      />
+    </h2>
+    <p>
+      En cada proyecto, mi objetivo es armonizar la estética, la funcionalidad y
+      la eficiencia para entregar soluciones que no solo satisfacen necesidades
+      del usuario
+    </p>
+    <Button
+      invert
+      tag="anchor"
+      href="https://cards.uxanarangel.com/"
+      target="_blank"
+    >
+      <span>Ver más</span>
+      <svg width="12" height="13" viewBox="0 0 12 13" fill="white">
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M0.329505 12.4312C-0.109835 11.9919 -0.109835 11.2796 0.329505 10.8402L8.15901 3.01074H2.625C2.00368 3.01074 1.5 2.50706 1.5 1.88574C1.5 1.26442 2.00368 0.760742 2.625 0.760742H10.875C11.4963 0.760742 24 1.26442 12 1.88574V10.1357C12 10.7571 11.4963 11.2607 10.875 11.2607C10.2537 11.2607 9.75 10.7571 9.75 10.1357V4.60173L1.9205 12.4312C1.48116 12.8706 0.768844 12.8706 0.329505 12.4312Z"
+          fill="white"></path>
+      </svg>
+    </Button>
+  </div>
+  <div class="cards-preview" style="aspect-ratio: 406/440">
+    <img
+      src="/img/ana-cards-preview.png"
+      alt="Ana Cards Preview"
+      decoding="async"
+      fetchpriority="low"
+      loading="lazy"
+      style="aspect-ratio: 406/440"
+    />
+  </div>
+</section>
+
+<style>
+  .ana-cards-container {
+    border: 1px solid hsl(0deg 0% 16%);
+    border-radius: 1.5rem;
+    background: hsl(240deg 4% 5%);
+    padding: 32px;
+    display: grid;
+    align-items: center;
+    gap: 48px;
+
+    @media (width >= 992px) {
+      padding: 56px;
+      grid-template-columns: 1fr 1fr;
+      gap: 0px;
+    }
+
+    .ana-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+
+      p {
+        text-wrap: pretty;
+      }
+    }
+
+    .cards-preview {
+      scale: 1.13;
+
+      @media (width >= 992px) {
+        transform-origin: left;
+      }
+    }
+  }
+</style>
