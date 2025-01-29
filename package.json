@@ -39,6 +39,7 @@
   "dependencies": {
     "@astrojs/check": "0.9.4",
     "@astrolicious/i18n": "0.4.3",
+    "@neodrag/vanilla": "2.3.0",
     "@playform/compress": "0.1.6",
     "astro": "4.4.11",
     "i18next": "23.0.0",
