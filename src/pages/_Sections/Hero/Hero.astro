@@ -1,18 +1,23 @@
 ---
 import { Button, IconCatalog } from '@components'
+import Draggable from 'components/Draggable.astro'
 import { t } from 'i18n:astro'
 ---
 
 <section>
   <div class="container">
     <div class="hero-headline | flow">
-      <h1>{t('hero_title')}</h1>
-      <p class="hero-description">
-        <Fragment set:html={t('hero_subtitle')} />
-      </p>
+      <Draggable>
+        <h1>{t('hero_title')}</h1>
+        <p class="hero-description">
+          <Fragment set:html={t('hero_subtitle')} />
+        </p>
+      </Draggable>
     </div>
     <div class="hero-actions | flow">
-      <p class="role-list">Product Designer | UX Engineer | UX Designer</p>
+      <Draggable>
+        <p class="role-list">Product Designer | UX Engineer | UX Designer</p>
+      </Draggable>
       <div class="btn-contanier">
         <div class="btn-group">
           <Button
@@ -61,8 +66,6 @@ import { t } from 'i18n:astro'
 
   .role-list {
     font-size: 1.25rem;
-    line-height: 2rem;
-    padding-bottom: 1.5rem;
   }
 
   section .btn-group {
@@ -70,6 +73,7 @@ import { t } from 'i18n:astro'
     flex-direction: column;
     gap: 1.5rem;
     inline-size: 100%;
+    margin-top: 1.5rem;
 
     @media (width >= 48rem) {
       inline-size: fit-content;
