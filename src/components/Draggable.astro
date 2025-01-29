@@ -1,0 +1,108 @@
+<div class="figma-effect-container">
+  <slot />
+  <div class="figma-effect-dots-top"></div>
+  <div class="figma-effect-dots-bottom"></div>
+</div>
+
+<style>
+  @media (any-hover: hover) and (width >= 1200px) {
+    .figma-effect-container {
+      --offset-position: 8px;
+      --color: #0c8ce9;
+
+      position: relative;
+      z-index: 10;
+      width: fit-content;
+      margin-inline: auto;
+      cursor: inherit;
+      user-select: none;
+
+      &.active,
+      &:hover {
+        outline: 1px solid var(--color);
+        outline-offset: var(--offset-position);
+      }
+
+      &.active .figma-effect-dots-top,
+      &.active .figma-effect-dots-bottom {
+        --dots-size: 6px;
+        --dots-relative-center-point: 2.75;
+        --dots-position: calc(var(--offset-position) * -1);
+
+        --dots-translation: calc(
+          var(--dots-position) / var(--dots-relative-center-point)
+        );
+        --dots-negative-translation: calc(var(--dots-translation) * -1);
+
+        &::before,
+        &::after {
+          content: '';
+          position: absolute;
+          width: var(--dots-size);
+          height: var(--dots-size);
+          background: #fff;
+          border: 1px solid var(--color);
+        }
+      }
+
+      &.active .figma-effect-dots-top {
+        &::before {
+          top: var(--dots-position);
+          left: var(--dots-position);
+          translate: var(--dots-translation) var(--dots-translation);
+        }
+
+        &::after {
+          top: var(--dots-position);
+          right: var(--dots-position);
+          translate: var(--dots-negative-translation) var(--dots-translation);
+        }
+      }
+
+      &.active .figma-effect-dots-bottom {
+        &::before {
+          bottom: var(--dots-position);
+          left: var(--dots-position);
+          translate: var(--dots-translation) var(--dots-negative-translation);
+        }
+
+        &::after {
+          bottom: var(--dots-position);
+          right: var(--dots-position);
+          translate: var(--dots-negative-translation)
+            var(--dots-negative-translation);
+        }
+      }
+    }
+  }
+</style>
+
+<script>
+  import { Draggable } from '@neodrag/vanilla'
+
+  const isMobile = /Android|iPhone|iPad/i.test(navigator.userAgent)
+
+  if (isMobile === false) {
+    const figmaEffectContainer = document.querySelectorAll('.figma-effect-container')
+    const parentLimit = document.querySelector('.gradient-background + section') as HTMLElement
+
+    figmaEffectContainer.forEach((container) => {
+      // eslint-disable-next-line no-new
+      new Draggable(container as HTMLElement, {
+        bounds: parentLimit,
+        onDrag: () => container.classList.add('active')
+      })
+
+      container.addEventListener('click', () => {
+        container.classList.toggle('active')
+      })
+
+      document.addEventListener('click', (event) => {
+        if (!container.contains(event.target as Node)) {
+          container.classList.remove('active')
+        }
+      })
+    })
+  }
+
+</script>
