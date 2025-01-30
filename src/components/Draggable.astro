@@ -83,26 +83,64 @@
   const isMobile = /Android|iPhone|iPad/i.test(navigator.userAgent)
 
   if (isMobile === false) {
-    const figmaEffectContainer = document.querySelectorAll('.figma-effect-container')
+    const figmaEffectContainers = document.querySelectorAll('.figma-effect-container')
     const parentLimit = document.querySelector('.gradient-background + section') as HTMLElement
+    const position = { x: 0, y: 0 }
+    let timeout: string | number | NodeJS.Timeout | undefined
 
-    figmaEffectContainer.forEach((container) => {
-      // eslint-disable-next-line no-new
-      new Draggable(container as HTMLElement, {
+    const handleDrag = (
+      container: HTMLElement,
+      dragInstance: Draggable,
+      offsetX: number,
+      offsetY: number
+    ) => {
+      container.style.transition = 'none'
+      container.classList.add('active')
+
+      dragInstance.updateOptions({
+        position: { x: offsetX, y: offsetY }
+      })
+
+      if (timeout) {
+        clearTimeout(timeout)
+      }
+    }
+
+    const handleDragEnd = () => {
+      figmaEffectContainers.forEach((element) => {
+        element.classList.remove('active')
+
+        const instance = new Draggable(element as HTMLElement, { position, bounds: parentLimit })
+        instance.updateOptions({ position })
+
+        ;(element as HTMLElement).style.transition = 'transform 600ms cubic-bezier(.64, .26, .34, .91)'
+      })
+    }
+
+    const initializeDraggable = (container: HTMLElement) => {
+      const dragInstance = new Draggable(container, {
+        position,
         bounds: parentLimit,
-        onDrag: () => container.classList.add('active')
+        onDrag: ({ offsetX, offsetY, rootNode }) => handleDrag(rootNode, dragInstance, offsetX, offsetY),
+        onDragEnd: ({ rootNode }) => {
+          rootNode.style.transition = 'transform 600ms cubic-bezier(.64, .26, .34, .91)'
+          timeout = setTimeout(handleDragEnd, 4000)
+        }
       })
 
       container.addEventListener('click', () => {
         container.classList.toggle('active')
       })
 
-      document.addEventListener('click', (event) => {
-        if (!container.contains(event.target as Node)) {
+      document.addEventListener('click', ({ target }) => {
+        if (container.contains(target as HTMLElement) === false) {
           container.classList.remove('active')
         }
       })
+    }
+
+    figmaEffectContainers.forEach((container) => {
+      initializeDraggable(container as HTMLElement)
     })
   }
-
 </script>
