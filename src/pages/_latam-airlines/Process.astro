@@ -5,16 +5,13 @@ import { t } from 'i18n:astro'
 
 <section>
   <div class="container">
-    <!-- Identified Issues Section -->
     <div class="cards-container">
       <div class="even-columns">
-        <!-- Card: Identified Issues -->
         <CardWrapper class="card | flow">
           <h2 class="card-title">{t('latam_process_issues_title')}</h2>
           <p class="card-description">{t('latam_process_issues_desc')}</p>
         </CardWrapper>
 
-        <!-- Image: Explaining wireframes -->
         <img
           src="/assets/images/latam-airways-process-1.png"
           alt="Pantalla de selección de vuelo de LATAM Airlines con observaciones de UX y comentarios de usuarios"
@@ -22,7 +19,6 @@ import { t } from 'i18n:astro'
       </div>
     </div>
 
-    <!-- Benchmarks Section -->
     <div class="benchmark-user-container">
       <div class="process-text-container | flow">
         <div class="flow">
@@ -30,14 +26,12 @@ import { t } from 'i18n:astro'
           <h3>{t('latam_process_benchmark_title')}</h3>
         </div>
         <p>{t('latam_process_benchmark_desc')}</p>
-        <!-- Image: Benchmarks comparison -->
         <img
           src="/assets/images/latam-airways-process-2.png"
           alt="Tabla de comparación de problemas identificados en el proceso de compra de boletos entre varias aerolíneas y servicios"
         />
       </div>
 
-      <!-- User Personas Section -->
       <div class="process-text-container | flow">
         <div class="flow">
           <img src="/assets/images/gpt-logo.png" alt="GPT LOGO" />
@@ -51,10 +45,8 @@ import { t } from 'i18n:astro'
       </div>
     </div>
 
-    <!-- Entrevistas con Usuario Section -->
     <div class="cards-container">
       <div class="grid-auto-fit">
-        <!-- Card: Testing Description -->
         <CardWrapper class="card | flow">
           <div class="card-text-container">
             <h2 class="card-title">
@@ -72,7 +64,6 @@ import { t } from 'i18n:astro'
           <p>{t('latam_process_user_interview_desc_2')}</p>
         </CardWrapper>
 
-        <!-- Image: User interviews conducted -->
         <img
           src="/assets/images/latam-airways-process-5.png"
           alt="Resultados de entrevistas de usuario: 3 entrevistas realizadas, calificación de la solución 4 de 5. Comentarios de usuarios sobre la falta de opciones personalizadas, dificultad para encontrar horarios de llegada claros y sentirse ignorados durante el proceso de reserva."
@@ -80,7 +71,6 @@ import { t } from 'i18n:astro'
       </div>
     </div>
 
-    <!-- Definition Section -->
     <div class="process-text-container | flow">
       <div class="flow">
         <h3 class="process-text-container__title">
@@ -88,7 +78,6 @@ import { t } from 'i18n:astro'
         </h3>
       </div>
       <p>{t('latam_process_definition_desc')}</p>
-      <!-- Image: Simulation of prioritization -->
       <img
         src="/assets/images/latam-airways-process-6.png"
         alt="Matriz de definición de mejoras del MVP 1, clasificando las mejoras por valor para el usuario y factibilidad, incluyendo opciones como claridad en los horarios de llegada y recomendaciones personalizadas"

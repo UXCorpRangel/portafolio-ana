@@ -5,9 +5,7 @@ import { t } from 'i18n:astro'
 
 <section>
   <div class="container">
-    <!-- First Section: Journey Maps -->
     <div class="cards-container | grid-auto-fit">
-      <!-- Card 1: Journey Maps Description -->
       <CardWrapper class="card | flow">
         <h2 class="card-title">Journey maps</h2>
         <p class="card-description">
@@ -15,7 +13,6 @@ import { t } from 'i18n:astro'
         </p>
       </CardWrapper>
 
-      <!-- Images for Journey Maps -->
       <img
         src="/assets/images/cards-section-1.png"
         alt="Tabla de consulta e implementación de planogramas con notas adhesivas y emoticonos de satisfacción"
@@ -26,22 +23,17 @@ import { t } from 'i18n:astro'
       />
     </div>
 
-    <!-- Second Section: Testing -->
     <div class="cards-container">
       <div class="even-columns">
-        <!-- Card 2: Testing Description -->
         <CardWrapper class="card | flow">
           <h2 class="card-title">Testing</h2>
           <p class="card-description">{t('planogram_process_testing_desc')}</p>
         </CardWrapper>
-        <!-- Image for Testing -->
         <img
           src="/assets/images/cards-section-3.png"
           alt="Ana Rangel explicando wireframes de planogramas a un grupo de personas"
         />
       </div>
-
-      <!-- Additional Image for Testing Section -->
       <img
         src="/assets/images/cards-section-4.png"
         alt="Wireframes de alertas de planogramas con notas adhesivas de colores"
@@ -49,32 +41,23 @@ import { t } from 'i18n:astro'
       />
     </div>
 
-    <!-- Third Section: Analysis and MVP 1 -->
     <div class="cards-container">
-      <!-- Subsection: Analysis -->
       <div class="even-columns">
-        <!-- Card 3: Analysis Description -->
         <CardWrapper class="card | flow" data-type="no-background">
           <h2 class="card-title">{t('planogram_process_analysis_title')}</h2>
           <p class="card-description">{t('planogram_process_analysis_desc')}</p>
         </CardWrapper>
-
-        <!-- Image for Analysis -->
         <img
           src="/assets/images/cards-section-5.png"
           alt="Análisis de planogramas con notas adhesivas en un tablero"
         />
       </div>
 
-      <!-- Subsection: MVP 1 -->
       <div class="even-columns">
-        <!-- Image for MVP 1 -->
         <img
           src="/assets/images/cards-section-6.png"
           alt="Matriz de valor para el usuario con cuatro cuadrantes"
         />
-
-        <!-- Card 4: MVP 1 Description -->
         <CardWrapper class="card | flow" data-type="no-background">
           <h2 class="card-title">MVP 1</h2>
           <p class="card-description">{t('planogram_process_mvp_desc')}</p>

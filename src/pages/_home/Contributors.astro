@@ -23,7 +23,7 @@ const respDevs = await fetch(
 const dataDevs: Contributor[] = await respDevs.json()
 const dataDesigners: Designer[] = designersData
 const images = import.meta.glob<{ default: ImageMetadata }>(
-  '/src/img/avatars/*.{jpg,jpeg}'
+  '/src/images/avatars/*.{jpg,jpeg}'
 )
 ---
 

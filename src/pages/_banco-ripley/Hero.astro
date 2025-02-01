@@ -5,7 +5,6 @@ import { t } from 'i18n:astro'
 
 <section class="hero">
   <div class="container">
-    <!-- Main logo of the case study -->
     <img
       src="/svg/banco-ripley-logo.svg"
       alt="Banco Ripley logo"
@@ -14,21 +13,17 @@ import { t } from 'i18n:astro'
     <h1 class="title">{t('ripley_hero_title')}</h1>
     <p class="description">{t('ripley_hero_desc')}</p>
 
-    <!-- Container for the cards -->
     <div class="cards-container | grid-auto-fit">
-      <!-- Card 1: Methodology used -->
       <CardWrapper class="card" hasBorder>
         <h2 class="card-title">{t('projects_hero_methodology_title')}</h2>
         <p class="subtitle">{t('ripley_hero_methodology_desc')}</p>
       </CardWrapper>
 
-      <!-- Card 2: Time taken -->
       <CardWrapper class="card" hasBorder>
         <h2 class="card-title">{t('projects_hero_time_title')}</h2>
         <p class="subtitle">{t('ripley_hero_time_desc')}</p>
       </CardWrapper>
 
-      <!-- Card 3: Devices used -->
       <CardWrapper class="card" hasBorder>
         <h2 class="card-title">{t('projects_hero_device_title')}</h2>
         <p class="subtitle">{t('ripley_hero_device_desc')}</p>
