@@ -1,0 +1,116 @@
+---
+import { IconCatalog } from '@contracts'
+import Aurora from '@components/Aurora.astro'
+import Button from '@components/Buttons/Button.astro'
+import { t } from 'i18n:astro'
+---
+
+<div class="contact-container">
+  <section class="container">
+    <div class:list={['contact', { 'no-home': Astro.url.pathname !== '/' }]}>
+      <div class="content">
+        <h2 class="title">{t('contact_title')}</h2>
+        <p class="description">{t('contact_desc')}</p>
+      </div>
+      <div class="actions">
+        <Button tag="anchor" href="https://calendly.com/rangelana1221/30min"
+          >{t('contact_button')}</Button
+        >
+        <Button
+          invert
+          tag="anchor"
+          href="https://drive.google.com/drive/u/0/folders/1vFrPWKHdKbi8AW8kAzEXHg7cGeCUWcfs"
+          isFullWidth
+          id="btn-hero-download"
+          afterIcon={IconCatalog.arrowDownTray}
+        >
+          {t('hero_download_cv')}
+        </Button>
+      </div>
+    </div>
+  </section>
+  {Astro.url.pathname !== '/' && Astro.url.pathname !== '/en/' && <Aurora />}
+</div>
+
+<style>
+  .contact-container {
+    position: relative;
+  }
+
+  .container {
+    padding-inline: 1rem;
+  }
+
+  .contact {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    padding: 10rem 0;
+  }
+
+  .contact.no-home {
+    padding: 5.5rem 0;
+  }
+
+  .content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .title {
+    font-family: Inter;
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 60px;
+    color: white;
+  }
+
+  .description {
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 1.5;
+    color: white;
+  }
+
+  .actions {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 48em) {
+    .contact {
+      height: 512px;
+      width: 90%;
+      padding: 56px 0px 56px 0px;
+      gap: 36px;
+    }
+
+    .title {
+      font-size: 2rem;
+      line-height: 3rem;
+    }
+
+    .description {
+      font-size: 1.25rem;
+      font-weight: 300;
+      line-height: 1.875rem;
+    }
+
+    .actions {
+      flex-wrap: nowrap;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+</style>

@@ -1,0 +1,131 @@
+---
+import CardWrapper from '@components/Cards/CardWrapper.astro'
+import { t } from 'i18n:astro'
+---
+
+<section class="hero">
+  <div class="container">
+    <h2 class="section-title">Benchmarks</h2>
+    <p class="section-description">{t('ripley_benchmarks_desc')}</p>
+
+    <!-- Container for the cards -->
+    <div class="cards-container | grid-auto-fit">
+      <!-- Card 1: Methodology used -->
+      <CardWrapper class="card | flow">
+        <h2 class="card-title">{t('ripley_benchmarks_banks_numb')}</h2>
+        <span>8</span>
+      </CardWrapper>
+
+      <!-- Card 2: Time taken -->
+      <CardWrapper class="card | flow">
+        <h2 class="card-title">{t('planogram_context_obj_1')}</h2>
+        <p class="subtitle">{t('ripley_benchmarks_obj_1_desc')}</p>
+      </CardWrapper>
+
+      <!-- Card 3: Devices used -->
+      <CardWrapper class="card | flow">
+        <h2 class="card-title">{t('planogram_context_obj_2')}</h2>
+        <p class="subtitle">{t('ripley_benchmarks_obj_2_desc')}</p>
+      </CardWrapper>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero .container {
+    padding-block-start: 2rem;
+    display: grid;
+    gap: 1.5rem;
+    place-items: center;
+    padding-inline: 2rem;
+  }
+
+  .flow {
+    --flow-spacer: 1.5rem;
+  }
+
+  .section-title {
+    font-size: var(--font-size-fluid-3);
+    line-height: 1.4;
+    font-weight: 500;
+    text-align: center;
+  }
+
+  .section-description {
+    color: hsl(236, 25%, 75%);
+    text-align: center;
+    line-height: 1.5;
+  }
+
+  .cards-container {
+    --min-item-width: 20rem;
+
+    margin-block-start: 3rem;
+    inline-size: 100%;
+  }
+
+  .card {
+    --flow-spacer: 1.4375rem;
+    width: 100%;
+    background-color: hsla(240, 4%, 5%, 1);
+    padding: 3.5rem 1.5rem 2.25rem 1.5rem;
+    margin-inline: auto;
+
+    h2 {
+      font-size: 1.25rem;
+      line-height: 1.5;
+      font-weight: 400;
+      text-align: center;
+    }
+
+    p {
+      line-height: 24px;
+      letter-spacing: -1%;
+      color: hsla(236, 25%, 75%, 1);
+    }
+
+    span {
+      display: block;
+      font-size: 4rem;
+      text-align: center;
+      font-weight: 700;
+    }
+  }
+
+  @media (min-width: 48em) {
+    .hero .container {
+      padding-block-start: 8rem;
+    }
+
+    .section-title {
+      font-size: 4rem;
+    }
+    .section-description {
+      font-size: 1.25rem;
+      max-inline-size: 78ch;
+      margin-inline: auto;
+      line-height: 1.875rem;
+    }
+
+    .card {
+      padding: 3rem;
+      text-align: start;
+
+      h2 {
+        font-size: 2rem;
+        line-height: 1.5;
+        font-weight: 400;
+        text-align: start;
+      }
+
+      span {
+        text-align: start;
+      }
+    }
+
+    .subtitle {
+      font-size: 1rem;
+      line-height: 1.5rem;
+    }
+  }
+</style>

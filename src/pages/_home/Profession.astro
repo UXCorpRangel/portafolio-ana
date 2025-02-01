@@ -1,0 +1,212 @@
+---
+import Button from '@components/Buttons/Button.astro'
+import { getLocalePath, t } from 'i18n:astro'
+---
+
+<article>
+  <div class="container | even-columns">
+    <div class="title-container">
+      <div class="border-box hoverable">
+        <h3 set:html={t('profession_title')} />
+        <div class="dots top"></div>
+        <div class="dots bottom"></div>
+      </div>
+      <p class="text-content">{t('profession_desc')}</p>
+      <Button
+        invert
+        tag="anchor"
+        href={getLocalePath('/sobre-mi')}
+        target="_self"
+      >
+        {t('profession_button')}
+        <!-- Se agrega el SVG de manera provisoria ya que el componente button da problemas para implementar el icono mediante props -->
+        <svg width="12" height="13" viewBox="0 0 12 13" fill="white">
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M0.329505 12.4312C-0.109835 11.9919 -0.109835 11.2796 0.329505 10.8402L8.15901 3.01074H2.625C2.00368 3.01074 1.5 2.50706 1.5 1.88574C1.5 1.26442 2.00368 0.760742 2.625 0.760742H10.875C11.4963 0.760742 24 1.26442 12 1.88574V10.1357C12 10.7571 11.4963 11.2607 10.875 11.2607C10.2537 11.2607 9.75 10.7571 9.75 10.1357V4.60173L1.9205 12.4312C1.48116 12.8706 0.768844 12.8706 0.329505 12.4312Z"
+            fill="white"></path>
+        </svg>
+      </Button>
+    </div>
+    <picture style="aspect-ratio: 591/470">
+      <source srcset="/img/home/interface-description.avif" type="image/avif" />
+      <source srcset="/img/home/interface-description.webp" type="image/webp" />
+      <img
+        src="/img/home/interface-description.webp"
+        alt="Interface description"
+        decoding="async"
+        loading="lazy"
+        fetchpriority="low"
+      />
+    </picture>
+  </div>
+</article>
+
+<style>
+  article {
+    margin-block-end: 1rem;
+  }
+
+  .container {
+    justify-content: space-between;
+    border: 1px solid hsl(0deg 0% 16%);
+    border-radius: 1.5rem;
+    background: hsl(240deg 4% 5%);
+    padding: 1.5rem;
+    inline-size: 90%;
+    max-inline-size: 81rem;
+    margin-inline: auto;
+  }
+
+  .title-container {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    gap: 2rem;
+  }
+
+  .text-content {
+    color: #b1b3d0;
+    text-align: center;
+    font-weight: 400;
+    font-size: 1.25rem;
+    font-style: normal;
+    line-height: 150%;
+  }
+
+  .border-box {
+    --border-color: #4b82ee;
+    --outline-offset: 4px;
+    --dot-size: 10px;
+    --dots-color: #fff;
+    --pos-dots: calc(var(--dot-size) / -2);
+    --hover-dots: calc(var(--dot-size) * -1);
+
+    outline: 2px solid var(--border-color);
+    padding: 12px 15px;
+    position: relative;
+    cursor: text;
+    width: fit-content;
+    transition: outline-offset 0.3s ease-in-out;
+
+    & .dots {
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        width: var(--dot-size);
+        height: var(--dot-size);
+        background: var(--dots-color);
+        border-radius: 50%;
+        border: 1px solid var(--border-color);
+        transition: all 0.3s ease-in-out;
+      }
+
+      &::before {
+        left: var(--pos-dots);
+      }
+
+      &::after {
+        right: var(--pos-dots);
+      }
+
+      &.top::before,
+      &.top::after {
+        top: calc(var(--dot-size) / -2);
+      }
+
+      &.bottom::before,
+      &.bottom::after {
+        bottom: calc(var(--dot-size) / -2);
+      }
+    }
+
+    &.hoverable:hover {
+      outline-offset: var(--outline-offset);
+
+      & .dots {
+        &::before {
+          left: var(--hover-dots);
+        }
+
+        &::after {
+          right: var(--hover-dots);
+        }
+
+        &.top::before,
+        &.top::after {
+          top: var(--hover-dots);
+        }
+
+        &.bottom::before,
+        &.bottom::after {
+          bottom: var(--hover-dots);
+        }
+      }
+    }
+  }
+
+  h3 {
+    color: hsl(0deg 0% 100%);
+    font-weight: 600;
+    font-size: 1.75rem;
+    line-height: 2.5rem;
+    text-align: center;
+  }
+
+  span {
+    position: relative;
+
+    display: inline-block;
+
+    color: hsl(0deg 0% 24%);
+  }
+
+  span::before {
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    border-radius: 2rem;
+    color: hsl(0deg 0% 100%);
+    font-size: 0.7rem;
+    text-wrap: nowrap;
+    background-color: hsl(248deg 98% 66%);
+    transform: rotate(-15deg);
+    content: 'En progreso';
+    inset: 0;
+    max-inline-size: 5.5rem;
+    max-block-size: 1.5rem;
+  }
+
+  @media (width >= 992px) {
+    article {
+      margin-block-end: 2rem;
+    }
+
+    .container {
+      padding-block-start: 3rem;
+      padding-inline-start: 3.5rem;
+      inline-size: 100%;
+    }
+
+    .title-container {
+      width: 100%;
+      align-items: start;
+    }
+
+    .text-content {
+      text-align: left;
+    }
+
+    h3 {
+      font-size: 2.5rem;
+      text-align: left;
+    }
+  }
+</style>
