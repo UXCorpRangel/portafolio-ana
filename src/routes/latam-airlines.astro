@@ -1,37 +1,25 @@
 ---
-import { GradientBackground } from '@components'
+import { GradientColor } from '@contracts'
+import GradientBackground from '@components/GradientBackground.astro'
 import Layout from '@layouts/Layout.astro'
-import Contact from '@pages/_Sections/Contact/Contact.astro'
-import {
-  ABTesting,
-  Context,
-  Designs,
-  Hero,
-  Process
-} from '@pages/latam-airlines/_sections'
-import { GradientColor } from '../components/GradientBackground/GradientBackground.astro'
+import Contact from '@sections/sections/Contact.astro'
+import ABTesting from '@sections/latam-airlines/ABTesting.astro'
+import Context from '@sections/latam-airlines/Context.astro'
+import Designs from '@sections/latam-airlines/Designs.astro'
+import Hero from '@sections/latam-airlines/Hero.astro'
+import Process from '@sections/latam-airlines/Process.astro'
 ---
 
 <Layout title="Ana Rangel | Latam Airlines">
   <main>
     <GradientBackground color={GradientColor.blue} />
 
-    <!-- Hero Section -->
     <Hero />
-
-    <!-- Context Section -->
     <Context />
-
-    <!-- Process Section -->
     <Process />
-
-    <!-- Designs Section -->
     <Designs />
-
-    <!-- ABTesting Section -->
     <ABTesting />
 
-    <!-- Contact Section -->
     <Contact />
   </main>
 </Layout>

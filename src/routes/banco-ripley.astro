@@ -1,37 +1,27 @@
 ---
-import { GradientBackground } from '@components'
-import { GradientColor } from 'components/GradientBackground/GradientBackground.astro'
+import { GradientColor } from '@contracts'
+import GradientBackground from '@components/GradientBackground.astro'
 import Layout from '@layouts/Layout.astro'
-import Contact from '@pages/_Sections/Contact/Contact.astro'
-import {
-  Analysis,
-  Benchmarks,
-  Context,
-  Criterios,
-  Designs,
-  Hero
-} from '../pages/banco-ripley/_sections'
+import Contact from '@sections/sections/Contact.astro'
+import Analysis from '@sections/banco-ripley/Analysis.astro'
+import Benchmarks from '@sections/banco-ripley/Benchmarks.astro'
+import Context from '@sections/banco-ripley/Context.astro'
+import Criterios from '@sections/banco-ripley/Criterios.astro'
+import Designs from '@sections/banco-ripley/Designs.astro'
+import Hero from '@sections/banco-ripley/Hero.astro'
 ---
 
 <Layout title="Ana Rangel | Banco Ripley">
   <main>
     <GradientBackground color={GradientColor.blue} />
 
-    <!-- Hero Section -->
     <Hero />
-
-    <!-- Context Section -->
     <Context />
-
     <Benchmarks />
-
     <Criterios />
-
     <Analysis />
-
     <Designs />
 
-    <!-- Contact Section -->
     <Contact />
   </main>
 </Layout>
