@@ -1,35 +1,4 @@
-interface DataTestimonies {
-  /**
-   * URL of the company's logo image
-   */
-  companyLogoUrl: string
-
-  /**
-   * Name of the company providing the testimony
-   */
-  companyName: string
-
-  /**
-   * Full name of the person providing the testimony
-   */
-  personFullName: string
-
-  /**
-   * Job title or profession of the person providing the testimony
-   */
-  personJobTitle: string
-
-  /**
-   * Testimonial text provided by the person
-   */
-  testimonyText: string
-
-  /**
-   * URL to the full testimonial
-   */
-  fullTestimonyUrl: string
-}
-export const dataTestimonies: DataTestimonies[] = [
+const testimonials = [
   {
     companyLogoUrl: '/assets/images/neoris_logo.jpg',
     companyName: 'Neoris',
@@ -67,3 +36,5 @@ export const dataTestimonies: DataTestimonies[] = [
     fullTestimonyUrl: ''
   }
 ]
+
+export default testimonials
