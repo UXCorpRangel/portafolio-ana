@@ -1,61 +1,17 @@
 ---
 import type { HTMLAttributes } from 'astro/types'
-import { IconCatalog, Icons, IconSize, IconStyle } from './Icons'
-
-const IconStyles: Record<IconStyle, number> = {
-  [IconStyle.thin]: 1,
-  [IconStyle.light]: 1.2,
-  [IconStyle.regular]: 1.5,
-  [IconStyle.bold]: 1.8,
-  [IconStyle.solid]: 0
-}
-
-const IconSizes: Record<IconSize, string> = {
-  [IconSize.xs]: '0.4rem',
-  [IconSize.sm]: '0.6rem',
-  [IconSize.base]: '0.8rem',
-  [IconSize.lg]: '1.0rem',
-  [IconSize.xl]: '1.2rem',
-  [IconSize['2xl']]: '1.4rem',
-  [IconSize['3xl']]: '1.6rem',
-  [IconSize['4xl']]: '1.8rem',
-  [IconSize['5xl']]: '2.0rem',
-  [IconSize['6xl']]: '2.2rem',
-  [IconSize['7xl']]: '2.4rem',
-  [IconSize['8xl']]: '2.6rem',
-  [IconSize['9xl']]: '2.8rem'
-}
+import { IconCatalog, Icons, IconSize, IconStyle, IconStyles, IconSizes } from '@contracts'
 
 interface Props extends HTMLAttributes<'svg'> {
-  /**
-   * The color variant of the icon.
-   */
   color?: string
-
-  /**
-   * Additional CSS classes to be applied to the SVG element.
-   */
   classes?: string
-
-  /**
-   * The icon to display.
-   */
   icon?: IconCatalog
-
-  /**
-   * The style of the icon.
-   */
   iconStyle?: IconStyle
-
-  /**
-   * The size of the icon. Required.
-   */
   size: IconSize
 }
 
 const {
   classes,
-
   icon = IconCatalog.arrowDownTray,
   iconStyle = IconStyle.thin,
   size = IconSize.sm,

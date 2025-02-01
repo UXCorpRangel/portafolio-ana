@@ -1,56 +1,25 @@
 ---
 import {
   CardVariant,
-  CardWrapper,
-  Icon,
   IconCatalog,
   IconSize,
   IconStyle
-} from '@components'
+} from '@contracts'
+import Icon from '@components/Icon.astro'
+import CardWrapper from '@components/Cards/CardWrapper.astro'
 
 interface Props {
-  /**
-   * The variant of the card.
-   */
   variant?: CardVariant
-
-  /**
-   * Determines whether the card has a border or not.
-   */
   hasBorder?: boolean
-
-  /**
-   * Determines whether the card is inverted or not.
-   */
   isInverted?: boolean
-
-  /**
-   * The text content of the card.
-   */
   cardText?: string
-
-  /**
-   * The text of the alt image.
-   */
   altText?: string
-
-  /**
-   * The image URL for the card.
-   */
   cardImage?: string
-
-  /**
-   * The aspect ratio of the image.
-   */
   aspectRatio?: string
-
-  /**
-   * The URL to navigate to when the card is clicked.
-   */
   url?: string
-
   hasHover?: boolean
 }
+
 const {
   variant = CardVariant.primary,
   hasBorder = true,

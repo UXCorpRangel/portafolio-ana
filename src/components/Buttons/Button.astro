@@ -1,78 +1,22 @@
 ---
-import {
-  ButtonSize,
-  ButtonVariant,
-  HtmlType,
-  type ColorVariants
-} from '@common'
-import { Icon, IconCatalog, IconSize, IconStyle } from '@components'
+import { ButtonSize, ButtonVariant, HtmlType, type ColorVariants, IconCatalog, IconSize, IconStyle } from '@contracts'
+import Icon from '@components/Icon.astro'
 
 interface Props {
-  /**
-   * The tag to use for the button. It can be either a button or an anchor tag
-   */
   tag?: 'button' | 'anchor'
-  /**
-   * The URL to navigate to when the anchor is clicked
-   */
   href?: string
-  /**
-   * The target attribute specifies where to open the linked document
-   */
   target?: HTMLAnchorElement['target']
-  /**
-   * The unique identifier of the component
-   */
   id?: string
-  /**
-   * Changes the size of the button, giving it more or less padding
-   */
   size?: ButtonSize
-
-  /**
-   * Adds additional class to the button
-   */
   className?: string
-
-  /**
-   * The shape of the component. It determines the importance in the hierarchy, for example, the contained button commands the most attention
-   */
   variant?: ButtonVariant
-
-  /**
-   * If set to true, the button's color will be inverted.
-   */
   invert?: boolean
-
-  /**
-   * Disables the button, disallowing user interaction.
-   */
   isDisabled?: boolean
-
-  /**
-   * Extends the button to 100% width.
-   */
   isFullWidth?: boolean
-
-  /**
-   * HTML type attribute of the button.
-   */
   htmlType?: HtmlType
-
-  /**
-   * Icon before the button content
-   */
   beforeIcon?: IconCatalog
-
-  /**
-   * Icon after the button content
-   */
   afterIcon?: IconCatalog
-
   // TODO: Look for a better way to pass the color
-  /**
-   * Color of the icon
-   */
   iconColor?: `var(--${ColorVariants}-${string})`
 }
 
