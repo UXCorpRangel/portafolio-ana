@@ -1,0 +1,97 @@
+---
+import SimpleCard from '@components/Cards/SimpleCard.astro'
+import { t } from 'i18n:astro'
+---
+
+<div class="study-cases">
+  <section class="card-container latam-airlines">
+    <img
+      class="logo-img"
+      src="/svg/latam-airlines-logo.svg"
+      alt="Latam airlines Logo"
+      width="285"
+      height="91"
+    />
+    <h3>{t('study_case_title')}</h3>
+    <p>
+      {t('study_case_desc')}
+    </p>
+    <picture style="aspect-ratio: 523/227">
+      <source srcset="/img/home/latam-airlines-1.avif?v=1" type="image/avif" />
+      <source srcset="/img/home/latam-airlines-1.webp?v=1" type="image/webp" />
+      <img
+        class="logo-img"
+        src="/img/home/latam-airlines-1.webp?v=1"
+        alt="Latam airlines - Ana Rangel"
+        decoding="async"
+        loading="lazy"
+        fetchpriority="low"
+        style="aspect-ratio: 523/227"
+      />
+    </picture>
+  </section>
+  <SimpleCard
+    cardText={t('project_cta')}
+    cardImage="/img/home/latam-airlines"
+    aspectRatio="512/384"
+    altText="Latam airlines"
+    isInverted={true}
+    url="/latam-airlines"
+    hasHover
+  />
+</div>
+
+<style is:global>
+  .study-cases {
+    display: grid;
+    gap: 2rem;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 2rem;
+
+    @media (width >= 992px) {
+      grid-template-columns: 1fr 1fr;
+      width: 100%;
+    }
+  }
+
+  .study-cases .latam-airlines {
+    background: linear-gradient(150deg, #0b153f, #0d0e12);
+    border: 1px solid hsl(0deg 0% 16%);
+    border-radius: 1.5rem;
+  }
+
+  .study-cases .card-container:not(.latam-airlines) {
+    block-size: initial;
+
+    & picture {
+      @media (width >= 992px) {
+        margin-top: 9.8rem;
+        translate: -3rem 0;
+      }
+    }
+  }
+
+  .card-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 3rem 2rem;
+
+    @media (width >= 992px) {
+      padding: 3rem;
+    }
+  }
+
+  h3 {
+    font-weight: 600;
+    font-size: 2.25rem;
+  }
+
+  p {
+    font-size: 1.25rem;
+    line-height: 1.875rem;
+    color: #b1b3d0;
+    font-family: Inter, sans-serif;
+  }
+</style>

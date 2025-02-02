@@ -1,25 +1,17 @@
 {
-  "exclude": [
-    "./dist/",
-    "commitlint.config.mjs",
-    "lint-staged.config.mjs",
-    "prettier.config.mjs",
-    "stylelint.config.mjs",
-    "validate-branch-name.config.cjs"
-  ],
   "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
-    "baseUrl": "src",
+    "baseUrl": ".",
     "strictNullChecks": true,
     "paths": {
-      "@content/*": ["content/*"],
-      "@components": ["components"],
-      "@common": ["common/index"],
-      "@data/*": ["data/*"],
-      "@layouts/*": ["layouts/*"],
-      "@pages/*": ["pages/*"],
-      "@sections/*": ["pages/_*"],
-      "@styles/*": ["styles/*"]
+      "@components/*": ["src/components/*"],
+      "@contracts": ["src/contracts"],
+      "@data/*": ["src/data/*"],
+      "@images/*": ["src/images/*"],
+      "@layouts/*": ["src/layouts/*"],
+      "@sections/*": ["src/pages/_*"],
+      "@scripts/*": ["src/scripts/*"],
+      "@styles/*": ["src/styles/*"]
     },
     "jsx": "react-jsx",
     "plugins": [

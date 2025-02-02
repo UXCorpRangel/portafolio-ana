@@ -1,0 +1,93 @@
+---
+import { t } from 'i18n:astro'
+---
+
+<section class="context">
+  <div class="container flow">
+    <h2 class="title">{t('projects_context_title')}</h2>
+    <p class="description">{t('latam_context_desc')}</p>
+    <img
+      src="/assets/images/latam-airways-context.png"
+      alt="Promoción de agencia de viajes ofreciendo paquetes estacionales"
+      class="section-image"
+    />
+
+    <img
+      alt="Ilustración de Jambot con iconos coloridos en una pantalla"
+      src="/assets/images/latam-airways-jambot.png"
+      class="jambot-img"
+    />
+
+    <h3 class="title">{t('latam_oportunity_title')}</h3>
+    <p class="description">{t('latam_coportunity_desc')}</p>
+    <img
+      src="/assets/images/latam-airways-after-jambot.png"
+      alt="Diagrama de brainstorming con tarjetas de ideas organizadas en un flujo"
+      class="section-image"
+    />
+  </div>
+</section>
+
+<style>
+  .context .container {
+    --flow-spacer: 1.5rem;
+
+    padding-block-start: 3rem;
+    padding-inline: 2rem;
+  }
+
+  .jambot-img {
+    margin-block-start: 3rem;
+    margin-inline: auto;
+  }
+
+  .title {
+    font-size: 2.25rem;
+    font-weight: 500;
+    text-align: center;
+  }
+
+  .description {
+    color: hsl(236, 25%, 75%);
+    text-align: center;
+    line-height: 1.5;
+  }
+
+  .section-image {
+    inline-size: 100%;
+    max-inline-size: 68.75rem;
+    margin-inline: auto;
+
+    &:last-child {
+      max-inline-size: 49.375rem;
+    }
+  }
+
+  .sub-section__title {
+    font-size: 2.25rem;
+    font-weight: 500;
+    text-align: center;
+    margin-block: 4.5rem;
+  }
+
+  @media (min-width: 48em) {
+    .context .container {
+      padding-block-start: 8rem;
+    }
+
+    .title {
+      font-size: 4rem;
+      line-height: 1.2;
+    }
+
+    .description {
+      font-size: 1.25rem;
+      max-inline-size: 81ch;
+      margin-inline: auto;
+    }
+
+    .jambot-img {
+      margin-block-start: 8rem;
+    }
+  }
+</style>

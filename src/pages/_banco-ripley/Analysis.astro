@@ -1,0 +1,71 @@
+---
+import CardWrapper from '@components/Cards/CardWrapper.astro'
+import { t } from 'i18n:astro'
+---
+
+<div class="container">
+  <h2 class="section-title">{t('ripley_analysis_title')}</h2>
+
+  <div class="grid-auto-fit">
+    <CardWrapper class="card | flow">
+      <h2 class="card-title">1</h2>
+      <p class="card-description">{t('ripley_analysis_1')}</p>
+    </CardWrapper>
+    <CardWrapper class="card | flow">
+      <h2 class="card-title">2</h2>
+      <p class="card-description">{t('ripley_analysis_2')}</p>
+    </CardWrapper>
+    <CardWrapper class="card | flow">
+      <h2 class="card-title">3</h2>
+      <p class="card-description">{t('ripley_analysis_3')}</p>
+    </CardWrapper>
+    <CardWrapper class="card | flow">
+      <h2 class="card-title">4</h2>
+      <p class="card-description">{t('ripley_analysis_4')}</p>
+    </CardWrapper>
+  </div>
+</div>
+
+<style>
+  .container {
+    padding-block-start: 2rem;
+    display: grid;
+    gap: 1.5rem;
+    place-items: center;
+    padding-inline: 2rem;
+  }
+
+  .section-title {
+    margin-block: 2rem;
+    font-size: 3rem;
+    font-weight: 500;
+  }
+
+  .grid-auto-fit {
+    --min-item-width: 15rem;
+  }
+
+  .card {
+    --flow-spacer: 1.4375rem;
+    width: 100%;
+    background-color: hsl(240, 4%, 5%);
+    padding: 3.5rem 1.5rem 2.25rem 1.5rem;
+    margin-inline: auto;
+  }
+
+  .card-title {
+    font-size: 3rem;
+    font-weight: 500;
+  }
+
+  .card-description {
+    color: hsl(236, 25%, 75%);
+    line-height: 1.5;
+  }
+
+  @media (min-width: 48em) {
+    .section-title {
+      font-size: 64px;
+    }
+  }
+</style>

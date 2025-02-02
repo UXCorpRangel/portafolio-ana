@@ -1,0 +1,98 @@
+---
+import CardWrapper from '@components/Cards/CardWrapper.astro'
+import { t } from 'i18n:astro'
+---
+
+<section>
+  <div class="container | flow">
+    <CardWrapper class="card | flow">
+      <div class="card__title-container | flow">
+        <img
+          src="/assets/images/latam-airways-abtesting-1.png"
+          alt="AB Testing Logo"
+        />
+        <h3>Test A/B</h3>
+      </div>
+      <p>{t('latam_abtesting_desc')}</p>
+    </CardWrapper>
+
+    <div class="images-container even-columns">
+      <img
+        src="/assets/images/latam-airways-abtesting-2.png"
+        alt="Mapa de calor de la pantalla de selección de vuelo de ida en el sitio web de LATAM Airlines, mostrando las áreas de mayor atención del usuario"
+      />
+      <img
+        src="/assets/images/latam-airways-abtesting-3.png"
+        alt="Mapa de calor de la pantalla de selección de vuelo de ida y regreso en el sitio web de LATAM Airlines, mostrando las áreas de mayor atención del usuario en la propuesta"
+      />
+    </div>
+  </div>
+</section>
+
+<style>
+  section .container {
+    --flow-spacer: 3rem;
+
+    padding-block-start: 4rem;
+    padding-inline: 2rem;
+  }
+
+  .card {
+    --flow-spacer: 1.5rem;
+  }
+
+  .card__title-container {
+    --flow-spacer: 1rem;
+
+    img {
+      margin-inline: auto;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      font-weight: 500;
+      line-height: 1.3;
+      text-align: center;
+    }
+  }
+
+  .text-container {
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  p {
+    text-align: center;
+    line-height: 1.5;
+    color: hsla(236, 25%, 75%, 1);
+    margin-inline: auto;
+  }
+
+  .images-container {
+    gap: 4rem;
+  }
+
+  @media (min-width: 48em) {
+    .card__title-container {
+      --flow-spacer: 0;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.625rem;
+
+      img {
+        margin-inline: unset;
+      }
+
+      h3 {
+        font-size: 4rem;
+      }
+    }
+
+    p {
+      font-size: 1.25rem;
+      max-inline-size: 80ch;
+    }
+  }
+</style>

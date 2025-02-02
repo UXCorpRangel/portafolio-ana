@@ -1,0 +1,147 @@
+---
+import {
+  CardVariant,
+  IconCatalog,
+  IconSize,
+  IconStyle
+} from '@contracts'
+import Icon from '@components/Icon.astro'
+import CardWrapper from '@components/Cards/CardWrapper.astro'
+
+interface Props {
+  variant?: CardVariant
+  hasBorder?: boolean
+  isInverted?: boolean
+  cardText?: string
+  altText?: string
+  cardImage?: string
+  aspectRatio?: string
+  url?: string
+  hasHover?: boolean
+}
+
+const {
+  variant = CardVariant.primary,
+  hasBorder = true,
+  isInverted = false,
+  cardText,
+  altText,
+  cardImage,
+  aspectRatio,
+  url,
+  hasHover = false
+} = Astro.props
+---
+
+<CardWrapper hasBorder={hasBorder} variant={variant} hasHover={hasHover}>
+  {
+    // TODO: Look for a better way to render this
+    !isInverted ? (
+      <div class="card-container">
+        <img class="logo-img" src={cardImage} alt="hey" slot="header" />
+        <p class="card-text" slot="content">
+          {cardText}
+        </p>
+      </div>
+    ) : (
+      <a href={url}>
+        <div class="card-container">
+          <div slot="header" class="card-header--with-icon">
+            <h3 class="card-text">{cardText}</h3>
+
+            <Icon
+              classes="card-icon"
+              icon={IconCatalog.arrowRight}
+              size={IconSize['7xl']}
+              iconStyle={IconStyle.bold}
+            />
+          </div>
+          <picture style={`aspect-ratio: ${aspectRatio}`}>
+            <source srcset={`${cardImage}.avif`} type="image/avif" />
+            <source srcset={`${cardImage}.webp`} type="image/webp" />
+            <img
+              src={`${cardImage}.webp`}
+              alt={altText}
+              decoding="async"
+              loading="lazy"
+              fetchpriority="low"
+              style={`aspect-ratio: ${aspectRatio}`}
+            />
+          </picture>
+        </div>
+      </a>
+    )
+  }
+</CardWrapper>
+
+<style>
+  .card-container {
+    block-size: 20.25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    padding: 3rem 2rem 0 2rem;
+
+    @media (width >= 992px) {
+      padding: 3rem 3rem 0 3rem;
+    }
+  }
+
+  .card-container:has(p) {
+    padding-block: 3rem;
+  }
+
+  h3 {
+    font-weight: 600;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+
+  p {
+    font-weight: 500;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-family: Inter, sans-serif;
+  }
+
+  .logo-img {
+    inline-size: 100%;
+    max-inline-size: 14rem;
+    max-block-size: 5rem;
+  }
+
+  .card-header--with-icon {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .card-container:hover {
+    --icon-color: var(--color-primary-400);
+    --icon-transform: 0.4rem;
+  }
+
+  @media (width >= 992px) {
+    .card-container {
+      block-size: 26rem;
+      max-inline-size: 38rem;
+
+      align-items: start;
+      padding-block: 3rem 0;
+      padding-inline: 3rem;
+    }
+
+    h3 {
+      font-size: 2.25rem;
+      line-height: 2.25rem;
+    }
+
+    p {
+      font-size: 2.25rem;
+      line-height: 3.375rem;
+    }
+  }
+</style>

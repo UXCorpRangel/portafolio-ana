@@ -1,0 +1,74 @@
+---
+import { CardVariant } from '@contracts'
+
+interface Props {
+  class?: string
+  variant?: CardVariant
+  hasBorder?: boolean
+  isFullWidth?: boolean
+  hasHover?: boolean
+}
+
+const { class: className, variant, hasBorder, hasHover, ...rest } = Astro.props
+
+function getBorderAttributes() {
+  return hasBorder ? { 'data-has-border': true } : {}
+}
+
+function getHoverAttributes() {
+  return hasHover ? { 'data-has-hover': true } : {}
+}
+---
+
+<article
+  {...getBorderAttributes()}
+  {...getHoverAttributes()}
+  class:list={[className]}
+  data-variant={variant}
+  {...rest}
+>
+  <slot />
+</article>
+
+<style>
+  article {
+    border: 1px solid hsl(0deg 0% 16%);
+    border-radius: 1.5rem;
+    transition:
+      border-color 300ms ease-in-out,
+      box-shadow 300ms ease-in-out;
+  }
+
+  article:not([data-has-border]) {
+    border: none;
+  }
+
+  article[data-has-hover]:hover {
+    border: 1px solid white;
+    box-shadow: 0px 0px 22.5px 0px rgba(255, 255, 255, 0.35);
+  }
+
+  /***********************************************
+										VARIANTS
+  ***********************************************/
+
+  article[data-variant='primary'] {
+    background: hsl(240deg 2% 9%);
+  }
+
+  article[data-variant='secondary'] {
+    background: linear-gradient(
+      127.36deg,
+      rgb(46 88 255 / 30%) 5.98%,
+      rgb(148 82 255 / 30%) 90.92%
+    );
+  }
+
+  article[data-variant='tertiary'] {
+    background: linear-gradient(
+      90deg,
+      rgb(48 183 202 / 30%) 0%,
+      rgb(33 212 155 / 30%) 100.01%
+    );
+  }
+</style>

@@ -1,0 +1,69 @@
+---
+import type { HTMLAttributes } from 'astro/types'
+import { IconCatalog, Icons, IconSize, IconStyle, IconStyles, IconSizes } from '@contracts'
+
+interface Props extends HTMLAttributes<'svg'> {
+  color?: string
+  classes?: string
+  icon?: IconCatalog
+  iconStyle?: IconStyle
+  size: IconSize
+}
+
+const {
+  classes,
+  icon = IconCatalog.arrowDownTray,
+  iconStyle = IconStyle.thin,
+  size = IconSize.sm,
+  style
+} = Astro.props
+
+const strokeWidth = IconStyles[iconStyle]
+const iconPaths = Icons[icon]
+const iconPath =
+  iconStyle === IconStyle.solid ? iconPaths.solid : iconPaths.outline
+const sizes = IconSizes[size]
+const fill = iconStyle === IconStyle.solid ? `currentColor` : 'none'
+const stroke = iconStyle === IconStyle.solid ? 'none' : `currentColor`
+---
+
+<svg
+  class:list={[classes]}
+  data-testid="Icon"
+  viewBox="0 0 24 24"
+  xmlns="http://www.w3.org/2000/svg"
+  stroke-width={strokeWidth}
+  focusable="false"
+  aria-hidden="true"
+  style={style}
+>
+  <path
+    fill-rule="evenodd"
+    clip-rule="evenodd"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    d={iconPath}></path>
+</svg>
+
+<style
+  define:vars={{
+    fill,
+    stroke,
+    sizes
+  }}
+>
+  svg {
+    color: var(--icon-color, currentColor);
+    transform: translateX(var(--icon-transform, 0));
+    transition-timing-function: var(--ease-elastic-in-out-3);
+    transition-duration: 300ms;
+    transition-property: fill stroke transform;
+    inline-size: var(--sizes);
+    block-size: var(--sizes);
+  }
+
+  path {
+    fill: var(--fill);
+    stroke: var(--stroke);
+  }
+</style>

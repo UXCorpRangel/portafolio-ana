@@ -1,0 +1,43 @@
+---
+interface Props {
+  message: string
+}
+
+const { message } = Astro.props
+---
+
+<div class="tooltip">
+  <slot />
+  <span class="tooltiptext">{message}</span>
+</div>
+
+<style>
+  .tooltip {
+    position: relative;
+    display: inline-block;
+  }
+
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: fit-content;
+    height: fit-content;
+    color: #b2b3cf;
+    background-color: #000;
+    text-align: center;
+    padding: 4px 8px;
+    border-radius: 4px;
+    border: 1px solid #51546e;
+    white-space: nowrap;
+    position: absolute;
+    left: 50%;
+    top: 120%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+  }
+</style>

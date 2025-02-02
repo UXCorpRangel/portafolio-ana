@@ -1,0 +1,156 @@
+---
+import CardWrapper from '@components/Cards/CardWrapper.astro'
+import { t } from 'i18n:astro'
+---
+
+<section>
+  <div class="container">
+    <div class="even-columns">
+      <CardWrapper class="card">
+        <h3>{t('latam_designs_problem_title')}</h3>
+        <p>{t('latam_designs_problem_desc')}</p>
+      </CardWrapper>
+
+      <CardWrapper class="card">
+        <h3>{t('latam_designs_hypothesis_title')}</h3>
+        <p>{t('latam_designs_hypothesis_desc')}</p>
+      </CardWrapper>
+    </div>
+
+    <img
+      class="userflow-img"
+      src="/assets/images/latam-airways-userflow-1.png"
+      alt="Diagrama de flujo de usuario propuesto para el proceso de compra de boletos, desde la entrada en la página principal hasta la confirmación de vuelos seleccionados, incluyendo selección de asientos y pago"
+    />
+
+    <div class="benefits | flow">
+      <h3>{t('latam_designs_benefits_title')}</h3>
+      <img
+        src="/assets/images/latam-airways-userflow-2.png"
+        alt="Matriz de beneficios del negocio y del usuario: Incluye aumentos en ventas, lealtad del cliente y reducción de abandono del carrito para el negocio; simplificación, ahorro de tiempo y conveniencia mejorada para el usuario."
+      />
+    </div>
+
+    <div class="designs | flow">
+      <CardWrapper class="card">
+        <h3>{t('projects_designs_design_title')}</h3>
+        <p>{t('latam_designs_design_desc')}</p>
+      </CardWrapper>
+
+      <div class="images-container | flow">
+        <div class="even-columns flow">
+          <img
+            src="/assets/images/latam-airways-userflow-3.png"
+            alt="Boceto de la interfaz de selección de vuelos para la ruta SCL-MIA, mostrando opciones de vuelos directos y detalles de precios"
+          />
+          <img
+            src="/assets/images/latam-airways-userflow-4.png"
+            alt="Boceto de la interfaz de selección de vuelos para la ruta SCL-MIA, mostrando detalles de vuelo, precios y opciones adicionales"
+          />
+        </div>
+        <img
+          src="/assets/images/latam-airways-userflow-5.png"
+          alt="Pantalla de selección de vuelo de regreso en el sitio web de LATAM Airlines, mostrando opciones de vuelo con detalles y precios"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  section .container {
+    display: grid;
+    margin-block-start: 3rem;
+    padding-inline: 2rem;
+    gap: 2rem;
+  }
+
+  img {
+    inline-size: 100%;
+  }
+
+  .container .even-columns {
+    gap: 2rem;
+  }
+
+  .card {
+    padding: 2.25rem 1.5rem;
+    background-color: hsla(240, 4%, 5%, 1);
+
+    h3 {
+      font-size: 32px;
+      font-weight: 500;
+      line-height: 1.4;
+    }
+
+    p {
+      line-height: 1.5;
+      color: hsla(236, 25%, 75%, 1);
+    }
+  }
+
+  .userflow-img {
+    margin-block: 3rem;
+    max-inline-size: 1204px;
+    margin-inline: auto;
+  }
+
+  .benefits {
+    --flow-spacer: 3.5rem;
+
+    text-align: center;
+    font-size: 2.25rem;
+    line-height: 0.4;
+
+    h3 {
+      font-weight: 500;
+    }
+  }
+
+  .designs {
+    --flow-spacer: 4rem;
+
+    .even-columns {
+      gap: 0;
+    }
+  }
+
+  @media (min-width: 48em) {
+    .benefits {
+      --flow-spacer: 3.5rem;
+      font-size: 4rem;
+      line-height: 1;
+    }
+
+    .designs {
+      --flow-spacer: 4rem;
+
+      text-align: center;
+      margin-block-start: 7.5rem;
+
+      .card {
+        padding: 0;
+        background-color: unset;
+      }
+
+      h3 {
+        font-size: 4rem;
+        line-height: 1.2;
+      }
+
+      p {
+        font-size: 1.25rem;
+        max-inline-size: 80ch;
+        margin-inline: auto;
+      }
+    }
+
+    .images-container {
+      .even-columns {
+        --flow-spacer: 0;
+
+        gap: 2rem;
+      }
+    }
+  }
+</style>

@@ -1,0 +1,148 @@
+---
+import CardWrapper from '@components/Cards/CardWrapper.astro'
+import { t } from 'i18n:astro'
+---
+
+<section>
+  <div class="container">
+    <div class="cards-container | grid-auto-fit">
+      <CardWrapper class="card | flow">
+        <h2 class="card-title">Journey maps</h2>
+        <p class="card-description">
+          {t('planogram_process_journey_map_desc')}
+        </p>
+      </CardWrapper>
+
+      <img
+        src="/assets/images/cards-section-1.png"
+        alt="Tabla de consulta e implementación de planogramas con notas adhesivas y emoticonos de satisfacción"
+      />
+      <img
+        src="/assets/images/cards-section-2.png"
+        alt="Ana Rangel presentando un taller sobre la implementación de planogramas en una sala de conferencias"
+      />
+    </div>
+
+    <div class="cards-container">
+      <div class="even-columns">
+        <CardWrapper class="card | flow">
+          <h2 class="card-title">Testing</h2>
+          <p class="card-description">{t('planogram_process_testing_desc')}</p>
+        </CardWrapper>
+        <img
+          src="/assets/images/cards-section-3.png"
+          alt="Ana Rangel explicando wireframes de planogramas a un grupo de personas"
+        />
+      </div>
+      <img
+        src="/assets/images/cards-section-4.png"
+        alt="Wireframes de alertas de planogramas con notas adhesivas de colores"
+        style="max-inline-size: 52.25rem;"
+      />
+    </div>
+
+    <div class="cards-container">
+      <div class="even-columns">
+        <CardWrapper class="card | flow" data-type="no-background">
+          <h2 class="card-title">{t('planogram_process_analysis_title')}</h2>
+          <p class="card-description">{t('planogram_process_analysis_desc')}</p>
+        </CardWrapper>
+        <img
+          src="/assets/images/cards-section-5.png"
+          alt="Análisis de planogramas con notas adhesivas en un tablero"
+        />
+      </div>
+
+      <div class="even-columns">
+        <img
+          src="/assets/images/cards-section-6.png"
+          alt="Matriz de valor para el usuario con cuatro cuadrantes"
+        />
+        <CardWrapper class="card | flow" data-type="no-background">
+          <h2 class="card-title">MVP 1</h2>
+          <p class="card-description">{t('planogram_process_mvp_desc')}</p>
+        </CardWrapper>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  section .container {
+    display: grid;
+    margin-block-start: 3rem;
+    padding-inline: 2rem;
+    gap: 2rem;
+  }
+
+  img {
+    margin-inline: auto;
+    inline-size: 100%;
+  }
+
+  .cards-container {
+    display: grid;
+    gap: 2rem;
+
+    .even-columns {
+      gap: 64px;
+    }
+  }
+
+  .cards-container.grid-auto-fit {
+    --min-item-width: 23.8987rem;
+
+    img {
+      block-size: 100%;
+    }
+  }
+
+  .card {
+    --flow-spacer: 1.4375rem;
+
+    background-color: hsla(240, 4%, 5%, 1);
+    padding: 3.5rem 2.25rem 2.25rem 2.25rem;
+    block-size: 100%;
+
+    h2 {
+      font-size: 2rem;
+      line-height: 1.5;
+      font-weight: 700;
+    }
+
+    p {
+      line-height: 24px;
+      letter-spacing: -1%;
+      max-inline-size: 29ch;
+      color: hsla(236, 25%, 75%, 1);
+    }
+  }
+
+  .card[data-type='no-background'] {
+    background-color: unset;
+    padding: 0;
+  }
+
+  @media (min-width: 48em) {
+    section .container {
+      padding-block-start: 7.5rem;
+    }
+    .even-columns {
+      --grid-gap: 4rem;
+
+      grid-auto-columns: 1fr;
+      grid-auto-flow: column;
+
+      .card[data-type='no-background'] {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-block: auto;
+      }
+
+      .card p {
+        max-inline-size: unset;
+      }
+    }
+  }
+</style>
