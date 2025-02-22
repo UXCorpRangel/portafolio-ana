@@ -22,9 +22,6 @@ export default defineConfig({
       pages: {
         '/sobre-mi': {
           en: '/about-me'
-        },
-        '/planograma': {
-          en: '/planogramm'
         }
       }
     }),
