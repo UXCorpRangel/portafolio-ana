@@ -1,28 +1,18 @@
 ---
-import { type GradientBackgroundProps, GradientColor } from "@contracts"
+import { type GradientsColors, GRADIENTS_COLORS } from "@contracts"
 
-const { color, class: className } = Astro.props as GradientBackgroundProps
-
-const gradients: Record<GradientColor, string> = {
-  [GradientColor.blue]:
-    'radial-gradient(48.42% 48.42% at 49.41% 51.58%, rgba(46, 88, 255, 0.34) 0%, rgba(0, 0, 0, 0.00) 100%)',
-  [GradientColor.purple]:
-    'radial-gradient(48.42% 48.42% at 49.41% 51.58%, rgba(148, 82, 255, 0.40) 0%, rgba(0, 0, 0, 0.00) 100%)',
-  [GradientColor.darkPurple]:
-    'radial-gradient(48.42% 48.42% at 49.41% 51.58%, #1E0D4F 0%, rgba(0, 0, 0, 0.00) 100%)',
-  [GradientColor.darkBlue]:
-    'radial-gradient(48.42% 48.42% at 49.41% 51.58%, #061962 0%, rgba(0, 0, 0, 0.00) 100%)',
-  [GradientColor.cyan]:
-    'radial-gradient(35.82% 35.18% at 50.01% 50%, rgba(48, 183, 202, 0.30) 0%, rgba(33, 212, 155, 0.00) 100%)'
+interface Props {
+  color: GradientsColors
 }
 
-const gradientStyle = gradients[color]
-const Class = className ? ` ${className}` : ''
+const { color } = Astro.props
+
+const gradientColor = GRADIENTS_COLORS[color]
 ---
 
 <div
-  class={`gradient-background${Class}`}
-  style={`--gradient: ${gradientStyle}`}
+  class="gradient-background"
+  style={`--gradient: ${gradientColor}`}
 >
   <slot />
 </div>
