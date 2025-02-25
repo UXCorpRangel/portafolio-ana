@@ -11,6 +11,6 @@ export type GradientsColors = keyof typeof colorValues;
 
 const BASE_GRADIENT = 'radial-gradient(48.42% 48.42% at 49.41% 51.58%, COLOR_PLACEHOLDER 0%, transparent 100%)';
 
-export const GRADIENTS_COLORS = Object.fromEntries(
+export const COLORS = Object.fromEntries(
   Object.entries(colorValues).map(([name, gradient]) => [name, BASE_GRADIENT.replace('COLOR_PLACEHOLDER', gradient)])
 ) as Record<GradientsColors, string>;

@@ -1,5 +1,5 @@
 ---
-import { type GradientsColors, GRADIENTS_COLORS } from "@contracts"
+import { type GradientsColors, COLORS } from "@contracts"
 
 interface Props {
   color: GradientsColors
@@ -7,7 +7,7 @@ interface Props {
 
 const { color } = Astro.props
 
-const gradientColor = GRADIENTS_COLORS[color]
+const gradientColor = COLORS[color]
 ---
 
 <div
