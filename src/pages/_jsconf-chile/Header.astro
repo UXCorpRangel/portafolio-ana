@@ -1,0 +1,62 @@
+---
+import { IconCatalog } from '@contracts'
+import Button from '@components/Buttons/Button.astro'
+import { Picture } from 'astro:assets'
+import logo from '@images/events/jsconf-chile/logo.png'
+---
+
+<header>
+  <div>
+    <Picture
+      src={logo}
+      alt="Logo JSConf Chile"
+      width={339}
+      height={126}
+      formats={['avif', 'webp']}
+      fetchpriority="high"
+      loading="eager"
+    />
+  </div>
+  <h1>Organizadora y diseñadora</h1>
+  <p>Lorem ipsum dolor sit amet consectetur. Feugiat amet accumsan arcu nisi ante tempor. Fringilla eleifend vitae aenean hendrerit. Aliquet nunc maecenas gravida vitae pellentesque ipsum. Fermentum porttitor tincidunt id suscipit accumsan. Magna curabitur placerat viverra etiam vestibulum volutpat.</p>
+  <Button
+    invert
+    tag="anchor"
+    href="https://jsconf.cl"
+    isFullWidth
+    afterIcon={IconCatalog.arrowRight}
+  >
+    Ver JSConf Chile
+  </Button>
+</header>
+
+<style>
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    max-width: 993px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+
+    & h1 {
+      font-size: 36px;
+      font-weight: 500;
+      line-height: initial;
+
+      @media (width >= 768px) {
+        font-size: 64px;
+      }
+    }
+
+    & p {
+      font-size: 20px;
+      font-weight: 400;
+      line-height: initial;
+      color: #B1B3D0;
+      text-wrap: pretty;
+    }
+  }
+</style>
