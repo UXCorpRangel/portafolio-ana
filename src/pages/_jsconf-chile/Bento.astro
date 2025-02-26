@@ -1,0 +1,86 @@
+---
+import { Picture } from "astro:assets";
+import jsconfDia2 from "@images/events/jsconf-chile/jsconf-dia-2-evento.png";
+import jsconfDia1 from "@images/events/jsconf-chile/jsconf-dia-1-evento.png";
+---
+
+<section class="bento">
+  <div>
+    <Picture
+      class="bento-image"
+      src={jsconfDia2}
+      alt="JSConf Chile día 2"
+      width={619}
+      height={646}
+      formats={['avif', 'webp']}
+      fetchpriority="high"
+      loading="eager"
+    />
+  </div>
+  <div class="bento-content">
+    <section>
+      <h2>Miembro del Staff, diseñadora y voluntaria</h2>
+      <p>En cada proyecto, mi objetivo es armonizar la estética, la funcionalidad y la eficiencia para entregar soluciones que no solo satisfacen necesidades del usuario.</p>
+    </section>
+    <div>
+      <Picture
+        src={jsconfDia1}
+        alt="JSConf Chile día 1"
+        width={640}
+        height={427}
+        formats={['avif', 'webp']}
+        fetchpriority="high"
+        loading="eager"
+      />
+    </div>
+  </div>
+</section>
+
+<style>
+  .bento {
+    display: grid;
+    gap: 32px;
+
+    @media (width >= 992px) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    img {
+      object-fit: cover;
+      border-radius: 32px;
+      aspect-ratio: 1 / 1;
+      width: 100%;
+      height: auto;
+
+      @media (width >= 992px) {
+        aspect-ratio: initial;
+      }
+    }
+
+    & .bento-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 32px;
+
+      & > section {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        & h2 {
+          font-size: 40px;
+          font-weight: 700;
+          line-height: initial;
+          text-wrap: balance;
+        }
+
+        & p {
+          font-size: 20px;
+          line-height: initial;
+          color: #B1B3D0;
+        }
+      }
+    }
+  }
+</style>
