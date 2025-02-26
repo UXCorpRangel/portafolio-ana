@@ -19,6 +19,14 @@ import Header from '@sections/jsconf-chile/Header.astro'
     display: flex;
     flex-direction: column;
     gap: 70px;
-    padding-block: 163px 64px;
+    padding-block: 16px 64px;
+    max-width: 1296px;
+    width: 100%;
+    margin: 0 auto;
+    padding-inline: 16px;
+
+    @media (width >= 992px) {
+      padding-block: 163px 64px;
+    }
   }
 </style>
