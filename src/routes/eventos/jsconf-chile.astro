@@ -2,6 +2,7 @@
 import GradientBackground from '@components/GradientBackground.astro'
 import Layout from '@layouts/Layout.astro'
 import Bento from '@sections/jsconf-chile/Bento.astro'
+import Carousel from '@sections/jsconf-chile/Carousel.astro'
 import Header from '@sections/jsconf-chile/Header.astro'
 ---
 
@@ -11,6 +12,7 @@ import Header from '@sections/jsconf-chile/Header.astro'
 
     <Header />
     <Bento />
+    <Carousel />
   </main>
 </Layout>
 
@@ -18,7 +20,7 @@ import Header from '@sections/jsconf-chile/Header.astro'
   main {
     display: flex;
     flex-direction: column;
-    gap: 70px;
+    gap: 100px;
     padding-block: 16px 64px;
     max-width: 1296px;
     width: 100%;
