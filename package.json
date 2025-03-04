@@ -42,6 +42,8 @@
     "@neodrag/vanilla": "2.3.0",
     "@playform/compress": "0.1.6",
     "astro": "4.4.11",
+    "embla-carousel": "8.5.2",
+    "embla-carousel-autoplay": "8.5.2",
     "i18next": "23.0.0",
     "sass": "1.83.0",
     "sharp": "0.33.5",
