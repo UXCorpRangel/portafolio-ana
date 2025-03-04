@@ -11,7 +11,5 @@ body {
 h1 {
   color: hsl(0deg 0% 100%);
   font-weight: 700;
-
   font-size: 4rem;
-  font-family: Inter, serif;
 }
