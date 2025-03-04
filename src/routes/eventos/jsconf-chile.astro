@@ -4,6 +4,7 @@ import Layout from '@layouts/Layout.astro'
 import Bento from '@sections/jsconf-chile/Bento.astro'
 import Carousel from '@sections/jsconf-chile/Carousel.astro'
 import Header from '@sections/jsconf-chile/Header.astro'
+import Contact from '@sections/sections/Contact.astro'
 ---
 
 <Layout title="Organizadora y diseñadora de JSConf Chile | Ana Rangel">
@@ -13,6 +14,7 @@ import Header from '@sections/jsconf-chile/Header.astro'
     <Header />
     <Bento />
     <Carousel />
+    <Contact />
   </main>
 </Layout>
 
@@ -26,6 +28,7 @@ import Header from '@sections/jsconf-chile/Header.astro'
     width: 100%;
     margin: 0 auto;
     padding-inline: 16px;
+    overflow: hidden;
 
     @media (width >= 992px) {
       padding-block: 163px 64px;
