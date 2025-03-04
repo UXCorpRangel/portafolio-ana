@@ -2,6 +2,8 @@
 import Avatar from '@components/Avatar.astro'
 import PostHog from '@components/PostHog.astro'
 
+import '@fontsource-variable/inter';
+import interVariable from '@fontsource-variable/inter/files/inter-latin-wght-normal.woff2'
 import '@styles/main.scss'
 
 interface Props {
@@ -24,6 +26,8 @@ const ogImage = new URL('/img/og.jpg', baseUrl)
 
   <meta charset="UTF-8" />
   <meta name="description" content={description} />
+
+  <link rel="preload" as="font" href={interVariable} type="font/woff2" crossorigin />
 
   <slot name="preload" />
 
