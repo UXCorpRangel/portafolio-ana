@@ -1,4 +1,5 @@
 ---
+import { Head } from 'astro-capo'
 import Avatar from '@components/Avatar.astro'
 import PostHog from '@components/PostHog.astro'
 
@@ -21,7 +22,7 @@ const ogImage = new URL('/img/og.jpg', baseUrl)
 ---
 
 <!doctype html>
-<head>
+<Head>
   <title>{title}</title>
 
   <meta charset="UTF-8" />
@@ -48,7 +49,7 @@ const ogImage = new URL('/img/og.jpg', baseUrl)
   <meta name="robots" content="index, follow" />
 
   <PostHog />
-</head>
+</Head>
 <body>
   <slot />
   <Avatar />
