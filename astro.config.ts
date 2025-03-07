@@ -1,6 +1,12 @@
+import browserslist from 'browserslist';
+import { browserslistToTargets } from 'lightningcss';
+
+import { defineConfig } from 'astro/config'
+
 import i18n from '@astrolicious/i18n'
 import playformCompress from '@playform/compress'
-import { defineConfig } from 'astro/config'
+
+const targets = browserslistToTargets(browserslist('>= 0.25%'));
 
 // standard unit size in pixels to convert to rem
 const STANDARD_UNIT_SIZE = 16
@@ -15,6 +21,7 @@ export default defineConfig({
     css: {
       transformer: 'lightningcss',
       lightningcss: {
+        targets,
         drafts: {
           customMedia: true
         },

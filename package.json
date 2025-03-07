@@ -44,6 +44,7 @@
     "@playform/compress": "0.1.6",
     "astro": "4.4.11",
     "astro-capo": "0.0.1",
+    "browserslist": "4.24.4",
     "embla-carousel": "8.5.2",
     "embla-carousel-autoplay": "8.5.2",
     "i18next": "23.0.0",
