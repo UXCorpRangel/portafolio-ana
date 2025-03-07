@@ -145,7 +145,6 @@ const computedIconSize = iconSizeMap[size]
     position: relative;
     z-index: 1;
     inline-size: 90%;
-
     padding: var(--padding);
     border: none;
     border-radius: 2.25rem;
@@ -154,10 +153,7 @@ const computedIconSize = iconSizeMap[size]
     color: var(--text-color);
     font-weight: var(--font-weight);
     font-size: var(--font-size);
-
     background-color: var(--background-color);
-
-    /* stylelint-disable-next-line plugin/no-low-performance-animation-properties */
     transition: font-weight 500ms linear(0, 0.009, 0.035 2.1%, 0.141 4.4%, 0.723 12.9%, 0.938 16.7%, 1.017, 1.077, 1.121, 1.149 24.3%, 1.159, 1.163, 1.161, 1.154 29.9%, 1.129 32.8%, 1.051 39.6%, 1.017 43.1%, 0.991, 0.977 51%, 0.974 53.8%, 0.975 57.1%, 0.997 69.8%, 1.003 76.9%, 1);
     block-size: var(--height);
   }
@@ -180,15 +176,11 @@ const computedIconSize = iconSizeMap[size]
   }
 
   .button::before {
-    position: absolute;
-
-    z-index: -1;
-
-    background-image: linear-gradient(to right, var(--gradient-primary));
-
-    transition: transform 0.3s cubic-bezier(0.5, 0, 0.5, 1);
-
     content: '';
+    position: absolute;
+    z-index: -1;
+    background-image: linear-gradient(to right, var(--gradient-primary));
+    transition: transform 0.3s cubic-bezier(0.5, 0, 0.5, 1);
     will-change: transform;
     inset: 0;
     inline-size: 200%;
@@ -206,25 +198,18 @@ const computedIconSize = iconSizeMap[size]
   }
 
   .button.inverted::before {
+    content: '';
     position: absolute;
-
     padding: 0.125rem;
     border-radius: 3.125rem;
-
     background-image: linear-gradient(to right, var(--gradient-primary));
     background-size: 200% 200%;
-
-    /* stylelint-disable-next-line plugin/no-low-performance-animation-properties */
     transition: background-position 500ms cubic-bezier(0.5, 0, 0.5, 1);
-
-    content: '';
-
     inline-size: 100%;
     inset: 0;
     mask:
       linear-gradient(hsl(0deg 0% 100%) 0 0) content-box,
       linear-gradient(hsl(0deg 0% 100%) 0 0);
-
     mask-composite: exclude;
   }
 
