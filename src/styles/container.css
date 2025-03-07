@@ -1,0 +1,23 @@
+.container {
+  inline-size: 100%;
+  margin-inline: auto;
+}
+
+@media (--min-sm) {
+  .container {
+    max-inline-size:40em;
+    margin-inline: auto;
+  }
+}
+
+@media (--min-md) {
+  .container {
+    max-inline-size: 48em;
+  }
+}
+
+@media (--min-lg) {
+  .container {
+    max-inline-size: 81rem;
+  }
+}
