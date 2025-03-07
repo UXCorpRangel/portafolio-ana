@@ -1,3 +1,0 @@
-.flow > *:where(:not(:first-child)) {
-  margin-block-start: var(--flow-spacer, var(--size-2));
-}
