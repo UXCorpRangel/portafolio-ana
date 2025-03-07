@@ -55,7 +55,7 @@ const stroke = iconStyle === IconStyle.solid ? 'none' : `currentColor`
   svg {
     color: var(--icon-color, currentColor);
     transform: translateX(var(--icon-transform, 0));
-    transition-timing-function: var(--ease-elastic-in-out-3);
+    transition-timing-function: cubic-bezier(0.5, -0.5, 0.1, 1.5);
     transition-duration: 300ms;
     transition-property: fill stroke transform;
     inline-size: var(--sizes);
