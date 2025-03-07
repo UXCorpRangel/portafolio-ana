@@ -9,6 +9,14 @@ export default defineConfig({
     domains: ['media.licdn.com', 'avatars.githubusercontent.com']
   },
   vite: {
+    css: {
+      transformer: 'lightningcss',
+      lightningcss: {
+        drafts: {
+          customMedia: true
+        }
+      }
+    },
     build: {
       cssMinify: 'lightningcss'
     }
