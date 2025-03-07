@@ -1,5 +1,3 @@
-/* Reset */
-
 /* Box sizing rules */
 *,
 *::before,
@@ -41,7 +39,6 @@ html:focus-within {
 body {
   min-block-size: 100vh;
   text-rendering: optimizespeed;
-
   line-height: 1;
 }
 
@@ -72,7 +69,6 @@ svg {
 }
 
 /* Remove all animations and transitions for people that prefer not to see them */
-
 @media (prefers-reduced-motion: reduce) {
   html:focus-within {
     scroll-behavior: auto;
@@ -81,13 +77,9 @@ svg {
   *,
   *::before,
   *::after {
-    /* stylelint-disable-next-line time-min-milliseconds */
     transition-duration: 0.01ms !important;
-    /* stylelint-disable-next-line time-min-milliseconds */
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     scroll-behavior: auto !important;
   }
 }
-
-/* Reset end */

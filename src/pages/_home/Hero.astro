@@ -113,7 +113,7 @@ import { t } from 'i18n:astro'
     stroke-width: 1.5;
     block-size: 1.5rem;
     inline-size: 1.5rem;
-    transition: stroke-width 300ms var(--ease-spring-3);
+    transition: stroke-width 300ms linear(0, 0.009, 0.035 2.1%, 0.141 4.4%, 0.723 12.9%, 0.938 16.7%, 1.017, 1.077, 1.121, 1.149 24.3%, 1.159, 1.163, 1.161, 1.154 29.9%, 1.129 32.8%, 1.051 39.6%, 1.017 43.1%, 0.991, 0.977 51%, 0.974 53.8%, 0.975 57.1%, 0.997 69.8%, 1.003 76.9%, 1);
   }
 
   .btn-group {
@@ -167,17 +167,17 @@ import { t } from 'i18n:astro'
   }
 
   .hero-actions {
-    --flow-spacer: var(--size-5);
+    --flow-spacer: 24px;
 
     margin-inline: auto;
-    margin-block-start: var(--size-8);
+    margin-block-start: 48px;
     text-align: center;
   }
 
   .role-list {
     color: hsl(250deg 10% 63%);
     font-weight: 500;
-    font-size: var(--size-4);
+    font-size: 20px;
     margin-inline: auto;
   }
 

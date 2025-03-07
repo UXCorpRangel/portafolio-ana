@@ -1,15 +1,19 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+@import url('./reset.css') layer(reset);
+@import url('./theme.css') layer(theme);
+@import url('./general.css') layer(general);
+@import url('./container.css') layer(utilities);
 
-body {
-  background-color: hsl(0deg 0% 0%);
-}
-
-h1 {
-  color: hsl(0deg 0% 100%);
-  font-weight: 700;
-  font-size: 4rem;
-}
+@custom-media --max-us (width <= 374.98px);
+@custom-media --min-us (width >= 375px);
+@custom-media --max-xs (width <= 410.98px);
+@custom-media --min-xs (width >= 411px);
+@custom-media --max-sm (width <= 575.98px);
+@custom-media --min-sm (width >= 576px);
+@custom-media --max-md (width <= 767.98px);
+@custom-media --min-md (width >= 768px);
+@custom-media --max-lg (width <= 991.98px);
+@custom-media --min-lg (width >= 992px);
+@custom-media --max-xl (width <= 1199.98px);
+@custom-media --min-xl (width >= 1200px);
+@custom-media --max-2xl (width <= 1535.98px);
+@custom-media --min-2xl (width >= 1536px);
