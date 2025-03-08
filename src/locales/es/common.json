@@ -154,5 +154,19 @@
       "title": "Wireframes, Wireflows y Taskflows para UX",
       "description": "En el décimo aniversario de Nerdearla, expliqué cómo estas herramientas ayudan a estructurar experiencias claras, optimizar el diseño y facilitar el trabajo con desarrollo."
     }
+  },
+
+  "event_awesome_fest": {
+    "header": {
+      "title": "Un evento para la comunidad tech",
+      "description": "Awesome Fest es el evento anual de Get on Board, la plataforma de empleo que conecta talento con empresas de tecnología. Este 2024, tuve el honor de participar como host, guiando conversaciones inspiradoras y conectando con profesionales de distintas áreas.",
+      "button": "Ver evento"
+    },
+    "bento": {
+      "first_image_alt": "Participación en el evento Awesome Fest",
+      "title": "Una experiencia enriquecedora",
+      "description": "Fue increíble compartir escenario con speakers y panelistas que impulsan la industria, además de conectar con profesionales apasionados por la tecnología y el crecimiento profesional.",
+      "second_image_alt": "Presentadora de Awesome Fest"
+    }
   }
 }
