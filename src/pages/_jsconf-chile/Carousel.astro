@@ -2,7 +2,14 @@
 import type { ImageMetadata } from 'astro'
 import carouselImages from '@data/carousel-images-jsconf-chile'
 import { Picture } from 'astro:assets'
+import { t } from 'i18n:astro'
 import '@styles/carousel.css'
+
+const { carousel } = t('event_jsconf_chile', {
+  returnObjects: true
+})
+
+const { title, description } = carousel
 
 const getImages = import.meta.glob<{ default: ImageMetadata }>(
   '/src/images/events/jsconf-chile/*.{jpeg,jpg,png}'
@@ -11,8 +18,8 @@ const getImages = import.meta.glob<{ default: ImageMetadata }>(
 
 <section class="carousel-container">
   <header>
-    <h2>Más que diseño: una experiencia única</h2>
-    <p>Además de diseñar, fui host junto con el staff, llevando la energía del evento y asegurando que cada momento fuera especial. Más que un evento en mi portafolio, JSConf Chile es una experiencia que marcó mi camino y mi conexión con la comunidad.</p>
+    <h2>{title}</h2>
+    <p>{description}</p>
   </header>
   <div class="embla">
     <div class="embla-viewport">

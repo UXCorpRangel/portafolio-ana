@@ -138,6 +138,24 @@
   "ripley_designs_title": "Diseños",
   "ripley_designs_desc": "Después de un proceso de empatizar y definir cuáles eras las oportunidades de mejora, se hizo un refrescamiento de todo el flujo, y adicional se agregaron nuevas funcionalidades para optimizar aún mas este flujo, posteriormente fue llevado a testeo para asegurar su usabilidad e implementarlo a desarrollo.",
 
+  "event_jsconf_chile": {
+    "header": {
+      "title": "Organizadora y diseñadora",
+      "description": "Mi historia con JSConf Chile comenzó en 2024, cuando diseñé voluntariamente su sitio web en vivo. Eso me llevó a ser parte del equipo organizador, una experiencia única y llena de aprendizaje.",
+      "button": "Ver JSConf Chile 2024"
+    },
+    "bento": {
+      "first_image_alt": "JSConf Chile día 2",
+      "title": "Diseño con identidad chilena",
+      "description": "Ese año, organicé un evento con más de 700 asistentes, diseñando su identidad visual, gráfica, merch y experiencia. También creé íconos inspirados en la cultura chilena, fusionando tecnología y tradición para resaltar la esencia del país.",
+      "second_image_alt": "JSConf Chile día 1"
+    },
+    "carousel": {
+      "title": "Más que diseño: Una experiencia única",
+      "description": "Además de diseñar, fui host junto con el staff, llevando la energía del evento y asegurando que cada momento fuera especial. Más que un evento en mi portafolio, JSConf Chile es una experiencia que marcó mi camino y mi conexión con la comunidad."
+    }
+  },
+
   "event_nerdearla": {
     "header": {
       "title": "Mi primera charla presencial",
