@@ -2,6 +2,13 @@
 import { Picture } from "astro:assets";
 import jsconfDia2 from "@images/events/jsconf-chile/jsconf-dia-2-evento.png";
 import jsconfDia1 from "@images/events/jsconf-chile/jsconf-dia-1-evento.png";
+import { t } from "i18n:astro";
+
+const { bento } = t('event_jsconf_chile', {
+  returnObjects: true
+})
+
+const { first_image_alt: firstImageAlt, title, description, second_image_alt: secondImageAlt } = bento
 ---
 
 <section class="bento">
@@ -9,7 +16,7 @@ import jsconfDia1 from "@images/events/jsconf-chile/jsconf-dia-1-evento.png";
     <Picture
       class="bento-image"
       src={jsconfDia2}
-      alt="JSConf Chile día 2"
+      alt={firstImageAlt}
       width={619}
       height={646}
       formats={['avif', 'webp']}
@@ -19,13 +26,13 @@ import jsconfDia1 from "@images/events/jsconf-chile/jsconf-dia-1-evento.png";
   </div>
   <div class="bento-content">
     <section>
-      <h2>Diseño con identidad chilena</h2>
-      <p>Ese año, organicé un evento con más de 700 asistentes, diseñando su identidad visual, gráfica, merch y experiencia. También creé íconos inspirados en la cultura chilena, fusionando tecnología y tradición para resaltar la esencia del país.</p>
+      <h2>{title}</h2>
+      <p>{description}</p>
     </section>
     <div>
       <Picture
         src={jsconfDia1}
-        alt="JSConf Chile día 1"
+        alt={secondImageAlt}
         width={616}
         height={427}
         formats={['avif', 'webp']}

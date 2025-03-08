@@ -138,6 +138,24 @@
   "ripley_designs_title": "Designs",
   "ripley_designs_desc": "After a process of empathizing and defining opportunities for improvement, the entire flow was refreshed, and additional new functionalities were added to further optimize this flow, which was then tested to ensure its usability and implement it for development.",
 
+  "event_jsconf_chile": {
+    "header": {
+      "title": "Organizer and designer",
+      "description": "My story with JSConf Chile began in 2024, when I voluntarily designed their live website. That led me to be part of the organizing team, a unique and learning-filled experience.",
+      "button": "See JSConf Chile 2024"
+    },
+    "bento": {
+      "first_image_alt": "JSConf Chile day 2",
+      "title": "Design with Chilean identity",
+      "description": "That year, I organized an event with more than 700 attendees, designing its visual identity, graphics, merch and experience. I also created icons inspired by Chilean culture, merging technology and tradition to highlight the essence of the country.",
+      "second_image_alt": "JSConf Chile day 1"
+    },
+    "carousel": {
+      "title": "More than design: A unique experience",
+      "description": "In addition to designing, I was a host along with the staff, bringing the energy of the event and ensuring that every moment was special. More than an event in my portfolio, JSConf Chile is an experience that marked my path and my connection with the community."
+    }
+  },
+
   "event_nerdearla": {
     "header": {
       "title": "My first in-person talk",

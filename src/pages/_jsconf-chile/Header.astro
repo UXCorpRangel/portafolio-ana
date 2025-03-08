@@ -3,6 +3,13 @@ import { IconCatalog } from '@contracts'
 import Button from '@components/Buttons/Button.astro'
 import { Picture } from 'astro:assets'
 import logo from '@images/events/jsconf-chile/logo.png'
+import { t } from 'i18n:astro';
+
+const { header } = t('event_jsconf_chile', {
+  returnObjects: true
+})
+
+const { title, description, button } = header
 ---
 
 <header>
@@ -17,8 +24,8 @@ import logo from '@images/events/jsconf-chile/logo.png'
       loading="eager"
     />
   </div>
-  <h1>Organizadora y diseñadora</h1>
-  <p>Mi historia con JSConf Chile comenzó en 2024, cuando diseñé voluntariamente su sitio web en vivo. Eso me llevó a ser parte del equipo organizador, una experiencia única y llena de aprendizaje</p>
+  <h1>{title}</h1>
+  <p>{description}</p>
   <Button
     invert
     tag="anchor"
@@ -26,7 +33,7 @@ import logo from '@images/events/jsconf-chile/logo.png'
     isFullWidth
     afterIcon={IconCatalog.arrowRight}
   >
-    Ver JSConf Chile 2024
+    {button}
   </Button>
 </header>
 
