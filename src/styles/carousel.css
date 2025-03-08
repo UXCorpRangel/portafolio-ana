@@ -19,17 +19,29 @@
       backface-visibility: hidden;
       touch-action: pan-y pinch-zoom;
 
-      @media (max-width: 767.98px) {
-        gap: var(--slide-spacing);
-      }
-
       .embla-slide {
         min-width: 0;
         flex: 0 0 var(--slide-size);
+        padding-left: var(--slide-spacing);
+
+        @media (max-width: 767.98px) {
+          translate: calc(var(--slide-spacing) * -1) 0;
+
+          &.nerdearla {
+            translate: -16px 0;
+
+            & img {
+              object-fit: contain;
+            }
+          }
+        }
 
         @media (width >= 768px) {
           flex: 0 0 var(--slide-size-md);
-          padding-left: var(--slide-spacing);
+
+          &.nerdearla:first-child img {
+            object-position: right;
+          }
         }
 
         @media (width >= 1200px) {

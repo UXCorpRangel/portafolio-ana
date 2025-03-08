@@ -1,0 +1,37 @@
+---
+import GradientBackground from '@components/GradientBackground.astro'
+import Layout from '@layouts/Layout.astro'
+import Bento from '@sections/nerdearla/Bento.astro'
+import Carousel from '@sections/nerdearla/Carousel.astro'
+import Header from '@sections/nerdearla/Header.astro'
+import Contact from '@sections/sections/Contact.astro'
+---
+
+<Layout title="Mi primera charla presencial | Ana Rangel">
+  <main>
+    <GradientBackground color="pink" />
+
+    <Header />
+    <Bento />
+    <Carousel />
+    <Contact />
+  </main>
+</Layout>
+
+<style>
+  main {
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+    padding-block: 16px 64px;
+    max-width: 1296px;
+    width: 100%;
+    margin: 0 auto;
+    padding-inline: 16px;
+    overflow: hidden;
+
+    @media (width >= 992px) {
+      padding-block: 163px 64px;
+    }
+  }
+</style>

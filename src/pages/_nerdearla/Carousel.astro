@@ -1,0 +1,72 @@
+---
+import type { ImageMetadata } from 'astro'
+import carouselImages from '@data/carousel-images-nerdearla'
+import { Picture } from 'astro:assets'
+import '@styles/carousel.css'
+
+const getImages = import.meta.glob<{ default: ImageMetadata }>(
+  '/src/images/events/nerdearla/*.{jpeg,jpg,png}'
+);
+---
+
+<section class="carousel-container">
+  <header>
+    <h2>Wireframes, Wireflows y Taskflows para UX</h2>
+    <p>En el décimo aniversario de Nerdearla, expliqué cómo estas herramientas ayudan a estructurar experiencias claras, optimizar el diseño y facilitar el trabajo con desarrollo.</p>
+  </header>
+  <div class="embla">
+    <div class="embla-viewport">
+      <div class="embla-container">
+        {
+          carouselImages.map(({ alt, src }) => (
+            <div class="embla-slide nerdearla">
+              <Picture
+                src={getImages[src]()}
+                alt={alt}
+                width={581}
+                height={387}
+                formats={['avif', 'webp']}
+                fetchpriority="low"
+              />
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  import '@scripts/carousel'
+</script>
+
+<style>
+  .carousel-container {
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+
+    header {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      max-width: 873px;
+      margin: 0 auto;
+      text-align: center;
+
+      h2 {
+        font-size: 40px;
+        font-weight: 700;
+        text-wrap: balance;
+      }
+
+      p {
+        font-size: 20px;
+        font-weight: 400;
+        color: #B1B3D0;
+        text-wrap: pretty;
+        line-height: initial;
+      }
+    }
+  }
+</style>

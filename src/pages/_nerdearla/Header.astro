@@ -1,0 +1,67 @@
+---
+import { IconCatalog } from '@contracts'
+import Button from '@components/Buttons/Button.astro'
+import { Picture } from 'astro:assets'
+import logo from '@images/events/nerdearla/logo.png'
+---
+
+<header>
+  <div>
+    <Picture
+      class="logo"
+      src={logo}
+      alt="Logo JSConf Chile"
+      width={494}
+      height={102}
+      formats={['avif', 'webp']}
+      fetchpriority="high"
+      loading="eager"
+    />
+  </div>
+  <h1>Mi primera charla presencial</h1>
+  <p>Nerdearla fue el evento que marcó un antes y un después en mi perfil. Fue mi primera charla presencial, una experiencia enriquecedora que me llevó a salir de mi zona de confort. Más allá del escenario, el networking fue increíble, conectando con personas apasionadas por la tecnología y el diseño.</p>
+  <Button
+    invert
+    tag="anchor"
+    href="https://www.youtube.com/watch?v=904kxj4acBU&t=1507s"
+    isFullWidth
+    afterIcon={IconCatalog.arrowRight}
+  >
+    Ver Charla
+  </Button>
+</header>
+
+<style>
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    max-width: 993px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+
+    & .logo {
+      object-fit: contain;
+    }
+
+    & h1 {
+      font-size: 36px;
+      font-weight: 500;
+      line-height: initial;
+
+      @media (width >= 768px) {
+        font-size: 64px;
+      }
+    }
+
+    & p {
+      font-size: 20px;
+      font-weight: 400;
+      line-height: initial;
+      color: #B1B3D0;
+      text-wrap: pretty;
+    }
+  }
+</style>

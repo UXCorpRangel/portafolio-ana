@@ -1,0 +1,86 @@
+---
+import { Picture } from "astro:assets";
+import charlaNerdearla1 from "@images/events/nerdearla/charla-nerdearla-1.png";
+import charlaNerdearla2 from "@images/events/nerdearla/charla-nerdearla-2.png";
+---
+
+<section class="bento">
+  <div>
+    <Picture
+      class="bento-image"
+      src={charlaNerdearla1}
+      alt="Cover sobre mi charla en Nerdearla"
+      width={619}
+      height={646}
+      formats={['avif', 'webp']}
+      fetchpriority="high"
+      loading="eager"
+    />
+  </div>
+  <div class="bento-content">
+    <section>
+      <h2>Cómo sacar tu primer MVP sin morir en el intento</h2>
+      <p>Hablé sobre cómo equilibrar diseño, producto y desarrollo al crear un MVP. Compartí estrategias para priorizar funcionalidades sin comprometer la experiencia y lograr un buen lanzamiento.</p>
+    </section>
+    <div>
+      <Picture
+        src={charlaNerdearla2}
+        alt="Foto con los demás charlistas de Nerdearla"
+        width={616}
+        height={427}
+        formats={['avif', 'webp']}
+        fetchpriority="high"
+        loading="eager"
+      />
+    </div>
+  </div>
+</section>
+
+<style>
+  .bento {
+    display: grid;
+    gap: 32px;
+
+    @media (width >= 992px) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    img {
+      object-fit: cover;
+      border-radius: 32px;
+      aspect-ratio: 1 / 1;
+      width: 100%;
+      height: auto;
+
+      @media (width >= 992px) {
+        aspect-ratio: initial;
+      }
+    }
+
+    & .bento-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 32px;
+
+      & > section {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        & h2 {
+          font-size: 40px;
+          font-weight: 700;
+          line-height: initial;
+          text-wrap: balance;
+        }
+
+        & p {
+          font-size: 20px;
+          line-height: initial;
+          color: #B1B3D0;
+        }
+      }
+    }
+  }
+</style>
