@@ -136,5 +136,23 @@
   "ripley_analysis_3": "Se le notifica al usuario por correo electrónico cuando se hace la renovación automática y se envía un documento detallado con las condiciones de la renovación.",
   "ripley_analysis_4": "En los 3 días hábiles para el retiro de la inversión el usuario se le habilita la función desde la misma card en el historial",
   "ripley_designs_title": "Diseños",
-  "ripley_designs_desc": "Después de un proceso de empatizar y definir cuáles eras las oportunidades de mejora, se hizo un refrescamiento de todo el flujo, y adicional se agregaron nuevas funcionalidades para optimizar aún mas este flujo, posteriormente fue llevado a testeo para asegurar su usabilidad e implementarlo a desarrollo."
+  "ripley_designs_desc": "Después de un proceso de empatizar y definir cuáles eras las oportunidades de mejora, se hizo un refrescamiento de todo el flujo, y adicional se agregaron nuevas funcionalidades para optimizar aún mas este flujo, posteriormente fue llevado a testeo para asegurar su usabilidad e implementarlo a desarrollo.",
+
+  "event_nerdearla": {
+    "header": {
+      "title": "Mi primera charla presencial",
+      "description": "Nerdearla fue el evento que marcó un antes y un después en mi perfil. Fue mi primera charla presencial, una experiencia enriquecedora que me llevó a salir de mi zona de confort. Más allá del escenario, el networking fue increíble, conectando con personas apasionadas por la tecnología y el diseño.",
+      "button": "Ver charla"
+    },
+    "bento": {
+      "first_image_alt": "Cover sobre mi charla en Nerdearla",
+      "title": "Cómo sacar tu primer MVP sin morir en el intento",
+      "description": "Hablé sobre cómo equilibrar diseño, producto y desarrollo al crear un MVP. Compartí estrategias para priorizar funcionalidades sin comprometer la experiencia y lograr un buen lanzamiento.",
+      "second_image_alt": "Foto con los demás charlistas de Nerdearla"
+    },
+    "carousel": {
+      "title": "Wireframes, Wireflows y Taskflows para UX",
+      "description": "En el décimo aniversario de Nerdearla, expliqué cómo estas herramientas ayudan a estructurar experiencias claras, optimizar el diseño y facilitar el trabajo con desarrollo."
+    }
+  }
 }

@@ -2,6 +2,13 @@
 import { Picture } from "astro:assets";
 import charlaNerdearla1 from "@images/events/nerdearla/charla-nerdearla-1.png";
 import charlaNerdearla2 from "@images/events/nerdearla/charla-nerdearla-2.png";
+import { t } from "i18n:astro";
+
+const { bento } = t('event_nerdearla', {
+  returnObjects: true
+})
+
+const { first_image_alt: firstImageAlt, title, description, second_image_alt: secondImageAlt } = bento
 ---
 
 <section class="bento">
@@ -9,7 +16,7 @@ import charlaNerdearla2 from "@images/events/nerdearla/charla-nerdearla-2.png";
     <Picture
       class="bento-image"
       src={charlaNerdearla1}
-      alt="Cover sobre mi charla en Nerdearla"
+      alt={firstImageAlt}
       width={619}
       height={646}
       formats={['avif', 'webp']}
@@ -19,13 +26,13 @@ import charlaNerdearla2 from "@images/events/nerdearla/charla-nerdearla-2.png";
   </div>
   <div class="bento-content">
     <section>
-      <h2>Cómo sacar tu primer MVP sin morir en el intento</h2>
-      <p>Hablé sobre cómo equilibrar diseño, producto y desarrollo al crear un MVP. Compartí estrategias para priorizar funcionalidades sin comprometer la experiencia y lograr un buen lanzamiento.</p>
+      <h2>{title}</h2>
+      <p>{description}</p>
     </section>
     <div>
       <Picture
         src={charlaNerdearla2}
-        alt="Foto con los demás charlistas de Nerdearla"
+        alt={secondImageAlt}
         width={616}
         height={427}
         formats={['avif', 'webp']}

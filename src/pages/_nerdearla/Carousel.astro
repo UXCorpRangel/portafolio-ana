@@ -2,7 +2,14 @@
 import type { ImageMetadata } from 'astro'
 import carouselImages from '@data/carousel-images-nerdearla'
 import { Picture } from 'astro:assets'
+import { t } from 'i18n:astro'
 import '@styles/carousel.css'
+
+const { carousel } = t('event_nerdearla', {
+  returnObjects: true
+})
+
+const { title, description } = carousel
 
 const getImages = import.meta.glob<{ default: ImageMetadata }>(
   '/src/images/events/nerdearla/*.{jpeg,jpg,png}'
@@ -11,8 +18,8 @@ const getImages = import.meta.glob<{ default: ImageMetadata }>(
 
 <section class="carousel-container">
   <header>
-    <h2>Wireframes, Wireflows y Taskflows para UX</h2>
-    <p>En el décimo aniversario de Nerdearla, expliqué cómo estas herramientas ayudan a estructurar experiencias claras, optimizar el diseño y facilitar el trabajo con desarrollo.</p>
+    <h2>{title}</h2>
+    <p>{description}</p>
   </header>
   <div class="embla">
     <div class="embla-viewport">
