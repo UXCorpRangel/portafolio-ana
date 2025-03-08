@@ -2,10 +2,10 @@
 import { IconCatalog } from '@contracts'
 import Button from '@components/Buttons/Button.astro'
 import { Picture } from 'astro:assets'
-import logo from '@images/events/nerdearla/logo.png'
+import logo from '@images/events/awesome-fest/logo.png'
 import { t } from 'i18n:astro';
 
-const { header } = t('event_nerdearla', {
+const { header } = t('event_awesome_fest', {
   returnObjects: true
 })
 
@@ -17,9 +17,9 @@ const { title, description, button } = header
     <Picture
       class="logo"
       src={logo}
-      alt="Logo Nerdearla"
-      width={494}
-      height={102}
+      alt="Logo Awesome Fest"
+      width={358}
+      height={163}
       formats={['avif', 'webp']}
       fetchpriority="high"
       loading="eager"
@@ -30,7 +30,7 @@ const { title, description, button } = header
   <Button
     invert
     tag="anchor"
-    href="https://www.youtube.com/watch?v=904kxj4acBU&t=1507s"
+    href="https://www.youtube.com/watch?v=LaMisySXudg"
     isFullWidth
     afterIcon={IconCatalog.arrowRight}
   >
@@ -44,7 +44,7 @@ const { title, description, button } = header
     flex-direction: column;
     align-items: center;
     gap: 24px;
-    max-width: 993px;
+    max-width: 1045px;
     width: 100%;
     margin: 0 auto;
     text-align: center;
