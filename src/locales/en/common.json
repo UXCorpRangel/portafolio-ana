@@ -136,5 +136,23 @@
   "ripley_analysis_3": "The user is notified by e-mail when the automatic renewal is done and a detailed document with the renewal conditions is sent.",
   "ripley_analysis_4": "In the 3 working days for the withdrawal of the investment the user is enabled the function from the same card in the history.",
   "ripley_designs_title": "Designs",
-  "ripley_designs_desc": "After a process of empathizing and defining opportunities for improvement, the entire flow was refreshed, and additional new functionalities were added to further optimize this flow, which was then tested to ensure its usability and implement it for development."
+  "ripley_designs_desc": "After a process of empathizing and defining opportunities for improvement, the entire flow was refreshed, and additional new functionalities were added to further optimize this flow, which was then tested to ensure its usability and implement it for development.",
+
+  "event_nerdearla": {
+    "header": {
+      "title": "My first in-person talk",
+      "description": "Nerdearla was the event that marked a before and after in my profile. It was my first in-person talk, an enriching experience that led me to step out of my comfort zone. Beyond the stage, the networking was incredible, connecting with people passionate about technology and design.",
+      "button": "See talk"
+    },
+    "bento": {
+      "first_image_alt": "Cover about my talk at Nerdearla",
+      "title": "How to get your first MVP without dying in the attempt",
+      "description": "I talked about how to balance design, product and development when creating an MVP. I shared strategies to prioritize features without compromising the experience and achieve a successful launch.",
+      "second_image_alt": "Photo with the other speakers at Nerdearla"
+    },
+    "carousel": {
+      "title": "Wireframes, Wireflows y Taskflows for UX",
+      "description": "On the tenth anniversary of Nerdearla, I explained how these tools help structure clear experiences, optimize design and facilitate work with development."
+    }
+  }
 }
