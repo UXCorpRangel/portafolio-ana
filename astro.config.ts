@@ -51,6 +51,15 @@ export default defineConfig({
         },
         '/eventos': {
           en: '/events'
+        },
+        '/eventos/jsconf-chile': {
+          en: '/events/jsconf-chile'
+        },
+        '/eventos/nerdearla': {
+          en: '/events/nerdearla'
+        },
+        '/eventos/awesome-fest': {
+          en: '/events/awesome-fest'
         }
       }
     }),
