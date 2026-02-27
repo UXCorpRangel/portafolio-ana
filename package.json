@@ -36,6 +36,9 @@
     "./**/*.json": "prettier --cache --write \"./**/*.json\"",
     "./**/*.yml": "prettier --cache --write \"./**/*.yml\""
   },
+  "optionalDependencies": {
+    "@rollup/rollup-linux-x64-gnu": "*"
+  },
   "dependencies": {
     "@astrojs/check": "0.9.4",
     "@astrolicious/i18n": "0.4.3",
