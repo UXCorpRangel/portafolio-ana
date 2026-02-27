@@ -4,17 +4,11 @@ import Logo from '@components/Logo.astro'
 import LanguageToggle from '@components/LanguageToggle.astro'
 
 const SLUGS = [
-  {
-    slug: getLocalePath('/')
-  },
-  {
-    slug: getLocalePath('/sobre-mi')
-  }
+  { slug: getLocalePath('/') },
+  { slug: getLocalePath('/sobre-mi') }
 ]
 
-const LINKS = t('navbar', {
-  returnObjects: true
-})
+const LINKS = t('navbar', { returnObjects: true })
 ---
 
 <header class="nav-container">
@@ -22,54 +16,154 @@ const LINKS = t('navbar', {
     <Logo />
   </a>
 
-  <!-- Navigation Section -->
   <nav class="navbar" data-status="close" aria-hidden="true">
     <ul class="list">
       {
         SLUGS.map(({ slug }, index) => (
           <>
-            <li
-              class:list={[
-                'list-item',
-                { active: Astro.url.pathname === slug }
-              ]}
-            >
+            <li class:list={['list-item', { active: Astro.url.pathname === slug }]}>
               <a href={slug}>{LINKS[index]}</a>
             </li>
             <li class="dots">&#183;</li>
           </>
         ))
       }
-      <li class="list-item">
-        <a
-          href="/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+
+      <!-- PROYECTOS -->
+      <li class="list-item has-mega" data-mega="projects">
+        <a href="#" class="mega-trigger" aria-haspopup="true" aria-expanded="false">
           Proyectos
         </a>
-        <li class="dots">&#183;</li>
+
+        <div class="mega-panel" role="menu" aria-label="Proyectos">
+          <div class="mega-grid mega-grid-1">
+            <div class="mega-col">
+              <h3 class="mega-col-title">Proyectos</h3>
+
+              <a class="mega-item" href="/banco-ripley">
+                <div class="mega-thumb"><img src="/assets/proyectos/banco_converted.webp" alt=""></div>
+                <div class="mega-text">
+                  <div class="mega-title">Banco Ripley</div>
+                  <div class="mega-subtitle">Autonomìa, research y prototipado</div>
+                </div>
+              </a>
+
+              <a class="mega-item" href="#">
+                <div class="mega-thumb"><img src="/assets/proyectos/cenco_converted.webp" alt=""></div>
+                <div class="mega-text">
+                  <div class="mega-title">Cencosud</div>
+                  <div class="mega-subtitle">Liderazgo, estrategia, testing, MVP</div>
+                </div>
+              </a>
+
+              <a class="mega-item" href="/latam-airlines">
+                <div class="mega-thumb"><img src="/assets/proyectos/latam_converted.webp" alt=""></div>
+                <div class="mega-text">
+                  <div class="mega-title">Latam</div>
+                  <div class="mega-subtitle">Diseño UX Potenciado por IA</div>
+                </div>
+              </a>
+
+              <a class="mega-item" href="/firma-fast">
+                <div class="mega-thumb"><img src="/assets/proyectos/ff_converted.webp" alt=""></div>
+                <div class="mega-text">
+                  <div class="mega-title">Firma Fast</div>
+                  <div class="mega-subtitle">Rediseño, vibe coding, estrategia, escalamiento</div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
       </li>
-      <li class="list-item">
-        <a
-          href="/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+      <li class="dots">&#183;</li>
+
+      <!-- EVENTOS -->
+      <li class="list-item has-mega" data-mega="events">
+        <a href="#" class="mega-trigger" aria-haspopup="true" aria-expanded="false">
           Eventos
         </a>
-        <li class="dots">&#183;</li>
+
+        <div class="mega-panel" role="menu" aria-label="Eventos">
+          <div class="mega-grid mega-grid-2">
+            <div class="mega-col">
+              <h3 class="mega-col-title">Participante</h3>
+
+              <a class="mega-item" href="#">
+                <div class="mega-thumb"><img src="/img/nerdearla-logo.png" alt=""></div>
+                <div class="mega-text">
+                  <div class="mega-title">Nerdearla</div>
+                  <div class="mega-subtitle">Charlista de MVP y user flow</div>
+                </div>
+              </a>
+
+              <a class="mega-item" href="#">
+                <div class="mega-thumb"><img src="/assets/proyectos/getonboard_converted.webp" alt=""></div>
+                <div class="mega-text">
+                  <div class="mega-title">Awesome Fest 2024</div>
+                  <div class="mega-subtitle">Host</div>
+                </div>
+              </a>
+
+              <a class="mega-item" href="#">
+                <div class="mega-thumb"><img src="/assets/proyectos/js_converted.webp" alt=""></div>
+                <div class="mega-text">
+                  <div class="mega-title">JSconf 2024</div>
+                  <div class="mega-subtitle">Organizadora</div>
+                </div>
+              </a>
+            </div>
+
+            <div class="mega-col">
+              <h3 class="mega-col-title">Charlista</h3>
+
+              <a class="mega-item" href="#">
+                <div class="mega-thumb"><img src="/img/nerdearla-logo.png" alt=""></div>
+                <div class="mega-text">
+                  <div class="mega-title">AI-first sin UI-first</div>
+                  <div class="mega-subtitle">Santiago de Chile. Pròximamente</div>
+                </div>
+              </a>
+              <a class="mega-item" href="https://www.youtube.com/watch?v=0LZEeA8TUU4&t=684s" target="_blank" rel="noopener noreferrer">
+                <div class="mega-thumb"><img src="/img/nerdearla-logo.png" alt=""></div>
+                <div class="mega-text">
+                  <div class="mega-title">UX al AX</div>
+                  <div class="mega-subtitle">Buenos aires, Argentina 2025</div>
+                </div>
+              </a>
+              <a class="mega-item" href="https://www.youtube.com/watch?v=RwKwSJ-YmW8&t=2s" target="_blank" rel="noopener noreferrer">
+                <div class="mega-thumb"><img src="/assets/proyectos/duoc_converted.webp" alt=""></div>
+                <div class="mega-text">
+                  <div class="mega-title">Derribando Mitos de la IA</div>
+                  <div class="mega-subtitle">Santiago de Chile, 2025</div>
+                </div>
+              </a>
+              <a class="mega-item" href="https://www.youtube.com/watch?v=BasBLkIvOnE&t=1567s" target="_blank" rel="noopener noreferrer">
+                <div class="mega-thumb"><img src="/assets/proyectos/edison_converted.webp" alt=""></div>
+                <div class="mega-text">
+                  <div class="mega-title">Más allá del chat GPT</div>
+                  <div class="mega-subtitle">Online</div>
+                </div>
+              </a>
+              <a class="mega-item" href="https://www.youtube.com/watch?v=lmYKJHbSgEY&t=1215s" target="_blank" rel="noopener noreferrer">
+                <div class="mega-thumb"><img src="/assets/proyectos/ana_converted.webp" alt=""></div>
+                <div class="mega-text">
+                  <div class="mega-title">Probé todos los Agentes de IA para diseñar interfaces</div>
+                  <div class="mega-subtitle">Online</div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
       </li>
+      <li class="dots">&#183;</li>
+
       <li class="list-item">
-        <a
-          href="https://cards.uxanarangel.com"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <a href="https://cards.uxanarangel.com" target="_blank" rel="noopener noreferrer">
           <span class="symbol">×</span>
           <span class="cards">CARDS</span>
         </a>
       </li>
+
       <li class="toggle-container">
         <LanguageToggle />
       </li>
@@ -86,39 +180,28 @@ const LINKS = t('navbar', {
 <style>
   :root {
     --color-bg: hsla(0deg 0% 0% 0.5);
-    --color-menu: hsla(0deg 0 100%);
     --color-menu-open: hsla(0deg 0% 0% / 80%);
   }
 
   .nav-container {
     position: relative;
     z-index: 10;
-
     display: flex;
-
     justify-content: space-between;
     inline-size: auto;
     padding-inline: 1.5rem;
     padding-block: 2rem;
-
     transition: transform 0.3s ease-in-out;
   }
 
   .navbar {
     position: absolute;
-
     z-index: 1;
-
     display: flex;
     justify-content: flex-end;
-
     background-color: hsla(0deg 0% 3% / 80%);
     transform: translateY(-300%);
-    opacity: 1;
-
-    transition:
-      transform 300ms ease-in-out,
-      opacity 300ms ease-in-out;
+    transition: transform 300ms ease-in-out, opacity 300ms ease-in-out;
     inset: 0;
     inline-size: 100%;
     block-size: 100svh;
@@ -127,7 +210,6 @@ const LINKS = t('navbar', {
     &[data-status='open'] {
       background-color: var(--color-menu-open);
       transform: translateY(0);
-      opacity: 100;
       backdrop-filter: blur(0.1rem);
     }
   }
@@ -138,208 +220,222 @@ const LINKS = t('navbar', {
     flex-direction: column;
     margin-inline: auto;
     gap: 1.5rem;
-
     font-size: 1.7rem;
     line-height: 2.5rem;
     color: white;
+    width: 100%;
+    padding-inline: 1rem;
   }
 
-  .dots {
-    display: none;
+  .dots { display: none; }
+
+  /* =========================
+     MEGA MENU - MOBILE (inline accordion)
+     ========================= */
+  .has-mega { width: 100%; }
+
+  .mega-trigger {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
   }
 
-  .toggle-container {
-    width: 65vw;
-    max-width: 638px;
-    @media (width >= 800px) {
-      width: 106.4px;
-    }
+  .mega-trigger::after {
+    content: "▾";
+    opacity: 0.85;
+    transform: translateY(1px);
   }
 
+  .mega-panel {
+    position: static;             /* inline */
+    width: 100%;
+    margin-top: 0.75rem;
+
+    background: rgba(10, 10, 10, 0.6);
+    border: 1px solid rgba(177, 179, 208, 0.28);
+    border-radius: 16px;
+    padding: 14px;
+
+    display: none;                /* cerrado por default en mobile */
+  }
+
+  .has-mega.is-open .mega-panel {
+    display: block;
+  }
+
+  .mega-grid { display: grid; gap: 14px; }
+  .mega-grid-1 { grid-template-columns: 1fr; }
+  .mega-grid-2 { grid-template-columns: 1fr; } /* en mobile se apila */
+
+  .mega-col-title {
+    font-size: 0.95rem;
+    margin: 0 0 10px 0;
+    color: #fff;
+    opacity: 0.9;
+  }
+
+  .mega-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px;
+    border-radius: 14px;
+    text-decoration: none;
+  }
+
+  .mega-item:hover {
+    background: rgba(255,255,255,0.06);
+  }
+
+  .mega-thumb {
+    width: 44px;
+    height: 44px;
+    background: #000;
+    border: 1px solid rgba(177, 179, 208, 0.45);
+    border-radius: 10px;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  .mega-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.86;
+    display: block;
+  }
+
+  .mega-title {
+    color: #fff;
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 1.1rem;
+  }
+
+  .mega-subtitle {
+    color: rgba(177, 179, 208, 0.9);
+    font-size: 0.9rem;
+    line-height: 1.2rem;
+  }
+
+  /* Burger (igual que el tuyo) */
   .burger {
     position: relative;
     inset-block-start: 0.3rem;
-
     z-index: 2;
-
     inline-size: 2rem;
     block-size: 2.8125rem;
-
-    transform: rotate(0deg);
     cursor: pointer;
-
-    transition:
-      transform 0.25s ease-in-out,
-      opacity 0.25s ease-in-out,
-      inset 0.25s ease-in-out;
   }
 
   .bars {
     position: absolute;
     inset-inline-start: 0;
-
     display: block;
     inline-size: 100%;
     block-size: 0.3rem;
-
     border-radius: 0.5625rem;
-
     background: white;
-    transform: rotate(0deg);
-    opacity: 1;
-
-    transition:
-      transform 0.25s ease-in-out,
-      opacity 0.25s ease-in-out,
-      inset 0.25s ease-in-out;
+    transition: transform 0.25s ease-in-out, opacity 0.25s ease-in-out, inset 0.25s ease-in-out;
   }
 
-  .bar-middle {
-    inset-block-start: 0.65rem;
-  }
-
-  .bar-bottom {
-    inset-block-start: 1.25rem;
-  }
+  .bar-middle { inset-block-start: 0.65rem; }
+  .bar-bottom { inset-block-start: 1.25rem; }
 
   .burger[data-status='open'] {
-    .bar-top {
-      inset-block-start: 1.125rem;
-
-      transform: rotate(135deg);
-    }
-
-    .bar-middle {
-      inset-inline-start: -3.75rem;
-
-      opacity: 0;
-    }
-
-    .bar-bottom {
-      inset-block-start: 1.125rem;
-
-      transform: rotate(-135deg);
-    }
+    .bar-top { inset-block-start: 1.125rem; transform: rotate(135deg); }
+    .bar-middle { inset-inline-start: -3.75rem; opacity: 0; }
+    .bar-bottom { inset-block-start: 1.125rem; transform: rotate(-135deg); }
   }
 
+  /* =========================
+     DESKTOP (popover mega menu)
+     ========================= */
   @media (width >= 50rem) {
-    .burger span,
-    .burger {
-      display: none;
-    }
-  }
+    .burger { display: none; }
+    .dots { display: flex; font-size: 2.5rem; color: #b1b3d0; }
 
-  @media (width >= 50rem) {
     .nav-container {
       position: fixed;
-
       display: flex;
       gap: 1.5rem;
       padding: 0.7rem 1.5rem;
-
       align-items: center;
       border: 0.2px solid hsla(234deg 15% 37% / 100%);
-
       border-radius: 2rem;
-
       background-color: rgba(10, 10, 10, 0.7);
       backdrop-filter: blur(10px);
       inset-block-start: 1.2rem;
       inset-inline: 0;
-
       inline-size: fit-content;
       margin-inline: auto;
     }
-  }
 
-  @media (width >= 50rem) {
     .navbar {
       display: contents;
-      border-radius: 0.5rem;
-
       background-color: var(--color-bg);
-      padding: 0.75rem 1.5rem;
       transform: translateY(0);
-      inset-inline-start: 28rem;
       inset: 0;
-      padding-block-start: 1.6rem;
+      padding: 0;
     }
 
     .list {
       display: flex;
       flex-direction: row;
       align-items: center;
-
-      block-size: 2rem;
-
-      list-style: none;
-    }
-
-    .list-item:has(a:hover),
-    .list-item:has(a:active),
-    .list-item.active {
-      background: radial-gradient(
-        50% 50% at 50% 50%,
-        rgba(255, 255, 255, 0.24) 0%,
-        rgba(153, 153, 153, 0) 100%
-      );
-      color: white;
-
-      & a > span.cards {
-        color: #fa86ce;
-      }
-    }
-
-    .list-item {
-      padding-inline: 0.5rem;
-      font-size: 1.2rem;
-      text-decoration: none;
+      gap: 1.2rem;
       font-size: 1rem;
-      color: #b1b3d0;
+      padding-inline: 0;
+      width: auto;
     }
 
-    a:has(span.cards) {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.3rem;
+    .list-item { position: relative; width: auto; padding-inline: 0.5rem; color: #b1b3d0; }
+
+    /* desktop: quitar flecha en trigger */
+    .mega-trigger::after { content: ""; }
+
+    .mega-panel {
+      position: absolute;
+      top: calc(100% + 14px);
+      left: 0;
+      width: 720px;
+
+      background: rgba(10, 10, 10, 0.92);
+      border: 1px solid rgba(177, 179, 208, 0.28);
+      border-radius: 22px;
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.35);
+      backdrop-filter: blur(10px);
+
+      padding: 22px;
+
+      display: block; /* en desktop existe pero se oculta por opacity */
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(18px) scale(0.98);
+      transition: all 280ms ease;
+      margin-top: 0;
     }
 
-    a > span.symbol {
-      font-size: 1.2rem;
-      line-height: 12px;
-      translate: 0 -0.8px;
+    .has-mega:hover .mega-panel,
+    .has-mega.is-open .mega-panel {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0) scale(1);
     }
 
-    .dots {
-      display: flex;
-
-      font-size: 2.5rem;
-      color: #b1b3d0;
-    }
-
-    .burger {
-      display: none;
-    }
+    .mega-grid-2 { grid-template-columns: 1fr 1fr; }
   }
 </style>
 
 <script is:inline>
-  const items = document.querySelectorAll('.list-item  a')
   const navBar = document.querySelector('.navbar')
   const burgerMenu = document.querySelector('.burger')
   const dataStatus = 'data-status'
 
-  items.forEach((anchor) => {
-    anchor.addEventListener('click', () => {
-      navBar.setAttribute(dataStatus, 'open')
-      burgerMenu.click()
-    })
-  })
-
-  // Animation to the three spans, if get touch, will be a X
+  // Burger toggle (igual)
   burgerMenu.addEventListener('click', () => {
     const isOpen = navBar.getAttribute(dataStatus) === 'open'
-
     if (isOpen) {
       document.querySelector('body').style.removeProperty('overflow-y')
       navBar.setAttribute(dataStatus, 'close')
@@ -350,4 +446,66 @@ const LINKS = t('navbar', {
       burgerMenu.setAttribute(dataStatus, 'open')
     }
   })
+
+  // ===== Mega menu behavior: mobile accordion / desktop popover
+  const megaParents = document.querySelectorAll('.has-mega')
+  const megaTriggers = document.querySelectorAll('.has-mega > .mega-trigger')
+
+  const isDesktop = () => window.matchMedia('(min-width: 50rem)').matches
+
+  function closeAllMega() {
+    megaParents.forEach((p) => {
+      p.classList.remove('is-open')
+      const t = p.querySelector('.mega-trigger')
+      if (t) t.setAttribute('aria-expanded', 'false')
+    })
+  }
+
+  megaTriggers.forEach((trigger) => {
+    trigger.addEventListener('click', (e) => {
+      e.preventDefault()
+      e.stopPropagation()
+
+      const parent = trigger.closest('.has-mega')
+      const opened = parent.classList.contains('is-open')
+
+      // En mobile: acordeón (toggle)
+      // En desktop: popover (solo uno abierto)
+      if (isDesktop()) {
+        closeAllMega()
+        if (!opened) {
+          parent.classList.add('is-open')
+          trigger.setAttribute('aria-expanded', 'true')
+        }
+      } else {
+        // mobile: toggle sin cerrar los otros si no quieres
+        if (opened) {
+          parent.classList.remove('is-open')
+          trigger.setAttribute('aria-expanded', 'false')
+        } else {
+          parent.classList.add('is-open')
+          trigger.setAttribute('aria-expanded', 'true')
+        }
+      }
+    })
+
+    trigger.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault()
+        trigger.click()
+      }
+      if (e.key === 'Escape') closeAllMega()
+    })
+  })
+
+  // Click afuera cierra SOLO en desktop (en mobile normalmente no)
+  document.addEventListener('click', () => {
+    if (isDesktop()) closeAllMega()
+  })
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeAllMega()
+  })
+
+  // Si cambias de tamaño (mobile <-> desktop), resetea
+  window.addEventListener('resize', () => closeAllMega())
 </script>
