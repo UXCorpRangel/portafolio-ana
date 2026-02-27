@@ -1,17 +1,32 @@
 ---
-import SimpleCard from '@components/Cards/SimpleCard.astro'
 import { t } from 'i18n:astro'
+import Icon from '@components/Icon.astro'
+import {
+  CardVariant,
+  IconCatalog,
+  IconSize,
+  IconStyle
+} from '@contracts'
 ---
 
 <div class="study-cases">
+  <a href={"/latam-airlines"}>
   <section class="card-container latam-airlines">
-    <img
-      class="logo-img"
-      src="/svg/latam-airlines-logo.svg"
-      alt="Latam airlines Logo"
-      width="285"
-      height="91"
-    />
+    <div class="card-header--with-icon">
+      <img
+        class="logo-img"
+        src="/svg/latam-airlines-logo.svg"
+        alt="Latam airlines Logo"
+        width="285"
+        height="91"
+      />
+      <Icon
+        classes="card-icon"
+        icon={IconCatalog.arrowRight}
+        size={IconSize['4xl']}
+        iconStyle={IconStyle.bold}
+      />
+    </div>   
     <h3>{t('study_case_title')}</h3>
     <p>
       {t('study_case_desc')}
@@ -30,15 +45,38 @@ import { t } from 'i18n:astro'
       />
     </picture>
   </section>
-  <SimpleCard
-    cardText={t('project_cta')}
-    cardImage="/img/home/latam-airlines"
-    aspectRatio="512/384"
-    altText="Latam airlines"
-    isInverted={true}
-    url="/latam-airlines"
-    hasHover
-  />
+  </a>
+  <a href={"/firma-fast"}>
+  <section class="card-container ff-project">
+    <div class="card-header--with-icon">
+      <img
+        class="logo-img"
+        src="/img/home/logo_FF.webp"
+        alt="Latam airlines Logo"
+        width="285"
+        height="91"
+      />
+      <Icon
+        classes="card-icon"
+        icon={IconCatalog.arrowRight}
+        size={IconSize['4xl']}
+        iconStyle={IconStyle.bold}
+      />
+    </div>   
+    <h3>{t('ff_desc_title')}</h3>
+    <picture style="aspect-ratio: 283/169">
+      <img
+        class="logo-img"
+        src="/img/home/image_FF.webp"
+        alt="Firma Fast - Ana Rangel"
+        decoding="async"
+        loading="lazy"
+        fetchpriority="low"
+        style="aspect-ratio: 283/169"
+      />
+    </picture>
+  </section>
+  </a>
 </div>
 
 <style is:global>
@@ -61,12 +99,35 @@ import { t } from 'i18n:astro'
     border-radius: 1.5rem;
   }
 
+  .latam-airlines:hover {
+    border: 1px solid white;
+    box-shadow: 0px 0px 22.5px 0px rgba(255, 255, 255, 0.35);
+    transition:
+      border-color 300ms ease-in-out,
+      box-shadow 300ms ease-in-out;
+  }
+
+  .ff-project {
+    background: hsl(240deg 2% 9%);
+    border: 1px solid hsl(0deg 0% 16%);
+    border-radius: 1.5rem;
+    justify-content: space-between;
+  }
+
+  .ff-project:hover {
+    border: 1px solid white;
+    box-shadow: 0px 0px 22.5px 0px rgba(255, 255, 255, 0.35);
+    transition:
+      border-color 300ms ease-in-out,
+      box-shadow 300ms ease-in-out;
+  }
+
   .study-cases .card-container:not(.latam-airlines) {
     block-size: initial;
 
     & picture {
       @media (width >= 992px) {
-        margin-top: 9.8rem;
+        
         translate: -3rem 0;
       }
     }
@@ -82,6 +143,10 @@ import { t } from 'i18n:astro'
       padding: 3rem;
     }
   }
+  .card-container:hover {
+    --icon-color: var(--color-primary-400);
+    --icon-transform: 0.4rem;
+  }
 
   h3 {
     font-weight: 600;
@@ -92,5 +157,12 @@ import { t } from 'i18n:astro'
     font-size: 1.25rem;
     line-height: 1.875rem;
     color: #b1b3d0;
+  }
+
+  .card-header--with-icon {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: space-between;
   }
 </style>

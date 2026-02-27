@@ -8,11 +8,6 @@ const SLUGS = [
     slug: getLocalePath('/')
   },
   {
-    slug: Astro.url.pathname.includes('/en')
-      ? getLocalePath('/#projects')
-      : getLocalePath('/#proyectos')
-  },
-  {
     slug: getLocalePath('/sobre-mi')
   }
 ]
@@ -45,6 +40,26 @@ const LINKS = t('navbar', {
           </>
         ))
       }
+      <li class="list-item">
+        <a
+          href="/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Proyectos
+        </a>
+        <li class="dots">&#183;</li>
+      </li>
+      <li class="list-item">
+        <a
+          href="/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Eventos
+        </a>
+        <li class="dots">&#183;</li>
+      </li>
       <li class="list-item">
         <a
           href="https://cards.uxanarangel.com"

@@ -1,0 +1,192 @@
+---
+import CardWrapper from '@components/Cards/CardWrapper.astro'
+import { t } from 'i18n:astro'
+---
+
+<div class="container">
+  <div class="evaluation-cards">
+    <div class="grid-auto-fit">
+      <CardWrapper class="evaluation-card | flow" variant='primary'>
+        <h2 class="evaluation-card-title">{t('ff_criterios_title')}</h2>
+        <p class="evaluation-card-description">Realicé entrevistas con potenciales usuarios B2B para:</p>
+        <ol class="evaluation-criteria flow">
+          <li>· {t('ff_criterios_1')}</li>
+          <li>· {t('ff_criterios_2')}</li>
+          <li>· {t('ff_criterios_3')}</li>
+          <li>· {t('ff_criterios_4')}</li>
+        </ol>
+      </CardWrapper>
+
+      <img
+        src="/assets/images/img_2_FF.webp"
+        alt="Criterios de evaluación"
+        class="evaluation-image"
+      />
+    </div>
+  </div>
+  <div class="oportunities-cards">
+    <div class="container">
+      <h2>{t('ff_oportunidades_title')}</h2>
+      <div class="cards-container | grid-auto-fit">
+        <CardWrapper class="card" hasBorder>
+          <p class="subtitle">{t('ff_oportunidad_1')}</p>
+        </CardWrapper>
+
+        <CardWrapper class="card" hasBorder>
+          <p class="subtitle">{t('ff_oportunidad_2')}</p>
+        </CardWrapper>
+
+        <CardWrapper class="card" hasBorder>
+          <p class="subtitle">{t('ff_oportunidad_3')}</p>
+        </CardWrapper>
+      </div>
+      <div class="cards-container | grid-auto-fit">
+        <CardWrapper class="card" hasBorder>
+          <p class="subtitle">{t('ff_oportunidad_4')}</p>
+        </CardWrapper>
+
+        <CardWrapper class="card" hasBorder>
+          <p class="subtitle">{t('ff_oportunidad_5')}</p>
+        </CardWrapper>
+
+        <CardWrapper class="card" hasBorder>
+          <p class="subtitle">{t('ff_oportunidad_6')}</p>
+        </CardWrapper>
+      </div>
+    </div>
+  </div>
+
+  <!-- <div class="cards-container">
+    <div class="even-columns">
+      <div class="flow">
+        <h2 class="title">NPS</h2>
+        <p class="description">{t('ripley_criterios_NPS_desc')}</p>
+      </div>
+
+      <img
+        src="/assets/images/banco-ripley-benchmarks-2.png"
+        alt="NPS Banco Ripley"
+      />
+    </div>
+  </div> -->
+</div>
+
+<style>
+  .container {
+    padding-block-start: 2rem;
+    display: grid;
+    gap: 1.5rem;
+    place-items: center;
+    padding-inline: 2rem;
+  }
+
+  .cards-container {
+    --min-item-width: 22rem;
+
+    margin-block-start: 3rem;
+    inline-size: 100%;
+    justify-items: center;
+  }
+
+  .card {
+    display: grid;
+    gap: 1rem;
+    background-color: #161617;
+    padding: 1.5rem;
+    max-inline-size: 25.625rem;
+    inline-size: 100%;
+    text-align: center;
+  }
+
+  .flow {
+    --flow-spacer: 1.5rem;
+  }
+
+  .evaluation-cards {
+    margin-block-start: 3rem;
+    inline-size: 100%;
+
+    .grid-auto-fit {
+      --min-item-width: 30rem;
+    }
+  }
+  .evaluation-card-description {
+    color: hsl(236, 25%, 75%);
+    line-height: 1.5;
+  }
+  .evaluation-image {
+    width: 100%;
+  }
+
+  .evaluation-card {
+    --flow-spacer: 1.4375rem;
+
+    width: 100%;
+    background-color: hsl(240, 4%, 5%);
+    padding: 3.5rem 1.5rem 2.25rem 1.5rem;
+    margin-inline: auto;
+  }
+
+  .oportunities-cards {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+  }
+  .oportunities-cards h2 {
+    font-size: 3rem;
+  }
+
+  .evaluation-card-title {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+
+  .evaluation-criteria {
+    --flow-spacer: 1rem;
+
+    line-height: 24px;
+    letter-spacing: -1%;
+    color: hsla(236, 25%, 75%, 1);
+  }
+
+  .even-columns {
+    margin-block-start: 2rem;
+    place-items: center;
+    gap: 4rem;
+  }
+
+  .title {
+    font-size: 3rem;
+    font-weight: 500;
+    text-align: center;
+  }
+
+  .description {
+    color: hsl(236, 25%, 75%);
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  @media (min-width: 48em) {
+    .evaluation-card {
+      padding: 3rem;
+      text-align: start;
+    }
+
+    .title {
+      font-size: 4rem;
+      text-align: start;
+    }
+
+    .even-columns {
+      .flow {
+        padding-inline-start: 2rem;
+      }
+      img {
+        justify-self: end;
+      }
+    }
+  }
+</style>

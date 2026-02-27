@@ -61,23 +61,23 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
         <h3 class="contributions-subtitle">{t('contributions_dev')}</h3>
         <div class="contributors">
           {
-            dataDevs.map((contributor) => (
-              <a
-                href={contributor.html_url}
-                target="_blank"
-                class="contributor"
-                title={contributor.login}
-              >
-                <Picture
-                  class="contributors__img"
-                  src={contributor.avatar_url}
-                  formats={['avif', 'webp']}
-                  alt={`Avatar ${contributor.login}`}
-                  width={45}
-                  height={45}
-                />
-              </a>
-            ))
+            // dataDevs.map((contributor) => (
+            //   <a
+            //     href={contributor.html_url}
+            //     target="_blank"
+            //     class="contributor"
+            //     title={contributor.login}
+            //   >
+            //     <Picture
+            //       class="contributors__img"
+            //       src={contributor.avatar_url}
+            //       formats={['avif', 'webp']}
+            //       alt={`Avatar ${contributor.login}`}
+            //       width={45}
+            //       height={45}
+            //     />
+            //   </a>
+            // ))
           }
         </div>
       </div>

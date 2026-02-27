@@ -1,0 +1,107 @@
+---
+import CardWrapper from '@components/Cards/CardWrapper.astro'
+import { t } from 'i18n:astro'
+---
+
+<div class="container">
+  <div class="cards-container">
+    <div class="even-columns">
+      <img
+        src="/assets/images/agente.webp"
+        alt="NPS Banco Ripley"
+      />
+
+      <div class="flow">
+        <h2 class="title">Evolución B2C + Agente</h2>
+        <p class="description">{t('ff_criterios_NPS_desc')}</p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<style>
+
+  .flow {
+    --flow-spacer: 1.5rem;
+  }
+
+  .flow p {
+    color: hsl(236, 25%, 75%);
+    line-height: 1.5;
+    font-size: 1.2rem;
+  }
+  .container {
+    padding-block-start: 2rem;
+    display: grid;
+    gap: 1.5rem;
+    place-items: center;
+    padding-inline: 2rem;
+  }
+
+  .cards-container {
+    --min-item-width: 22rem;
+
+    margin-block-start: 3rem;
+    inline-size: 100%;
+    justify-items: center;
+  }
+
+  .even-columns {
+    margin-block-start: 2rem;
+    place-items: center;
+    gap: 4rem;
+  }
+
+  .section-title {
+    margin-block: 2rem;
+    font-size: 3rem;
+    font-weight: 500;
+  }
+
+  .grid-auto-fit {
+    --min-item-width: 15rem;
+  }
+
+  .card {
+    --flow-spacer: 1.4375rem;
+    width: 100%;
+    background-color: hsl(240, 4%, 5%);
+    padding: 3.5rem 1.5rem 2.25rem 1.5rem;
+    margin-inline: auto;
+  }
+
+  .card-title {
+    font-size: 3rem;
+    font-weight: 500;
+  }
+
+  .card-description {
+    color: hsl(236, 25%, 75%);
+    line-height: 1.5;
+  }
+
+  @media (min-width: 48em) {
+    .section-title {
+      font-size: 64px;
+    }
+    .evaluation-card {
+      padding: 3rem;
+      text-align: start;
+    }
+
+    .title {
+      font-size: 4rem;
+      text-align: start;
+    }
+
+    .even-columns {
+      .flow {
+        padding-inline-start: 2rem;
+      }
+      img {
+        justify-self: end;
+      }
+    }
+  }
+</style>

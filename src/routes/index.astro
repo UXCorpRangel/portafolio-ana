@@ -51,23 +51,19 @@ import { t } from 'i18n:astro'
     <div class="container">
       <Profession />
 
-      <article class="uxcorp-projects">
-        <AnaCards />
-        <UXCorp />
-      </article>
-
       <div
         id={Astro.url.pathname.includes('/en') ? 'projects' : 'proyectos'}
         class="grid-auto-fit"
       >
-        <SimpleCard
+        <!-- <SimpleCard
           cardText={t('project_ripley_title')}
-          cardImage="/svg/logo-ripley.svg"
-        />
+          cardImage="/img/ripley.webp"
+          aspectRatio="512/265"
+        /> -->
 
         <SimpleCard
-          cardText={t('project_cta')}
-          cardImage="/img/home/img-ripley"
+          cardText={t('project_cta_ripley')}
+          cardImage="/img/ripley"
           isInverted={true}
           altText={t('project_ripley_title')}
           aspectRatio="512/265"
@@ -75,11 +71,25 @@ import { t } from 'i18n:astro'
           url="/banco-ripley"
           hasHover
         />
+        <SimpleCard
+          cardText={t('project_cta_cenco')}
+          cardImage="/img/home/cenco"
+          isInverted={true}
+          altText={t('project_cenco_title')}
+          aspectRatio="512/265"
+          variant={CardVariant.tertiary}
+          url="/banco-ripley"
+          hasHover
+        />
       </div>
+      <StudyCases />
+
+      <article class="uxcorp-projects">
+        <AnaCards />
+        <UXCorp />
+      </article>
 
       <Thunder />
-
-      <StudyCases />
 
       <Contact />
     </div>
@@ -97,7 +107,7 @@ import { t } from 'i18n:astro'
   .uxcorp-projects {
     display: grid;
     gap: 2rem;
-    margin-bottom: 2rem;
+    margin-top: 2rem;
     padding-inline: 1rem;
   }
 

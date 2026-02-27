@@ -4,7 +4,8 @@ const colorValues = {
   darkPurple: '#1E0D4F',
   darkBlue: '#061962',
   cyan: 'rgba(48, 183, 202, 0.30)',
-  pink: 'rgba(248, 128, 214, 0.34)'
+  pink: 'rgba(248, 128, 214, 0.34)',
+  darkYellow: 'rgba(255, 255, 255, 0.30)'
 };
 
 export type GradientsColors = keyof typeof colorValues;

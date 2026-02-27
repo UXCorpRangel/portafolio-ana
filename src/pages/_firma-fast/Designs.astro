@@ -1,0 +1,102 @@
+---
+import { t } from 'i18n:astro'
+---
+
+<section>
+  <div class="container">
+    <div class="flow">
+      <h1 class="title">{t('ripley_designs_title')}</h2>
+      <p class="description">{t('ff_designs_desc')}</p>
+
+      <img
+        class="hide-mobile"
+        src="/assets/images/flujo.webp"
+        alt="Diseño de la aplicación y web"
+      />
+    </div>
+  </div>
+</section>
+
+<style>
+  section .container {
+    display: grid;
+    margin-block-start: 3rem;
+    padding-inline: 2rem;
+    gap: 2rem;
+  }
+
+  .title {
+    font-size: 4rem;
+    line-height: 1.4;
+    font-weight: 500;
+    text-align: center;
+  }
+
+  .description {
+    color: hsl(236, 25%, 75%);
+    text-align: center;
+    line-height: 1.5;
+    max-inline-size: 80ch;
+    margin-inline: auto;
+    margin-block-end: 4rem;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  .section-title {
+    margin-block: 2rem;
+    font-size: 3rem;
+    font-weight: 500;
+  }
+
+  .image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding-inline: 2rem;
+    margin-block-start: 4rem;
+  }
+
+  .image-container img {
+    inline-size: 100%;
+    block-size: 100%;
+    max-inline-size: 320px;
+    max-block-size: 31.25rem;
+    margin-inline: auto;
+  }
+
+  @media (width <= 768px) {
+    .hide-mobile {
+      content-visibility: hidden;
+    }
+  }
+
+  @media (min-width: 48em) {
+    .title {
+      font-size: 4rem;
+    }
+
+    .subtitle {
+      font-size: 1rem;
+      line-height: 1.5rem;
+    }
+
+    .image-container {
+      flex-direction: row;
+    }
+
+    .image-container img {
+      flex-shrink: 1;
+      flex-basis: 15rem;
+    }
+
+    .image-container img:first-child {
+      width: 100%;
+      max-width: 43.75rem;
+      flex-basis: 50rem;
+    }
+  }
+</style>

@@ -1,0 +1,116 @@
+---
+import CardWrapper from '@components/Cards/CardWrapper.astro'
+import { t } from 'i18n:astro'
+---
+
+<section class="hero">
+  <div class="container">
+    <h2 class="section-title">Diagramar antes de diseñar</h2>
+    <p class="section-description">{t('ff_benchmarks_desc')}</p>
+
+    <img
+      src="/assets/images/diagrama_ff.webp"
+      alt="Gráfica contexto Firma Fast"
+      class="section-image"
+    />
+  </div>
+</section>
+
+<style>
+  .hero .container {
+    padding-block-start: 2rem;
+    display: grid;
+    gap: 1.5rem;
+    place-items: center;
+    padding-inline: 2rem;
+  }
+
+  .flow {
+    --flow-spacer: 1.5rem;
+  }
+
+  .section-title {
+    font-size: clamp(2rem, 9vw, 3.5rem);
+    line-height: 1.4;
+    font-weight: 500;
+    text-align: center;
+  }
+
+  .section-description {
+    color: hsl(236, 25%, 75%);
+    text-align: center;
+    line-height: 1.5;
+  }
+
+  .cards-container {
+    --min-item-width: 20rem;
+
+    margin-block-start: 3rem;
+    inline-size: 100%;
+  }
+
+  .card {
+    --flow-spacer: 1.4375rem;
+    width: 100%;
+    background-color: hsla(240, 4%, 5%, 1);
+    padding: 3.5rem 1.5rem 2.25rem 1.5rem;
+    margin-inline: auto;
+
+    h2 {
+      font-size: 1.25rem;
+      line-height: 1.5;
+      font-weight: 400;
+      text-align: center;
+    }
+
+    p {
+      line-height: 24px;
+      letter-spacing: -1%;
+      color: hsla(236, 25%, 75%, 1);
+    }
+
+    span {
+      display: block;
+      font-size: 4rem;
+      text-align: center;
+      font-weight: 700;
+    }
+  }
+
+  @media (min-width: 48em) {
+    .hero .container {
+      padding-block-start: 8rem;
+    }
+
+    .section-title {
+      font-size: 4rem;
+    }
+    .section-description {
+      font-size: 1.25rem;
+      max-inline-size: 78ch;
+      margin-inline: auto;
+      line-height: 1.875rem;
+    }
+
+    .card {
+      padding: 3rem;
+      text-align: start;
+
+      h2 {
+        font-size: 2rem;
+        line-height: 1.5;
+        font-weight: 400;
+        text-align: start;
+      }
+
+      span {
+        text-align: start;
+      }
+    }
+
+    .subtitle {
+      font-size: 1rem;
+      line-height: 1.5rem;
+    }
+  }
+</style>

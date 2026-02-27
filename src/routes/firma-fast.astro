@@ -1,0 +1,32 @@
+---
+import GradientBackground from '@components/GradientBackground.astro'
+import Layout from '@layouts/Layout.astro'
+import Contact from '@sections/sections/Contact.astro'
+import Analysis from '@sections/firma-fast/Analysis.astro'
+import Benchmarks from '@sections/firma-fast/Benchmarks.astro'
+import Context from '@sections/firma-fast/Context.astro'
+import Criterios from '@sections/firma-fast/Criterios.astro'
+import Designs from '@sections/firma-fast/Designs.astro'
+import Hero from '@sections/firma-fast/Hero.astro'
+---
+
+<Layout title="Ana Rangel | Firma Fast">
+  <main>
+    <GradientBackground color="darkYellow" />
+
+    <Hero />
+    <Context />
+    <Benchmarks />
+    <Criterios />
+    <Designs />
+    <Analysis />
+    <Contact />
+  </main>
+</Layout>
+
+<style>
+  main {
+    padding-block-start: 4rem;
+    overflow: hidden;
+  }
+</style>

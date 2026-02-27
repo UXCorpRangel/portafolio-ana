@@ -59,15 +59,15 @@ import { t } from 'i18n:astro'
         <p class="card__paragraph" set:html={t('about_volunteering_desc')} />
       </div>
       <div class="events-container">
-        <div class="event" data-name="js-chile">
+        <div class="event" data-name="uxcorp-rangel">
           <img
-            src="/svg/jschile.svg"
-            alt="Javascript Chile"
+            src="/img/uxcorprangel-logo.png"
+            alt="UX Corp Rangel"
             loading="lazy"
             decoding="async"
             fetchpriority="low"
           />
-          <p>Javascript Chile</p>
+          <p>UX Corp Rangel</p>
         </div>
         <div class="event" data-name="spark-code">
           <img
@@ -99,15 +99,15 @@ import { t } from 'i18n:astro'
           />
           <p>Women Techmakers Chile</p>
         </div>
-        <div class="event" data-name="js-venezuela">
+        <div class="event" data-name="js-chile">
           <img
-            src="/svg/jsvzla.svg"
-            alt="Javascript Venezuela"
+            src="/svg/jschile.svg"
+            alt="Javascript Chile"
             loading="lazy"
             decoding="async"
             fetchpriority="low"
           />
-          <p>Javascript Venezuela</p>
+          <p>Javascript Chile</p>
         </div>
       </div>
     </CardWrapper>
@@ -247,6 +247,8 @@ import { t } from 'i18n:astro'
         }
 
         &[data-name='js-chile'] {
+          top: 55%;
+          left: 65%;
           p {
             background-color: hsl(53, 93%, 54%);
             color: hsl(240, 4%, 5%);
@@ -296,17 +298,18 @@ import { t } from 'i18n:astro'
           }
         }
 
-        &[data-name='js-venezuela'] {
-          top: 55%;
-          left: 65%;
+        &[data-name='uxcorp-rangel'] {
+          width: 48px;
 
           p {
-            border: 1px solid hsl(53, 93%, 54%);
-            color: hsl(53, 93%, 54%);
+            border: 1px solid hsl(0, 0%, 8%);
+            background-color: hsl(0, 100%, 50%);
+            color: hsl(0, 0%, 0%);
+            max-inline-size: 6.5625rem;
           }
 
           p::after {
-            background-color: hsl(53, 93%, 54%);
+            background-color: hsl(0, 100%, 50%);
           }
         }
       }
