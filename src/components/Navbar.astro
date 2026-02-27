@@ -433,9 +433,10 @@ const LINKS = t('navbar', { returnObjects: true })
   const burgerMenu = document.querySelector('.burger')
   const dataStatus = 'data-status'
 
-  // Burger toggle (igual)
+  // ===== Burger menu toggle =====
   burgerMenu.addEventListener('click', () => {
     const isOpen = navBar.getAttribute(dataStatus) === 'open'
+
     if (isOpen) {
       document.querySelector('body').style.removeProperty('overflow-y')
       navBar.setAttribute(dataStatus, 'close')
@@ -447,65 +448,38 @@ const LINKS = t('navbar', { returnObjects: true })
     }
   })
 
-  // ===== Mega menu behavior: mobile accordion / desktop popover
-  const megaParents = document.querySelectorAll('.has-mega')
+  // ===== Mega menu: SOLO mobile por click (accordion) =====
   const megaTriggers = document.querySelectorAll('.has-mega > .mega-trigger')
-
   const isDesktop = () => window.matchMedia('(min-width: 50rem)').matches
-
-  function closeAllMega() {
-    megaParents.forEach((p) => {
-      p.classList.remove('is-open')
-      const t = p.querySelector('.mega-trigger')
-      if (t) t.setAttribute('aria-expanded', 'false')
-    })
-  }
 
   megaTriggers.forEach((trigger) => {
     trigger.addEventListener('click', (e) => {
+      // Desktop: hover manda, el click no hace nada (y evitamos "sticky")
+      if (isDesktop()) return
+
       e.preventDefault()
-      e.stopPropagation()
 
       const parent = trigger.closest('.has-mega')
       const opened = parent.classList.contains('is-open')
 
-      // En mobile: acordeón (toggle)
-      // En desktop: popover (solo uno abierto)
-      if (isDesktop()) {
-        closeAllMega()
-        if (!opened) {
-          parent.classList.add('is-open')
-          trigger.setAttribute('aria-expanded', 'true')
-        }
+      if (opened) {
+        parent.classList.remove('is-open')
+        trigger.setAttribute('aria-expanded', 'false')
       } else {
-        // mobile: toggle sin cerrar los otros si no quieres
-        if (opened) {
-          parent.classList.remove('is-open')
-          trigger.setAttribute('aria-expanded', 'false')
-        } else {
-          parent.classList.add('is-open')
-          trigger.setAttribute('aria-expanded', 'true')
-        }
+        parent.classList.add('is-open')
+        trigger.setAttribute('aria-expanded', 'true')
       }
     })
-
-    trigger.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault()
-        trigger.click()
-      }
-      if (e.key === 'Escape') closeAllMega()
-    })
   })
 
-  // Click afuera cierra SOLO en desktop (en mobile normalmente no)
-  document.addEventListener('click', () => {
-    if (isDesktop()) closeAllMega()
+  // Si cambias tamaño (mobile <-> desktop), cierra acordeones para evitar estados raros
+  window.addEventListener('resize', () => {
+    if (isDesktop()) {
+      document.querySelectorAll('.has-mega.is-open').forEach((el) => {
+        el.classList.remove('is-open')
+        const t = el.querySelector('.mega-trigger')
+        if (t) t.setAttribute('aria-expanded', 'false')
+      })
+    }
   })
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeAllMega()
-  })
-
-  // Si cambias de tamaño (mobile <-> desktop), resetea
-  window.addEventListener('resize', () => closeAllMega())
 </script>

@@ -85,11 +85,21 @@ import {
     width: 90%;
     margin: 0 auto;
     margin-top: 2rem;
+    align-items: stretch;
 
     @media (width >= 992px) {
       grid-template-columns: 1fr 1fr;
       width: 100%;
     }
+  }
+
+  .study-cases > a {
+    display: block;
+    height: 100%;
+  }
+  
+  .study-cases > a > .card-container {
+    height: 100% !important;
   }
 
   .study-cases .latam-airlines {
@@ -164,4 +174,11 @@ import {
     align-items: center;
     justify-content: space-between;
   }
+
+  @media (width >= 992px) {
+    .card-container {
+      min-height: 520px; /* ajusta a tu diseño */
+    }
+  }
+
 </style>
